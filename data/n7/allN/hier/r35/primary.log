@@ -1,0 +1,30 @@
+smale ['Mathematical problems for the next century'] 20 2 7-15 {'date-parts': [[1998, 3]]} [('Steve', 'Smale')]
+moulton ['The Straight Line Solutions of the Problem of N Bodies'] 12 1 1 {'date-parts': [[1910, 10]]} [('F. R.', 'Moulton')]
+hampton ['Finiteness of relative equilibria of the four-body problem'] 163 2 289-312 {'date-parts': [[2006, 2]]} [('Marshall', 'Hampton'), ('Richard', 'Moeckel')]
+albouy ['Finiteness of central configurations of five bodies in the plane'] 176 1 535-588 {'date-parts': [[2012, 7, 1]]} [('Alain', 'Albouy'), ('Vadim', 'Kaloshin')]
+roberts ['A continuum of relative equilibria in the five-body problem'] 127 3-4 141-145 {'date-parts': [[1999, 3]]} [('Gareth E.', 'Roberts')]
+jensen ["Smale's 6th Problem for Generic Masses"] 1 2 None {'date-parts': [[2025, 8, 30]]} [('Anders', 'Jensen'), ('Anton', 'Leykin')]
+changI ['Toward finiteness of central configurations for the planar six-body problem by symbolic computations. (I) Determine diagrams and orders'] 123 None 102277 {'date-parts': [[2024, 7]]} [('Ke-Ming', 'Chang'), ('Kuo-Chang', 'Chen')]
+changII ['Toward Finiteness of Central Configurations for the Planar Six-Body Problem by Symbolic Computations. (II) Determine Mass Relations'] 24 3 2369-2404 {'date-parts': [[2025, 9, 30]]} [('Ke-Ming', 'Chang'), ('Kuo-Chang', 'Chen')]
+diaspan no Crossref metadata
+mocz19 ['Central configurations in planar n-body problem with equal masses for $$n=5,6,7$$'] 131 10 46 {'date-parts': [[2019, 10]]} [('Małgorzata', 'Moczurad'), ('Piotr', 'Zgliczyński')]
+mocz20 ['Central configurations in the spatial n-body problem for $$n=5,6$$ with equal masses'] 132 11-12 56 {'date-parts': [[2020, 12]]} [('Małgorzata', 'Moczurad'), ('Piotr', 'Zgliczyński')]
+heintz ['Definability and fast quantifier elimination in algebraically closed fields'] 24 3 239-277 {'date-parts': [[1983, 8]]} [('Joos', 'Heintz')]
+heintzerr no Crossref metadata
+moeckel no Crossref metadata
+xia no Crossref metadata
+payne ['Fibers of tropicalization'] 262 2 301-311 {'date-parts': [[2009, 6]]} [('Sam', 'Payne')]
+lean ['The Lean 4 Theorem Prover and Programming Language'] None None 625-635 {'date-parts': [[2021]]} [('Leonardo de', 'Moura'), ('Sebastian', 'Ullrich')]
+mathlib no Crossref metadata
+highs no Crossref metadata
+primary PDF tomar6-zenodo 668683
+primary PDF tomar6-hexagon 665572
+primary PDF tomar-special 561787
+primary PDF nurowski 479699
+primary PDF payne-err 307778
+primary PDF poonen 338644
+primary PDF moeckel 200937
+primary PDF chen6 581594
+no PDF palmoreII 28961
+primary PDF pardo-sebastian 825270
+primary PDF payne 193219

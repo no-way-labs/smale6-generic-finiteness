@@ -1,0 +1,7 @@
+--- docs/as-read/R34-references.bib	2026-11-18 07:52:53
++++ paper/alln/references.bib	2026-11-18 07:52:53
+@@ -183,0 +184 @@
++  pages   = {5--255},
+@@ -190 +191 @@
+-  note   = {Preprint, version 5, \url{https://doi.org/10.5281/zenodo.23720035}},
++  note   = {Preprint, version 5, \url{https://doi.org/10.5281/zenodo.23720035}; a copy with the same section numbers is at \url{https://hexagonmath.org/2611.00377v1}},

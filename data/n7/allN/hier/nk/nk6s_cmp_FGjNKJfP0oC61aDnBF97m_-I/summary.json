@@ -1,0 +1,14 @@
+{
+ "BL": {
+  "rc": 0,
+  "line": "nk_fibre K=6 u=0,1,45,2000,89000,3920000 SAMPLE of 100000 ordered pairs of trees, seed 29,: pairs of trees 108056025, zeta trees 0 done before and 10395 now (COMPLETE), LPs 167954450, LPs with no verdict 0, solutions 4335, distinct points 1589, by dimension of the cell {1: 1489, 2: 99, 3: 1}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {0: 1564, 1: 2085, 2: 686}; 1067s"
+ },
+ "BP": {
+  "rc": 0,
+  "line": "nk_fibre K=6 Psi >= 5 u=0,1,45,2000,89000,3920000 SAMPLE of 500000 ordered pairs of trees, seed 29,: pairs of trees 108056025, zeta trees 0 done before and 10395 now (COMPLETE), LPs 1692521660, LPs with no verdict 0, solutions 920, distinct points 189, by dimension of the cell {1: 187, 2: 2}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {0: 654, 1: 158, 2: 108}; 10421s"
+ },
+ "AP": {
+  "rc": 0,
+  "line": "nk_fibre K=6 Psi >= 5 u=0,1,12,150,1900,24000 SAMPLE of 300000 ordered pairs of trees, seed 29,: pairs of trees 108056025, zeta trees 0 done before and 10395 now (COMPLETE), LPs 1010259943, LPs with no verdict 0, solutions 569, distinct points 108, by dimension of the cell {1: 106, 2: 2}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {0: 438, 1: 80, 2: 51}; 5839s"
+ }
+}

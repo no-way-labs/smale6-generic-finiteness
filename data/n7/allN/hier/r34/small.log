@@ -1,0 +1,38 @@
+Running HiGHS 1.16.0 (git hash: f3f113d): Copyright (c) 2026 under MIT licence terms
+Includes third-party software components, see THIRD_PARTY_NOTICES.md for full details
+Running HiGHS 1.16.0 (git hash: f3f113d): Copyright (c) 2026 under MIT licence terms
+Includes third-party software components, see THIRD_PARTY_NOTICES.md for full details
+Running HiGHS 1.16.0 (git hash: f3f113d): Copyright (c) 2026 under MIT licence terms
+Includes third-party software components, see THIRD_PARTY_NOTICES.md for full details
+Running HiGHS 1.16.0 (git hash: f3f113d): Copyright (c) 2026 under MIT licence terms
+Includes third-party software components, see THIRD_PARTY_NOTICES.md for full details
+  zeta trees 50/105, solutions 8, of dimension > 1: 0, leaves with a ray 4, rays that stay in the prevariety 0, LPs 825690, 18s
+  zeta trees 100/105, solutions 24, of dimension > 1: 0, leaves with a ray 8, rays that stay in the prevariety 0, LPs 1640815, 37s
+nk_fibre K=4 Psi >= 3 u=0,1,34,1156: pairs of trees 11025, zeta trees 0 done before and 105 now (COMPLETE), LPs 1731527, LPs with no verdict 0, solutions 28, distinct points 6, by dimension of the cell {1: 6}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {0: 18, 1: 10}; 39s
+   largest Psi at the distinct points: min 735.667, median 736, max 747
+   dim 1  xi [-396.875, -397.875, -397.875, -397.875]  eta [-338.125, -338.125, -372.125, -338.125]  zeta {'01': -397.875, '02': -397.875, '03': -397.875, '12': 1914.125, '13': 1914.125, '23': 2684.125}  omega {'01': 1871.875, '02': -372.125, '03': 2641.875, '12': -372.125, '13': 1871.875, '23': -372.125}
+   dim 1  xi [-373.5, -374.5, -374.5, -374.5]  eta [-372.5, -373.5, -372.5, -372.5]  zeta {'01': -374.5, '02': -374.5, '03': -374.5, '12': 1937.5, '13': 2685.5, '23': 1937.5}  omega {'01': -373.5, '02': 1936.5, '03': 2684.5, '12': -373.5, '13': -373.5, '23': 1936.5}
+   dim 1  xi [-338.95833, -338.95833, -372.95833, -338.95833]  eta [-396.70833, -397.70833, -396.70833, -396.70833]  zeta {'01': 1871.04167, '02': -372.95833, '03': 1871.04167, '12': -372.95833, '13': 2641.70833, '23': -372.95833}  omega {'01': -397.70833, '02': 1912.29167, '03': 1912.29167, '12': -397.70833, '13': -397.70833, '23': 2682.95833}
+   dim 1  xi [-338.125, -338.125, -372.125, -338.125]  eta [-396.875, -397.875, -397.875, -397.875]  zeta {'01': 1871.875, '02': -372.125, '03': 2641.875, '12': -372.125, '13': 1871.875, '23': -372.125}  omega {'01': -397.875, '02': -397.875, '03': -397.875, '12': 1914.125, '13': 1914.125, '23': 2684.125}
+   dim 1  xi [-396.70833, -397.70833, -396.70833, -396.70833]  eta [-338.95833, -338.95833, -372.95833, -338.95833]  zeta {'01': -397.70833, '02': 1912.29167, '03': 1912.29167, '12': -397.70833, '13': -397.70833, '23': 2682.95833}  omega {'01': 1871.04167, '02': -372.95833, '03': 1871.04167, '12': -372.95833, '13': 2641.70833, '23': -372.95833}
+   dim 1  xi [-372.5, -373.5, -372.5, -372.5]  eta [-373.5, -374.5, -374.5, -374.5]  zeta {'01': -373.5, '02': 1936.5, '03': 2684.5, '12': -373.5, '13': -373.5, '23': 1936.5}  omega {'01': -374.5, '02': -374.5, '03': -374.5, '12': 1937.5, '13': 2685.5, '23': 1937.5}
+real 38.86
+user 150.90
+sys 2.86
+            37634048  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               12700  page reclaims
+                  76  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                 142  voluntary context switches
+               14126  involuntary context switches
+           861775751  instructions retired
+           377404678  cycles elapsed
+            27379072  peak memory footprint

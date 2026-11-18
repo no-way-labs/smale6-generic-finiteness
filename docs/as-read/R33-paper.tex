@@ -1,0 +1,1196 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{problem}[theorem]{Problem}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+\emergencystretch=2em
+
+\newcommand{\repo}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\Qbar}{\overline{\mathbb{Q}}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\Gm}{\mathbb{G}}
+\newcommand{\Ps}{\Psi^{*}}
+\newcommand{\Es}{E^{*}}
+\newcommand{\Po}{\Psi^{\circ}}
+\newcommand{\Eo}{E^{\circ}}
+\newcommand{\one}[1]{\mathbf{1}_{#1}}
+\newcommand{\nd}[2]{[#1]_{#2}}
+\newcommand{\step}[1]{\smallskip\noindent\textit{#1}\ }
+\DeclareMathOperator{\Spec}{Spec}
+
+\begin{document}
+
+\title[Generic finiteness of planar central configurations]{Generic finiteness of planar central configurations for every number of bodies}
+
+\author{Keston Aquino-Michaels}
+\address{Independent researcher}
+
+\begin{abstract}
+We prove that for every $n \ge 2$ there is a proper Zariski-closed subset of $\CC^n$, defined over
+$\QQ$, such that for positive masses outside it the planar $n$-body problem has finitely many central
+configurations up to similarity. The subset is not described, and we attempt no count of the
+configurations. The statement is known for $n \le 5$ and is the subject of two preprints of 2026 for
+$n = 6$; we know no earlier proof for $n \ge 7$. We work with the system of Albouy and Kaloshin over a
+field of Hahn series, at masses whose valuations $u_0 < u_1 < \dots < u_{n-1}$ satisfy
+$u_j - u_{j-1} > 2n^2 (u_{j-1} - u_0)$. At such masses we show that the least valuation among the terms
+of the potential and of the moment of inertia is one of finitely many numbers fixed by the $u_j$, and
+hence that the order of every close approach of two bodies in a solution is bounded. A continuum of
+solutions modulo rotation would contain close approaches of every order. The proof contains no
+enumeration of diagrams and no computation. Formal counterparts of the statements about valuations are
+proved in Lean~4 with Mathlib: that the valuations of a solution satisfy the cut conditions
+(Lemma~\ref{lem:A}), the nonvanishing in Lemma~\ref{lem:B}, Corollary~\ref{cor:C}, the existence of a
+simple cycle and its relation (Theorem~\ref{thm:D4}(a) and~(c) for simple cycles) and the bound of
+Corollary~\ref{cor:bound}. The reduction to these statements, which uses algebraic geometry over the
+field of Hahn series, is not formalised.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+Let $n \ge 2$. Pairwise distinct points $z_0, \dots, z_{n-1} \in \CC$ with masses $m_0, \dots, m_{n-1}$
+form a \emph{central configuration} if there are $\lambda \in \RR$ and $c \in \CC$ such that
+\begin{equation}\label{eq:cc}
+  \lambda\,(z_t - c) \;=\; \sum_{l \ne t} m_l\, \frac{z_t - z_l}{|z_t - z_l|^{3}}
+  \qquad (t = 0, \dots, n-1).
+\end{equation}
+Central configurations are the shapes of the homographic solutions of the Newtonian $n$-body problem,
+and in particular of its relative equilibria~\cite{wintner1941}. A \emph{similarity} is a map
+$z \mapsto \alpha z + \beta$ or $z \mapsto \alpha \bar z + \beta$ with $\alpha \ne 0$; it maps a central
+configuration to a central configuration. The number of classes is finite with the reflections if and
+only if it is finite without them. The question whether, for every choice of positive masses, the
+number of central configurations up to similarity is finite goes back to Wintner~\cite{wintner1941} and
+is the sixth problem on Smale's list~\cite{smale1998}.
+
+For three bodies there are five classes up to similarities without reflection, for all positive masses:
+the three collinear configurations of Euler and the two equilateral triangles of Lagrange.
+Table~\ref{tab:known} lists what is proved or claimed for $n \ge 4$. For four bodies Hampton and Moeckel proved finiteness for all positive masses.
+For five bodies Albouy and Kaloshin proved it outside an explicit subvariety of codimension~2 of the mass
+space, and three preprints of October 2026 give proofs for all positive masses. For six bodies two preprints
+of 2026 give proofs of finiteness for positive masses outside a proper algebraic subset: that of Tomar, whose
+proof is formalised in Lean, and Part~I of a work of Chen and Tong, which builds on the classification of
+diagrams by Chang and Chen~\cite{changchen2024jsc,changchen2025siads}. Both enumerate the diagrams of
+Albouy and Kaloshin for six bodies and exclude them with computer algebra. For seven bodies Moczurad
+and Zgliczy\'nski list the central configurations with equal masses and count those with masses close
+to equal, with computer-assisted proofs.
+
+\begin{table}[ht]
+\caption{Finiteness of planar central configurations for $n \ge 4$ bodies: results and claims, with the
+hypothesis on the masses and the state of the source. The table rests on a search of arXiv and Zenodo
+made on 17 November 2026.}\label{tab:known}
+\small
+\begin{tabular}{@{}l>{\raggedright}p{0.30\textwidth}>{\raggedright}p{0.27\textwidth}>{\raggedright\arraybackslash}p{0.25\textwidth}@{}}
+\toprule
+$n$ & masses & source & state \\
+\midrule
+4 & all positive & Hampton and Moeckel~\cite{hamptonmoeckel2006} & published \\
+5 & positive, outside an explicit subvariety of codimension 2 & Albouy and Kaloshin~\cite{albouykaloshin2012} & published \\
+5 & outside a proper algebraic subset & Jensen and Leykin~\cite{jensenleykin2025} & published; a computation of a tropical prevariety \\
+5 & all positive & Tomar~\cite{tomar5}; Chen and Tong~\cite{chentong5}; Liu and Liu~\cite{liuliu5} & three preprints \\
+6 & positive, outside a proper algebraic subset & Tomar~\cite{tomar6} & preprint; the proof is formalised in Lean \\
+6 & positive, outside a proper algebraic subset & Chen and Tong~\cite{chentong6} & preprint; rests on the classification of Chang and Chen and on computational certificates; the exceptional masses are left to a Part~II \\
+6 & one symmetric class with $m_5 = m_6$, outside a proper algebraic subset of these masses & Dias and Pan~\cite{diaspan2020} & published \\
+5, 6, 7 & equal masses & Moczurad and Zgliczy\'nski~\cite{moczuradzgliczynski2019} & published; computer-assisted; all configurations are listed \\
+4 to 7 & a neighbourhood of the equal masses in the usual topology & Moczurad and Zgliczy\'nski~\cite{moczuradzgliczynski2020} & published; computer-assisted; the configurations are counted \\
+all & Dziobek configurations (of dimension $n - 2$, planar only for $n = 4$), outside a proper algebraic subset & Moeckel~\cite{moeckel2001} & published \\
+all & some open sets of positive masses in the usual topology & Xia~\cite{xia1991} & published; the configurations are counted \\
+all & all positive & Tibboel~\cite{tibboel2013} & withdrawn by the author \\
+all & not stated & Okolo~\cite{okolo2026} & only the title is public \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+No entry of Table~\ref{tab:known} gives finiteness outside a proper algebraic subset of the mass space
+for any $n \ge 7$. The results of Xia and of Moczurad and Zgliczy\'nski hold at one mass vector or on
+open sets of masses in the usual topology, and say nothing outside them. Of the two claims for every $n$, one was withdrawn and the other is a record whose
+abstract and file are not public. The following theorem gives finiteness outside a proper algebraic
+subset for every $n$.
+
+\begin{theorem}\label{thm:main}
+For every $n \ge 2$ there is a proper Zariski-closed subset $\Sigma_n$ of $\CC^n$, defined over $\QQ$,
+with the following property. For every $(m_0, \dots, m_{n-1}) \in \RR_{>0}^n$ that does not lie in
+$\Sigma_n$, the points of the plane that form a central configuration with the masses
+$m_0, \dots, m_{n-1}$ fall into finitely many classes up to similarity.
+\end{theorem}
+
+The proof is about a system of polynomial equations with complex unknowns. For masses $m_0, \dots, m_{n-1}$ in
+a field $k$, the system $\cN_n$ has the unknowns $X_t$, $Y_t$ for $0 \le t < n$ and $P_{tl} = P_{lt}$ for
+$0 \le t < l < n$. With $X_{tl} = X_t - X_l$ and $Y_{tl} = Y_t - Y_l$ its equations are
+\begin{align}
+  P_{tl}^2\, X_{tl}\, Y_{tl} &= 1 && (t \ne l), \label{eq:N1}\\
+  X_t &= \sum_{l \ne t} m_l\, P_{tl}^3\, X_{tl} && (0 \le t < n), \label{eq:N2}\\
+  Y_t &= \sum_{l \ne t} m_l\, P_{tl}^3\, Y_{tl} && (0 \le t < n). \label{eq:N3}
+\end{align}
+These are the equations of Albouy and Kaloshin~\cite{albouykaloshin2012}: a central configuration with
+$c = 0$ and $\lambda = 1$ gives the solution $X_t = z_t$, $Y_t = \bar z_t$, $P_{tl} = |z_t - z_l|^{-1}$.
+An element $s \in k^{*}$ maps a solution $(X, Y, P)$ to the solution $(sX, s^{-1}Y, P)$. We refer to
+this action of $k^{*}$ as the \emph{rotation}, because for $k = \CC$ and $|s| = 1$ it is a rotation of
+the plane.
+
+\begin{theorem}\label{thm:Nn}
+For every $n \ge 2$ there is a proper Zariski-closed subset $\Sigma_n$ of $\CC^n$, defined over $\QQ$,
+such that for every $m \in \CC^n$ outside $\Sigma_n$ the system $\cN_n$ with the masses $m$ has finitely
+many solutions in $\CC$ modulo the rotation.
+\end{theorem}
+
+Let $K = \Qbar((T^{\RR}))$ be the field of Hahn series with coefficients in $\Qbar$ and real exponents,
+with its valuation $v$ (Section~\ref{sec:val}). For $\tau \ge 0$ let
+\begin{equation}\label{eq:chamber}
+  W_n(\tau) = \bigl\{\, u \in \RR^n : u_1 > u_0 \text{ and } u_j - u_{j-1} > \tau\,(u_{j-1} - u_0)
+  \text{ for } 2 \le j \le n-1 \,\bigr\}.
+\end{equation}
+
+\begin{theorem}\label{thm:K}
+Let $n \ge 2$ and let $m \in (K^{*})^n$ be such that $(v(m_0), \dots, v(m_{n-1})) \in W_n(2n^2)$. Then the
+system $\cN_n$ with the masses $m$ has finitely many solutions in $K$ modulo the rotation.
+\end{theorem}
+
+Theorem~\ref{thm:main} follows from Theorem~\ref{thm:Nn} and Lemmas~\ref{lem:norm}
+and~\ref{lem:cc-sol}. Theorem~\ref{thm:Nn} follows from Theorem~\ref{thm:K} and
+Lemma~\ref{lem:D0}. Theorem~\ref{thm:K} follows from Lemma~\ref{lem:A}, Corollary~\ref{cor:bound},
+Proposition~\ref{prop:D2} and Lemma~\ref{lem:orbits}. Corollary~\ref{cor:bound} is a consequence of
+Theorem~\ref{thm:D4}, which uses Lemmas~\ref{lem:B} and~\ref{lem:C}.
+
+\begin{remark}\label{rem:scope}
+The set $\Sigma_n$ is not described, and we attempt no count of the solutions. In
+Theorem~\ref{thm:Nn} the set $\Sigma_n$ cannot avoid the positive masses: for $n = 5$ it contains
+$(4, 4, 4, 4, 1)$, where $\cN_5$ has a continuum of solutions that are not central configurations
+(Remark~\ref{rem:roberts}). Whether $\Sigma_n$ can be chosen disjoint from $\RR_{>0}^n$ in
+Theorem~\ref{thm:main} is Smale's problem, and this paper does not address it.
+\end{remark}
+
+\subsection*{Method} Albouy and Kaloshin~\cite{albouykaloshin2012} classify by diagrams the ways in which
+a sequence of solutions can become singular, and exclude the diagrams one by one. The six-body
+preprints~\cite{tomar6,chentong6} follow this approach for the positive central configurations, with
+computer algebra, and Jensen and Leykin~\cite{jensenleykin2025} compute the recession cones of a tropical
+prevariety at generic masses. The number of diagrams and the size of the computation grow with $n$. The
+present proof has no classification, and three of its steps are taken from the literature. The
+coordinates and the system $\cN_n$ are those of~\cite[\S 2, system~(4)]{albouykaloshin2012}, with
+$P_{tl}$ the inverse of their distance $r_{tl}$ and without their normalisation of the rotation.
+Proposition~\ref{prop:D2} is the valuation form of an argument of theirs: a polynomial on a closed
+algebraic set takes finitely many values or all values but finitely
+many~\cite[Lemma~1]{albouykaloshin2012}, and on a continuum of solutions modulo rotation some mutual
+distance is of the second kind (the proofs of Theorems~3 and~6
+of~\cite{albouykaloshin2012}). Lemma~\ref{lem:D0} embeds the field of the generic masses in $K$ in such
+a way that the masses receive prescribed valuations, and replaces the tropical computation at generic
+masses of~\cite{jensenleykin2025} by a theorem at those valuations. The identity obtained when the
+equations \eqref{eq:N2} are added over a subset of the bodies underlies the proof of Rule~1c
+of~\cite[p.~546]{albouykaloshin2012}, and Tomar~\cite[\S 2.3, \S 4.1 and \S 9.1]{tomar6} states it for
+both colours and uses it with the origin as an additional point of both trees of clusters.
+
+The step that we did not find in the literature is Theorem~\ref{thm:D4}. Let the masses have valuations
+in $W_n(2n^2)$, so that every body is lighter than the previous one by a large power of $T$. At a solution
+over $K$, consider the terms $m_t m_l P_{tl}$ of the potential and the terms $m_t X_t Y_t$ of the moment
+of inertia, and among them the set $\Es$ of the terms of least valuation. Each term has a cluster in the
+tree of the $X$ coordinates and a cluster in the tree of the $Y$ coordinates. The identities of
+Lemma~\ref{lem:A} show that each such cluster belongs to at least two terms of $\Es$, and therefore the
+graph that joins the two clusters of each term has a cycle. Around a cycle the heights of the clusters
+cancel, and what remains is a relation $N \Ps + q \cdot u = 0$ between the least valuation $-\Ps$ and the
+valuations $u$ of the masses, with integers $N$ and $q_j$ bounded in terms of $n$. Lemma~\ref{lem:C}
+shows that a cycle cannot consist of terms of the potential alone, and a parity argument, which uses the
+exponent $3$ of the Newtonian force, then gives $N \ne 0$. Hence $\Ps$ is one of finitely many numbers
+fixed by $u$, and every mutual distance of every solution has a valuation bounded in terms of $u$.
+
+\subsection*{Formal proof and computations} Formal counterparts of five statements are proved in
+Lean~4 with Mathlib, against two files of statements that were fixed and reviewed before the proofs
+were written: the last sentence of Lemma~\ref{lem:A}, the nonvanishing in Lemma~\ref{lem:B},
+Corollary~\ref{cor:C}, Theorem~\ref{thm:D4}(a) and~(c) for simple cycles, and
+Corollary~\ref{cor:bound}. Table~\ref{tab:lean} in Section~\ref{sec:lean} says what each formal
+statement covers. Lemmas~\ref{lem:norm} to~\ref{lem:orbits}, Proposition~\ref{prop:D2} and
+Lemma~\ref{lem:D0} are not formalised, and neither are the deductions of Theorems~\ref{thm:main},
+\ref{thm:Nn} and~\ref{thm:K} from them. Floating-point searches for five and six bodies agree
+with Theorem~\ref{thm:D4} (Section~\ref{sec:comp}); they are evidence, and no proof in this paper uses
+them. The proofs, the formal proofs and the programs were produced with a language-model agent, and
+Section~\ref{sec:llm} records how.
+
+\subsection*{Organisation} Section~\ref{sec:system} relates central configurations to the system
+$\cN_n$. Section~\ref{sec:val} introduces the valuations, the two trees and the cut identities.
+Sections~\ref{sec:chamber} to~\ref{sec:D4} contain the statements about valuations: Lemma~\ref{lem:B},
+Lemma~\ref{lem:C} and Theorem~\ref{thm:D4}. Section~\ref{sec:K} proves Theorem~\ref{thm:K} and
+Section~\ref{sec:generic} proves Theorems~\ref{thm:Nn} and~\ref{thm:main}. Section~\ref{sec:hyp} says
+where each hypothesis is used, Sections~\ref{sec:lean} and~\ref{sec:comp} describe the formal proof and
+the computations, Section~\ref{sec:problems} states open problems, and Section~\ref{sec:llm} records the
+use of language models.
+
+\section{Central configurations and the system \texorpdfstring{$\cN_n$}{N\_n}}\label{sec:system}
+
+Throughout, $n \ge 2$, the \emph{bodies} are the indices $0, \dots, n-1$, and $t$, $l$, $a$, $b$, $c$
+denote bodies. A central configuration is \emph{normalised} if \eqref{eq:cc} holds with $c = 0$ and
+$\lambda = 1$.
+
+\begin{lemma}\label{lem:norm}
+If the masses are positive, every central configuration is similar to a normalised one. If moreover two
+normalised central configurations are similar, then one is the image of the other under a map
+$z \mapsto e^{i\theta} z$ or $z \mapsto e^{i\theta} \bar z$ with $\theta \in \RR$.
+\end{lemma}
+
+\begin{proof}
+Multiply \eqref{eq:cc} by $m_t\, \overline{(z_t - c)}$ and add over $t$. On the right, the two terms of a
+pair $\{t, l\}$ add up to $m_t m_l / |z_t - z_l|$. This gives $\lambda I = U$ with
+$I = \sum_t m_t |z_t - c|^2$ and $U = \sum_{t < l} m_t m_l / |z_t - z_l|$. Both $I$ and $U$ are positive,
+and therefore $\lambda > 0$. The translation by $-c$ gives $c = 0$, and the map
+$z \mapsto \lambda^{1/3} z$ then gives $\lambda = 1$, because a scaling by $\rho > 0$ divides $\lambda$
+by $\rho^{3}$. For the second statement, add \eqref{eq:cc} multiplied by $m_t$ over $t$: the right side
+vanishes, and hence $c$ is the centre of mass. A similarity $z \mapsto \alpha z + \beta$ or
+$z \mapsto \alpha \bar z + \beta$ between two normalised configurations preserves the centre of mass
+$0$, which gives $\beta = 0$, and it divides $\lambda$ by $|\alpha|^{3}$, which gives $|\alpha| = 1$.
+\end{proof}
+
+\begin{lemma}\label{lem:cc-sol}
+Let $m \in \RR_{>0}^n$.
+\begin{enumerate}
+\item[(a)] If $(z_t)$ is a normalised central configuration, then $X_t = z_t$, $Y_t = \bar z_t$,
+$P_{tl} = |z_t - z_l|^{-1}$ is a solution of $\cN_n$ in $\CC$.
+\item[(b)] If the solutions of two normalised central configurations $(z_t)$ and $(z'_t)$ lie in one orbit
+of the rotation, then $z'_t = s z_t$ for all $t$ with one $s$ of modulus $1$.
+\item[(c)] If $\cN_n$ has finitely many solutions in $\CC$ modulo the rotation, then the central
+configurations with the masses $m$ fall into finitely many classes up to similarity.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+For (a), $X_{tl} Y_{tl} = |z_t - z_l|^2$ gives \eqref{eq:N1}, and \eqref{eq:N2} is \eqref{eq:cc} with
+$c = 0$ and $\lambda = 1$; \eqref{eq:N3} is its complex conjugate. For (b), let $z'_t = s z_t$ and
+$\bar z'_t = s^{-1} \bar z_t$ for all $t$. The conjugate of the second equation is
+$z'_t = \bar s^{-1} z_t$, and some $z_t$ is not $0$, which gives $s \bar s = 1$. For (c), the map of (a)
+sends the normalised central configurations modulo rotations of the plane injectively to the orbits, by
+(b). By Lemma~\ref{lem:norm} every similarity class contains a normalised central configuration.
+\end{proof}
+
+\begin{lemma}\label{lem:facts}
+Let $(X, Y, P)$ be a solution of $\cN_n$ over a field $k$.
+\begin{enumerate}
+\item[(a)] For all $t \ne l$ the elements $X_{tl}$, $Y_{tl}$ and $P_{tl}$ are not $0$. At most one $X_t$
+is $0$, and at most one $Y_t$ is $0$.
+\item[(b)] If $s \in k^{*}$ fixes the solution, then $s = 1$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Part (a) follows from \eqref{eq:N1}, and for (b) the equation $s X_{01} = X_{01}$ with $X_{01} \ne 0$
+gives $s = 1$.
+\end{proof}
+
+\begin{lemma}\label{lem:orbits}
+Let $k$ be an algebraically closed field and $m \in k^n$. The set of the solutions of $\cN_n$ in $k$ with
+the masses $m$ is a Zariski-closed subset of an affine space over $k$. It consists of finitely many orbits
+of the rotation if and only if none of its irreducible components has dimension at least $2$.
+\end{lemma}
+
+\begin{proof}
+The group $k^{*}$ is connected, and therefore it maps every irreducible component to itself; by
+Lemma~\ref{lem:facts}(b) every orbit has dimension $1$. An orbit that lies in a component of dimension
+$1$ is a constructible subset of that component of the same dimension; it therefore contains a nonempty
+open subset of the component. Two nonempty open subsets of an irreducible space meet, and hence a
+component of dimension $1$ is a single orbit. If no component has dimension at least $2$, every
+component is one orbit, and there are finitely many components. Conversely, a finite union of orbits has
+dimension at most $1$.
+\end{proof}
+
+\section{Valuations, trees and the cut identities}\label{sec:val}
+
+\subsection{The field of Hahn series} Let $K = \Qbar((T^{\RR}))$ be the field of the formal sums
+$\sum_{\gamma} a_\gamma T^{\gamma}$ with $a_\gamma \in \Qbar$, real exponents $\gamma$ and a well-ordered
+support. The valuation $v(x)$ of $x \ne 0$ is the least exponent of $x$, and $v(0) = +\infty$. The field
+$K$ is algebraically closed~\cite[Theorem~1 and Corollary~4]{poonen1993}, and we use three properties
+of its valuation. First, $v(xy) = v(x) + v(y)$ and $v(x + y) \ge \min(v(x), v(y))$. Second, if finitely many elements
+of $K$, not all $0$, have the sum $0$, then the least of their valuations is the valuation of at least
+two of them. Third, every real number is the valuation of infinitely many elements of $K$.
+
+\subsection{Ultrametrics and nodes}
+
+\begin{definition}\label{def:ultra}
+An \emph{ultrametric} on a finite set $\Lambda$ is a symmetric function
+$(x, y) \mapsto d_{xy}$ on the pairs of distinct elements of $\Lambda$, with values in
+$\RR \cup \{+\infty\}$, such that $d_{xz} \ge \min(d_{xy}, d_{yz})$ for all distinct $x, y, z$; we put
+$d_{xx} = +\infty$. For $x \ne y$ with $d_{xy}$ real, the \emph{node} of the pair $\{x, y\}$ is the set
+$\nd{x, y}{d} = \{ p \in \Lambda : d_{xp} \ge d_{xy} \}$, and $d_{xy}$ is its \emph{height}. The
+\emph{children} of a node $A$ of height $h$ are the classes of the relation ``$p = p'$ or $d_{pp'} > h$''
+on $A$.
+\end{definition}
+
+The condition on $d$ says that in every triangle the least of the three values is taken at least twice.
+With the convention $d_{xx} = +\infty$ the inequality $d_{xz} \ge \min(d_{xy}, d_{yz})$ holds for all
+$x, y, z \in \Lambda$, distinct or not, and the proofs below use it in this form.
+
+\begin{lemma}\label{lem:tree}
+Let $d$ be an ultrametric on $\Lambda$, let $x \ne y$ have a real value $h = d_{xy}$, and let
+$A = \nd{x, y}{d}$.
+\begin{enumerate}
+\item[(a)] The node $A$ contains $x$ and $y$, it equals $\nd{y, x}{d}$, and $d_{pp'} \ge h$ for all
+$p, p' \in A$. If $\nd{x', y'}{d} = A$ for a pair with a real value $d_{x'y'}$, then $d_{x'y'} = h$.
+\item[(b)] The relation of Definition~\ref{def:ultra} is an equivalence relation on $A$, the elements $x$
+and $y$ lie in different children, and $d_{pp'} = h$ whenever $p$ and $p'$ lie in different children.
+\item[(c)] If $p \in A$ and $p' \notin A$, then $d_{pp'} < h$.
+\item[(d)] If $p, p' \in A$ and $d_{pp'} = h$, then $\nd{p, p'}{d} = A$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) If $d_{xp} \ge h$ then $d_{yp} \ge \min(d_{yx}, d_{xp}) \ge h$, and the converse holds by symmetry;
+this gives $\nd{x, y}{d} = \nd{y, x}{d}$. For $p, p' \in A$ we have
+$d_{pp'} \ge \min(d_{px}, d_{xp'}) \ge h$. If $\nd{x', y'}{d} = A$, then $x', y' \in A$ gives
+$d_{x'y'} \ge h$, and $x, y \in \nd{x', y'}{d}$ gives $h \ge d_{x'y'}$. (b) The relation is transitive
+because $d_{pp''} \ge \min(d_{pp'}, d_{p'p''})$. The elements $x$ and $y$ are not related because
+$d_{xy} = h$. If $p$ and $p'$ lie in different children, then $d_{pp'} \le h$ by the definition of the
+relation and $d_{pp'} \ge h$ by (a). (c) Here $d_{xp'} < h \le d_{xp}$. If $d_{pp'}$ were at least $h$,
+then $d_{xp'} \ge \min(d_{xp}, d_{pp'}) \ge h$. (d) Let $q \in \Lambda$. Because
+$d_{xp} \ge h$, the inequality $d_{pq} \ge \min(d_{px}, d_{xq})$ shows that $d_{xq} \ge h$ implies
+$d_{pq} \ge h$, and the inequality $d_{xq} \ge \min(d_{xp}, d_{pq})$ shows the converse. Hence
+$\nd{p, p'}{d} = \{ q : d_{pq} \ge h \} = A$.
+\end{proof}
+
+\subsection{The weights of a solution} Let $m \in (K^{*})^n$ and put $u_t = v(m_t)$, the \emph{mass
+weight} of the body $t$; a larger mass weight is a lighter body. For a solution of $\cN_n$ over $K$ put
+\[
+  \xi_t = v(X_t), \qquad \eta_t = v(Y_t), \qquad \zeta_{tl} = v(X_{tl}), \qquad \omega_{tl} = v(Y_{tl}).
+\]
+By Lemma~\ref{lem:facts}(a) the numbers $\zeta_{tl}$ and $\omega_{tl}$ are real, and $\xi_t$, $\eta_t$
+are real or $+\infty$; the equation \eqref{eq:N1} gives $v(P_{tl}) = -(\zeta_{tl} + \omega_{tl})/2$.
+
+We add to the $n$ bodies one more \emph{vertex} $O$, the origin, and put $\zeta_{tO} = \xi_t$ and
+$\omega_{tO} = \eta_t$. Then $\zeta_{xy}$ is the valuation of the difference of two of the $n + 1$
+elements $X_0, \dots, X_{n-1}, 0$ of $K$, and therefore $\zeta$ is an ultrametric on the $n + 1$
+vertices; the same holds for $\omega$. The letters $x$, $y$, $p$ denote vertices, and an \emph{edge} is
+a pair of vertices: a \emph{body pair} $\{t, l\}$ or an \emph{$O$-edge} $\{t, O\}$. We speak of the
+\emph{colour $z$} for $X$, $\zeta$, $\xi$ and of the \emph{colour $w$} for $Y$, $\omega$, $\eta$. For an
+edge $e = \{x, y\}$ we write $\zeta_e = \zeta_{xy}$ and $\omega_e = \omega_{xy}$, and, when these are
+real, $\nd{e}{\zeta}$ and $\nd{e}{\omega}$ for its two nodes.
+
+\begin{definition}\label{def:psi}
+Let $u \in \RR^n$ and let $\zeta$, $\omega$ be ultrametrics on the $n + 1$ vertices with real values on
+the body pairs. Put $\xi_t = \zeta_{tO}$ and $\eta_t = \omega_{tO}$, and
+\[
+  \Psi(t, l) = \tfrac12 (\zeta_{tl} + \omega_{tl}) - u_t - u_l, \qquad
+  \Psi(t, O) = -\xi_t - \eta_t - u_t ,
+\]
+where $\Psi(t, O) = -\infty$ if $\xi_t$ or $\eta_t$ is $+\infty$. Let $\Ps$ be the largest value of
+$\Psi$ on the edges, a real number because $n \ge 2$, and let $\Es$ be the set of the edges $e$ with
+$\Psi(e) = \Ps$. For a nonempty set $S$ of bodies, the \emph{terms of the cut of $S$ in the colour $z$}
+are the body pairs $\{t, l\}$ with $t \in S$ and $l \notin S$, with the values
+$\Phi^z(t, l) = \Psi(t, l) + \omega_{tl}$, and the $O$-edges $\{t, O\}$ with $t \in S$ and $\xi_t$ real,
+with the values $\Phi^z(t, O) = -u_t - \xi_t$. The \emph{cut condition} for $S$ in the colour $z$ says
+that two different terms of the cut have the same value $\Phi^z$ and no term has a larger one. The terms
+and the cut condition in the colour $w$ are defined in the same way with $\zeta$ and $\omega$ exchanged
+and $\eta$ in place of $\xi$: $\Phi^w(t, l) = \Psi(t, l) + \zeta_{tl}$ and $\Phi^w(t, O) = -u_t - \eta_t$.
+The triple $(u, \zeta, \omega)$ is a \emph{weight datum} if the cut condition holds for every nonempty
+set of bodies and both colours.
+\end{definition}
+
+For the weights of a solution, $-\Psi(t, l)$ is the valuation of the term $m_t m_l P_{tl}$ of the
+potential $\sum_{t < l} m_t m_l P_{tl}$, and $-\Psi(t, O)$ is the valuation of the term $m_t X_t Y_t$ of
+the moment of inertia $\sum_t m_t X_t Y_t$. If $\xi_t$ and $\eta_t$ are real, then
+$\Phi^z(t, O) = \Psi(t, O) + \eta_t$ and $\Phi^w(t, O) = \Psi(t, O) + \xi_t$, which is the rule
+$\Phi^z(e) = \Psi(e) + \omega_e$ of the body pairs.
+
+\begin{lemma}[cut identities]\label{lem:A}
+Let $m \in (K^{*})^n$ and let $(X, Y, P)$ be a solution of $\cN_n$ over $K$. For every nonempty set $S$
+of bodies,
+\begin{equation}\label{eq:cut}
+  \sum_{t \in S} m_t X_t \;-\; \sum_{t \in S,\ l \notin S} m_t m_l\, P_{tl}^3\, X_{tl} \;=\; 0 ,
+\end{equation}
+and the same identity holds with $Y$ in place of $X$. The term of a body pair $\{t, l\}$ in
+\eqref{eq:cut} has the valuation $-\Phi^z(t, l)$, and the term $m_t X_t$ has the valuation
+$-\Phi^z(t, O)$ if $X_t \ne 0$. The weights $(u, \zeta, \omega)$ of the solution form a weight datum.
+\end{lemma}
+
+\begin{proof}
+Multiply \eqref{eq:N2} for the body $t$ by $m_t$ and add over $t \in S$. A pair $\{t, l\}$ inside $S$
+contributes $m_t m_l P_{tl}^3 (X_{tl} + X_{lt}) = 0$, which gives \eqref{eq:cut}. The valuation of
+$m_t m_l P_{tl}^3 X_{tl}$ is
+$u_t + u_l - \tfrac32 (\zeta_{tl} + \omega_{tl}) + \zeta_{tl} = -(\Psi(t, l) + \omega_{tl})$, and the
+valuation of $m_t X_t$ is $u_t + \xi_t$. The terms of \eqref{eq:cut} that are not $0$ are therefore the
+terms of the cut of $S$ in the colour $z$, with the valuations $-\Phi^z$. At least one of them is not
+$0$: a set $S$ that does not contain all bodies has the term of a body pair, and the set of all bodies
+has a term $m_t X_t \ne 0$ by Lemma~\ref{lem:facts}(a) and $n \ge 2$. By the second property of $v$, the
+least valuation among the terms that are not $0$ is taken by two of them. This is the cut condition in
+the colour $z$, and the colour $w$ is the same argument with \eqref{eq:N3}.
+\end{proof}
+
+\begin{example}[two bodies]\label{ex:n2}
+For $n = 2$ the system gives $P_{01}^3 (m_0 + m_1) = 1$. If $u_0 < u_1$, then
+$\zeta_{01} + \omega_{01} = 2u_0/3$, $\xi_1 = \zeta_{01}$ and $\xi_0 = \zeta_{01} + u_1 - u_0$, and the
+same holds for $\eta$ and $\omega$. Hence $\Psi(0, 1) = \Psi(1, O) = -(2u_0 + 3u_1)/3$, and
+$\Psi(0, O)$ is smaller by $u_1 - u_0$. The set $\Es$ consists of $\{0, 1\}$ and $\{1, O\}$, and both
+edges have the node $\{0, 1, O\}$ in both colours.
+\end{example}
+
+The identity \eqref{eq:cut} underlies the proof of Rule~1c of~\cite[p.~546]{albouykaloshin2012}, a
+statement about the centre of mass of an isolated component of a diagram.
+Tomar~\cite[\S 2.3, \S 4.1 and \S 9.1]{tomar6} states the identity for both colours and uses it with the
+vertex $O$ in both trees. Table~\ref{tab:notation} collects the notation of Sections~\ref{sec:system}
+to~\ref{sec:D4}.
+
+\begin{table}[ht]
+\caption{Notation.}\label{tab:notation}
+\small
+\begin{tabular}{@{}>{\raggedright}p{0.30\textwidth}>{\raggedright\arraybackslash}p{0.64\textwidth}@{}}
+\toprule
+symbol & meaning \\
+\midrule
+$t, l, a, b, c$; $x, y, p$; $e, f, g$ & bodies; vertices (bodies and $O$); edges \\
+$\cN_n$; $X_t, Y_t, P_{tl}$; $X_{tl}, Y_{tl}$ & the system \eqref{eq:N1} to \eqref{eq:N3}; its unknowns; $X_t - X_l$, $Y_t - Y_l$ \\
+$K$, $v$, $T$ & the field of Hahn series, its valuation, its variable \\
+$u_t$ & the mass weight $v(m_t)$ \\
+$\xi_t, \eta_t$; $\zeta_{xy}, \omega_{xy}$ & $v(X_t)$, $v(Y_t)$; the two ultrametrics on the vertices \\
+$\nd{e}{\zeta}$, $\nd{e}{\omega}$ & the nodes of the edge $e$ (Definition~\ref{def:ultra}) \\
+$\Psi$, $\Ps$, $\Es$ & Definition~\ref{def:psi} \\
+$\Phi^z$, $\Phi^w$ & the values of the terms of a cut (Definition~\ref{def:psi}) \\
+$W_n(\tau)$ & the chamber \eqref{eq:chamber} \\
+$\Po$, $\Eo$ & the largest $\Psi$ on the body pairs and the pairs that attain it (Section~\ref{sec:C}) \\
+$f_i, g_i$; $\varepsilon$; $N$, $q$ & the edges of a cycle; their signs; Definition~\ref{def:cycle} \\
+$\one{t}$; $\one{e}$ & the unit vector of the body $t$ in $\ZZ^n$; the sum of $\one{t}$ over the bodies $t$ of the edge $e$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{The chamber}\label{sec:chamber}
+
+The set $W_n(\tau)$ of \eqref{eq:chamber} is an open cone. It is not empty: the vector with $u_0 = 0$
+and $u_j = (\tau + 2)^{j-1}$ for $j \ge 1$ lies in it. For $\tau \ge 0$ and $u \in W_n(\tau)$,
+induction on $j$ gives
+\begin{equation}\label{eq:mono}
+  0 < u_1 - u_0 < u_2 - u_0 < \dots < u_{n-1} - u_0
+  \quad\text{and}\quad u_j - u_0 > (1 + \tau)(u_{j-1} - u_0) \ \text{ for } 2 \le j \le n-1 .
+\end{equation}
+In particular the mass weights increase with the index: the body $0$ is the heaviest.
+
+\begin{lemma}\label{lem:B}
+Let $n \ge 2$, $\tau \ge 0$ and $u \in W_n(\tau)$. Let $q \in \ZZ^n$ be a nonzero vector with
+$\sum_j q_j = 0$, and let $p$ be the largest index with $q_p \ne 0$. If
+\[
+  \tau \;\ge\; \frac{1}{|q_p|} \sum_{1 \le j < p} |q_j| \;-\; 1 ,
+\]
+then $q \cdot u \ne 0$, and $q \cdot u$ has the sign of $q_p$.
+\end{lemma}
+
+\begin{proof}
+Because $\sum_j q_j = 0$ and $q \ne 0$, we have $p \ge 1$ and
+$q \cdot u = \sum_{1 \le j \le p} q_j (u_j - u_0)$. If $p = 1$ this is $q_1 (u_1 - u_0)$. Let $p \ge 2$.
+By \eqref{eq:mono} and the hypothesis on $\tau$,
+\[
+  \Bigl| \sum_{1 \le j < p} q_j (u_j - u_0) \Bigr|
+  \;\le\; \Bigl( \sum_{1 \le j < p} |q_j| \Bigr) (u_{p-1} - u_0)
+  \;\le\; (1 + \tau)\, |q_p|\, (u_{p-1} - u_0) \;<\; |q_p|\, (u_p - u_0) ,
+\]
+and therefore the term $q_p (u_p - u_0)$ decides the sign of $q \cdot u$.
+\end{proof}
+
+\begin{remark}\label{rem:tau}
+The hypothesis $\tau \ge 0$ is needed: the vector $u = (0, 2, 3/2, 1)$ satisfies the inequalities of
+\eqref{eq:chamber} with $n = 4$ and $\tau = -1/2$, the vector $q = (-1, -1, 0, 2)$ satisfies the inequality of the lemma, and $q \cdot u = 0$.
+\end{remark}
+
+\section{Cycles of body pairs}\label{sec:C}
+
+In this section the vertex $O$ does not occur. Let $\zeta$ and $\omega$ be ultrametrics on the $n$
+bodies with real values, and let $u \in \RR^n$. With
+$\Psi(a, b) = \tfrac12(\zeta_{ab} + \omega_{ab}) - u_a - u_b$ as in Definition~\ref{def:psi}, let $\Po$
+be the largest value of $\Psi$ on the pairs of bodies and $\Eo$ the set of the pairs that attain it.
+
+\begin{definition}\label{def:alt}
+Let $E$ be a set of edges on which $\zeta$ and $\omega$ are real. A \emph{closed alternating sequence}
+in $E$ is a sequence $f_0, g_0, f_1, g_1, \dots, f_{r-1}, g_{r-1}$ of $2r$ distinct edges of $E$, with
+$r \ge 1$, such that $\omega_{f_i} = \omega_{g_i}$ and $\zeta_{g_i} = \zeta_{f_{i+1}}$ for
+$0 \le i < r$, where $f_r = f_0$. It is a \emph{simple cycle} of $E$ if moreover
+$\nd{f_i}{\omega} = \nd{g_i}{\omega}$ and $\nd{g_i}{\zeta} = \nd{f_{i+1}}{\zeta}$ for $0 \le i < r$,
+the $r$ nodes $\nd{f_i}{\omega}$ are distinct, and the $r$ nodes $\nd{f_i}{\zeta}$ are distinct.
+\end{definition}
+
+A simple cycle of $E$ is a simple cycle, in the usual sense, of the following bipartite multigraph
+$\Gamma(E)$. Its vertex set is the disjoint union of the set of the nodes $\nd{e}{\zeta}$, $e \in E$,
+and the set of the nodes $\nd{e}{\omega}$, $e \in E$; a set of vertices that is a node in both colours
+gives two vertices of $\Gamma(E)$. It has one edge for each $e \in E$, which joins $\nd{e}{\zeta}$ to
+$\nd{e}{\omega}$. For $r = 1$ a simple cycle consists of two distinct edges of $E$ with the same node in
+each colour. Two edges with the same node have the same height by Lemma~\ref{lem:tree}(a), and hence
+the conditions on the nodes imply the conditions on the heights.
+
+\begin{lemma}\label{lem:C}
+Let $n \ge 2$, $\tau \ge n^2$ and $u \in W_n(\tau)$, and let $\zeta$ and $\omega$ be ultrametrics on
+the $n$ bodies with real values. Let $\Eo$ be the set of the pairs of bodies at which
+$\Psi(a, b) = \tfrac12(\zeta_{ab} + \omega_{ab}) - u_a - u_b$ takes its largest value. Then there is no
+closed alternating sequence in $\Eo$.
+\end{lemma}
+
+\begin{corollary}\label{cor:C}
+Under the hypotheses of Lemma~\ref{lem:C} the graph $\Gamma(\Eo)$ has no simple cycle.
+\end{corollary}
+
+\begin{proof}[Proof of Lemma~\ref{lem:C}]
+Suppose that $f_0, g_0, \dots, f_{r-1}, g_{r-1}$ is a closed alternating sequence in $\Eo$. Step~1
+shows that every body lies in as many pairs $f_i$ as pairs $g_i$. Step~2 expresses the heights along
+the sequence by integer functions, one for each body. Steps~3 and~4 find, at the lightest body of the
+sequence, three bodies whose triangle condition contradicts Lemma~\ref{lem:B}.
+
+Put $\alpha_i = \zeta_{f_i}$ and $\beta_i = \omega_{f_i}$ for $0 \le i < r$, and $\alpha_r = \alpha_0$.
+Then $\beta_i = \omega_{g_i}$ and $\alpha_{i+1} = \zeta_{g_i}$. All pairs of the sequence have the value
+$\Po$, which gives, for $0 \le i < r$,
+\begin{equation}\label{eq:rel}
+  \alpha_i + \beta_i = 2\Po + 2\, \one{f_i} \cdot u
+  \qquad\text{and}\qquad
+  \alpha_{i+1} + \beta_i = 2\Po + 2\, \one{g_i} \cdot u .
+\end{equation}
+
+\step{Step 1: the vector $q = \sum_{i < r} (\one{g_i} - \one{f_i})$ is $0$.} The difference of the two
+equations of \eqref{eq:rel} is $\alpha_{i+1} - \alpha_i = 2 (\one{g_i} - \one{f_i}) \cdot u$, and the
+sum over $i$ is $0 = 2\, q \cdot u$. The coefficients of $q$ are integers with the sum $0$. A body lies
+in at most $n - 1$ pairs and the $2r$ pairs are distinct, and therefore $|q_j| \le n - 1$ for every $j$.
+If $q \ne 0$, let $p$ be its largest index with $q_p \ne 0$. The sum of Lemma~\ref{lem:B} has at most
+$n - 2$ terms, it is at most $(n - 2)(n - 1)$, and $\tau \ge n^2$ exceeds this number; Lemma~\ref{lem:B}
+then gives $q \cdot u \ne 0$, a contradiction. Hence $q = 0$, which says that every body lies in as
+many pairs $g_i$ as pairs $f_i$.
+
+\step{Step 2: levels.} For a body $k$ and $0 \le i \le r$ put
+\[
+  a_k(i) = \#\{ j < i : k \in g_j \} - \#\{ j < i : k \in f_j \} ,
+\]
+and for $0 \le i < r$ put $b_k(i) = a_k(i) - 1$ if $k \in f_i$ and $b_k(i) = a_k(i)$ otherwise. Then
+$a_k(i + 1) = b_k(i) + 1$ if $k \in g_i$ and $a_k(i + 1) = b_k(i)$ otherwise, and
+$a_k(r) = q_k = 0 = a_k(0)$ by Step~1. We claim that for $0 \le i \le r$ and $0 \le j < r$
+\begin{equation}\label{eq:height}
+  \alpha_i + \beta_j - 2\Po \;=\; 2 \sum_{k} \bigl( a_k(i) - b_k(j) \bigr)\, u_k .
+\end{equation}
+Indeed, the differences $\alpha_{i+1} - \alpha_i = 2 \sum_k (a_k(i+1) - a_k(i))\, u_k$ add up to
+$\alpha_i = \alpha_0 + 2 \sum_k a_k(i)\, u_k$. The first equation of \eqref{eq:rel} then gives
+$\beta_j = 2\Po - \alpha_0 - 2 \sum_k b_k(j)\, u_k$, and the sum of the two is \eqref{eq:height}. The
+integers $a_k(i) - b_k(j)$ have three properties that Step~4 uses. Their sum over $k$ is $2$, because every pair
+has two bodies, which gives $\sum_k a_k(i) = 0$ and $\sum_k b_k(j) = -2$. They are $0$ for a body $k$
+that lies in no pair of the sequence. Their absolute value is at most $n$, because $a_k(i) - a_k(j)$ is
+a difference of two numbers of distinct pairs through $k$, each between $0$ and $n - 1$.
+
+\step{Step 3: two pairs through the lightest body.} Let $L$ be the largest index of a body that lies in
+a pair of the sequence. Because $q_L = 0$, the body $L$ lies in some $f_i$. Consider the cyclic sequence
+of the $2r$ integers $a_L(0), b_L(0), a_L(1), b_L(1), \dots, a_L(r-1), b_L(r-1)$. From $a_L(i)$ to
+$b_L(i)$ it falls by $1$ if $L \in f_i$ and does not change otherwise; from $b_L(i)$ to $a_L(i+1)$ it
+rises by $1$ if $L \in g_i$ and does not change otherwise. The sequence is not constant, and we let $\mu$ be its least value. Some entry equal to $\mu$ follows an entry larger than $\mu$, and this is a step from $a_L(i)$
+to $b_L(i)$ with $L \in f_i$. Some entry equal to $\mu$ precedes an entry larger than $\mu$, and this is
+a step from $b_L(j)$ to $a_L(j+1)$ with $L \in g_j$. Hence there are $i$ and $j$ with
+\begin{equation}\label{eq:levels}
+  L \in f_i, \quad L \in g_j, \quad b_L(i) = b_L(j) = \mu, \quad a_L(i) = a_L(j + 1) = \mu + 1 .
+\end{equation}
+
+\step{Step 4: the triangle.} Let $f_i = \{x, L\}$ and $g_j = \{x', L\}$ with $i$, $j$ as in
+\eqref{eq:levels}. The pairs $f_i$ and $g_j$ are distinct, and therefore $x \ne x'$. Both $x$ and $x'$
+have smaller indices than $L$; hence $L \ge 2$, and $u_x < u_L$ and $u_{x'} < u_L$ by \eqref{eq:mono}.
+The ultrametric conditions for the three bodies $x$, $L$, $x'$ are
+\[
+  \zeta_{xx'} \ge \min(\zeta_{xL}, \zeta_{x'L}) = \min(\alpha_i, \alpha_{j+1})
+  \qquad\text{and}\qquad
+  \omega_{xx'} \ge \min(\omega_{xL}, \omega_{x'L}) = \min(\beta_i, \beta_j) ,
+\]
+and $\Psi(x, x') \le \Po$ says $\zeta_{xx'} + \omega_{xx'} \le 2\Po + 2u_x + 2u_{x'}$. Therefore
+\begin{equation}\label{eq:four}
+  \alpha_c + \beta_d \;\le\; 2\Po + 2u_x + 2u_{x'}
+  \qquad\text{for some } c \in \{i, j + 1\} \text{ and some } d \in \{i, j\} .
+\end{equation}
+Each of the four cases of $(c, d)$ leads to a contradiction, as follows. If $(c, d) = (i, i)$, the first equation of \eqref{eq:rel} turns \eqref{eq:four}
+into $u_L \le u_{x'}$, which is false. If $(c, d) = (j + 1, j)$, the second equation of \eqref{eq:rel}
+turns it into $u_L \le u_x$, which is false. In the two other cases \eqref{eq:height} turns
+\eqref{eq:four} into $\nu \cdot u \ge 0$ for the vector
+\[
+  \nu \;=\; \one{x} + \one{x'} - \sum_k \bigl( a_k(c) - b_k(d) \bigr)\, \one{k} \;\in\; \ZZ^n ,
+  \qquad (c, d) = (i, j) \text{ or } (j + 1, i) .
+\]
+By Step~2 the coefficients of $\nu$ have the sum $0$, they are $0$ at the indices larger than $L$, and
+$|\nu_k| \le n + 1$. By \eqref{eq:levels} the coefficient at $L$ is $\nu_L = -1$ in both cases. Hence
+$L$ is the largest index with a nonzero coefficient, and the sum of Lemma~\ref{lem:B} for $\nu$ is at
+most $(L - 1)(n + 1) \le (n - 2)(n + 1) < n^2 \le \tau$. Lemma~\ref{lem:B} therefore gives $\nu \cdot u < 0$, against $\nu \cdot u \ge 0$, and with this all
+four cases are excluded.
+\end{proof}
+
+\begin{example}\label{ex:0011}
+The hypothesis on $u$ is needed, as the following data for $n = 4$ and $u = (0, 0, 1, 1)$ show. Let
+$\zeta_{ab} = 2$ if
+$a, b \in \{1, 2, 3\}$ and $\zeta_{ab} = 0$ otherwise, and let $\omega_{ab} = 2$ if $a, b \in \{0, 2, 3\}$
+and $\omega_{ab} = 0$ otherwise. Then $\Psi = 0$ on all six pairs, and
+$\{0, 1\}, \{1, 2\}, \{2, 3\}, \{0, 3\}$ is a simple cycle of $\Eo$.
+\end{example}
+
+\section{The cycle relation}\label{sec:D4}
+
+Let $(u, \zeta, \omega)$ be a weight datum, with $\Psi$, $\Ps$ and $\Es$ as in Definition~\ref{def:psi}.
+An edge of $\Es$ has a real value $\Psi$, and therefore $\zeta$ and $\omega$ are real on $\Es$.
+
+\begin{definition}\label{def:cycle}
+For a closed alternating sequence $f_0, g_0, \dots, f_{r-1}, g_{r-1}$ in $\Es$ put
+$\varepsilon(f_i) = -1$ and $\varepsilon(g_i) = +1$, and
+\[
+  N = 3 \sum_{e \text{ a body pair}} \varepsilon(e) \in \ZZ , \qquad
+  q = \sum_{e \text{ a body pair}} 2\, \varepsilon(e)\, \one{e}
+      \;-\; \sum_{e = \{t, O\}} \varepsilon(e)\, \one{t} \in \ZZ^n ,
+\]
+where the sums run over the edges $e$ of the sequence.
+\end{definition}
+
+\begin{theorem}\label{thm:D4}
+Let $n \ge 2$, $\tau \ge 2n^2$ and $u \in W_n(\tau)$, and let $(u, \zeta, \omega)$ be a weight datum.
+\begin{enumerate}
+\item[(a)] For every edge $e \in \Es$ there is an edge $e' \in \Es$ with $e' \ne e$ and
+$\nd{e'}{\omega} = \nd{e}{\omega}$, and an edge $e'' \in \Es$ with $e'' \ne e$ and
+$\nd{e''}{\zeta} = \nd{e}{\zeta}$. The graph $\Gamma(\Es)$ has a simple cycle.
+\item[(b)] Every closed alternating sequence in $\Es$ contains an $O$-edge.
+\item[(c)] For every closed alternating sequence in $\Es$, the numbers of Definition~\ref{def:cycle}
+satisfy $N \ne 0$ and $N \Ps + q \cdot u = 0$.
+\item[(d)] The number $\Ps$ belongs to a finite set that depends on $n$ and $u$ only, and
+$\Ps \le \tfrac13 (2n - 1) \sum_{j} |u_j|$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\step{Step 1: proof of (a).} Let $e = \{x, y\} \in \Es$, let $A = \nd{e}{\omega}$ and $h = \omega_e$. By
+Lemma~\ref{lem:tree}(b) the vertices $x$ and $y$ lie in different children of $A$, and at most one of
+these two children contains $O$. The pair $e$ is not ordered, and we name its vertices in such a way that the child $S$ of $A$ that
+contains $x$ does not contain $O$. Then $S$ is a nonempty set of bodies and $y \notin S$. Let $g = \{p, p'\}$ be a term of the cut of $S$ in the colour $z$, with $p \in S$ and
+$p' \notin S$. We show that
+\begin{equation}\label{eq:phi}
+  \Phi^z(g) = \Psi(g) + \omega_g \le \Ps + h, \quad\text{with equality only if } g \in \Es
+  \text{ and } \nd{g}{\omega} = A .
+\end{equation}
+The equation $\Phi^z(g) = \Psi(g) + \omega_g$ holds for a body pair by definition. Let $g = \{p, O\}$,
+so that $\xi_p$ is real. If $\eta_p = \omega_{pO}$ were $+\infty$, it would be larger than $h$; the
+vertex $O$ would then lie in $A$, by Lemma~\ref{lem:tree}(c), and in the child $S$ of $p$. Hence
+$\eta_p$ is real, and $\Phi^z(g) = \Psi(g) + \eta_p$ by the remark after Definition~\ref{def:psi}. For
+the inequality, $\Psi(g) \le \Ps$, and $\omega_g \le h$: if $p' \in A$ then $p$ and $p'$ lie in different
+children and $\omega_g = h$ by Lemma~\ref{lem:tree}(b), and if $p' \notin A$ then $\omega_g < h$ by
+Lemma~\ref{lem:tree}(c). If equality holds, then $\Psi(g) = \Ps$ and $\omega_g = h$ with $p, p' \in A$,
+and $\nd{g}{\omega} = A$ by Lemma~\ref{lem:tree}(d), which proves \eqref{eq:phi}.
+
+The edge $e$ is a term of the cut of $S$ in the colour $z$: it joins $x \in S$ to $y \notin S$, and if
+$y = O$ then $\xi_x$ is real because $\Psi(e)$ is real. Its value is $\Phi^z(e) = \Ps + h$, the largest
+possible by \eqref{eq:phi}. By the cut condition a term $e' \ne e$ has the same value, and by
+\eqref{eq:phi} it lies in $\Es$ and has the node $A$. The statement for $\nd{e}{\zeta}$ follows from
+the same argument with the two colours exchanged.
+
+For the simple cycle, note that $\Es$ is not empty and that every vertex of $\Gamma(\Es)$ lies on at
+least two edges. Take a path of $\Gamma(\Es)$ with distinct vertices and the largest possible number of
+edges. Its last vertex lies on an edge that is not the last edge of the path, and the other end of that
+edge is a vertex of the path, because the path cannot be made longer. The part of the path from that
+vertex to the last one, with the additional edge, is a simple cycle. It has an even number of edges
+because $\Gamma(\Es)$ is bipartite, and its edges can be named $f_0, g_0, \dots, f_{r-1}, g_{r-1}$ as in
+Definition~\ref{def:alt}.
+
+\step{Step 2: the relation of (c).} Let $f_0, g_0, \dots, f_{r-1}, g_{r-1}$ be a closed alternating
+sequence in $\Es$. The equations $\omega_{f_i} = \omega_{g_i}$ and $\zeta_{g_i} = \zeta_{f_{i+1}}$ give
+$\sum_e \varepsilon(e) (\zeta_e + \omega_e) = 0$, the sum over the $2r$ edges. On $\Es$,
+\[
+  \zeta_e + \omega_e = 2\Ps + 2\, \one{e} \cdot u \ \text{ for a body pair } e,
+  \qquad
+  \zeta_e + \omega_e = -\Ps - u_t \ \text{ for } e = \{t, O\} .
+\]
+Let $\sigma$ be the sum of $\varepsilon(e)$ over the body pairs of the sequence and $\sigma_O$ the sum
+over its $O$-edges. The sum above is $(2\sigma - \sigma_O) \Ps + q \cdot u$. The sequence has $r$ edges
+of each sign, which gives $\sigma + \sigma_O = 0$, and therefore $2\sigma - \sigma_O = 3\sigma = N$.
+This proves $N \Ps + q \cdot u = 0$. We note for Step~4 that $\sum_j q_j = 4\sigma - \sigma_O = 5N/3$.
+
+\step{Step 3: proof of (b).} Suppose that all edges of a closed alternating sequence in $\Es$ are body
+pairs. The restrictions of $\zeta$ and $\omega$ to the bodies are ultrametrics with real values. A body
+pair attains $\Ps$, and therefore $\Po = \Ps$ and the pairs of the sequence lie in $\Eo$. The sequence
+is then a closed alternating sequence in $\Eo$, which Lemma~\ref{lem:C} excludes because
+$\tau \ge 2n^2 \ge n^2$.
+
+\step{Step 4: $N \ne 0$.} By Step~3 the sequence contains an $O$-edge $\{t, O\}$, and it contains it
+once, because its edges are distinct. In $q_t$ every body pair through $t$ contributes $\pm 2$ and the
+edge $\{t, O\}$ contributes $\pm 1$. Hence $q_t$ is odd and $q \ne 0$. Suppose that $N = 0$. Then
+$\sum_j q_j = 0$ and $q \cdot u = 0$ by Step~2. A body lies in at most $n - 1$ body pairs and one
+$O$-edge, which gives $|q_j| \le 2n - 1$. The sum of Lemma~\ref{lem:B} for $q$ has at most $n - 2$ terms
+and is at most $(n - 2)(2n - 1) < 2n^2 \le \tau$. Lemma~\ref{lem:B} gives $q \cdot u \ne 0$, a
+contradiction.
+
+\step{Step 5: proof of (d).} By (a) and (c) there is a closed alternating sequence with
+$\Ps = -q \cdot u / N$. Here $N$ is a nonzero multiple of $3$ and $|q_j| \le 2n - 1$, which gives the
+bound. The pairs $(N, q)$ of all closed alternating sequences of edges on $n + 1$ vertices form a finite
+set that depends on $n$ only.
+\end{proof}
+
+\begin{corollary}\label{cor:bound}
+Let $n \ge 2$, $\tau \ge 2n^2$ and $u \in W_n(\tau)$. For every weight datum $(u, \zeta, \omega)$ and
+every body pair $\{t, l\}$,
+\[
+  \zeta_{tl} + \omega_{tl} \;\le\; \tfrac23 (2n - 1) \sum_j |u_j| \;+\; 2u_t + 2u_l .
+\]
+\end{corollary}
+
+\begin{proof}
+By Definition~\ref{def:psi}, $\zeta_{tl} + \omega_{tl} = 2\Psi(t, l) + 2u_t + 2u_l$, and
+$\Psi(t, l) \le \Ps$. The bound on $\Ps$ is Theorem~\ref{thm:D4}(d).
+\end{proof}
+
+\begin{example}\label{ex:n2cycle}
+In Example~\ref{ex:n2} the two edges of $\Es$ form the simple cycle $f_0 = \{0, 1\}$, $g_0 = \{1, O\}$,
+with $N = -3$ and $q = (-2, -3)$. The relation is $-3\Ps - 2u_0 - 3u_1 = 0$.
+\end{example}
+
+\section{Finiteness over the field of Hahn series}\label{sec:K}
+
+In this section a \emph{solution} is a solution of $\cN_n$ in $K$ at fixed masses $m \in (K^{*})^n$, and
+the solutions form a Zariski-closed subset of an affine space over the algebraically closed field $K$.
+The number $\zeta_{tl} + \omega_{tl}$ is the valuation of $X_{tl} Y_{tl}$, which for a central
+configuration is the square of a mutual distance. A large valuation is a close approach of two bodies.
+
+\begin{proposition}\label{prop:D2}
+Let $m \in (K^{*})^n$. Suppose that there is a real number $M$ such that
+$v(X_{tl} Y_{tl}) \le M$ for every solution of $\cN_n$ in $K$ with the masses $m$ and every body pair
+$\{t, l\}$. Then no irreducible component of the set of these solutions has dimension at least $2$.
+\end{proposition}
+
+\begin{proof}
+Let $V$ be an irreducible component of dimension at least $2$. We show first that every function
+$X_{tl} Y_{tl}$ and every $P_{tl}$ is constant on $V$, and then that $V$ contains finitely many orbits
+of the rotation, which contradicts its dimension.
+
+\step{Step 1: every $X_{tl} Y_{tl}$ is constant on $V$.} Fix a body pair and let $\phi = X_{tl} Y_{tl}$,
+a regular function on $V$. The image $\phi(V)$ is a constructible subset of the affine line, by
+Chevalley's theorem, and its closure is irreducible. Hence $\phi$ is constant, or $\phi(V)$ contains
+all elements of $K$ except finitely many. In the second case $\phi(V)$ contains an element of valuation
+$M + 1$, by the third property of $v$, and this contradicts the hypothesis. Hence $\phi$ is a constant
+$\delta_{tl}$, and $\delta_{tl} \ne 0$ by Lemma~\ref{lem:facts}(a).
+
+\step{Step 2: every $P_{tl}$ is constant on $V$.} By \eqref{eq:N1}, $P_{tl}^2 = \delta_{tl}^{-1}$ on
+$V$. A regular function on an irreducible variety that takes two values at most is constant.
+
+\step{Step 3: the slice.} The rotation maps $V$ to itself, because $K^{*}$ is connected. Fix two bodies
+$a \ne b$ and let $V_1$ be the set of the points of $V$ with $X_{ab} = 1$. The function $X_{ab}$ has no zero on $V$, and the rotation by $s$ multiplies it by $s$. The morphism
+$K^{*} \times V_1 \to V$ given by the rotation therefore has the regular inverse that sends a point $p$
+of $V$ to the pair of $X_{ab}(p)$ and the image of $p$ under the rotation by $X_{ab}(p)^{-1}$. It is an
+isomorphism, and $\dim V_1 = \dim V - 1 \ge 1$.
+
+\step{Step 4: $V_1$ is finite.} On $V_1$ we have $X_{ab} = 1$ and $Y_{ab} = \delta_{ab}$. For $n = 2$
+this fixes all differences. When there is a third body $c$, we have $X_{cb} = X_{ca} + 1$ and
+$Y_{cb} = Y_{ca} + \delta_{ab}$, and therefore
+\[
+  X_{ca} Y_{ca} = \delta_{ca} \qquad\text{and}\qquad
+  (X_{ca} + 1)(Y_{ca} + \delta_{ab}) = \delta_{cb} .
+\]
+The second equation minus the first gives
+$Y_{ca} = \delta_{cb} - \delta_{ca} - \delta_{ab} - \delta_{ab} X_{ca}$, and the first then reads
+\[
+  -\delta_{ab}\, X_{ca}^2 + (\delta_{cb} - \delta_{ca} - \delta_{ab})\, X_{ca} - \delta_{ca} = 0 .
+\]
+Its leading coefficient is not $0$; a quadratic equation for the configurations with given mutual
+distances is used in the same way in~\cite[\S 2.1]{tomar6}. Hence $X_{ca}$ and $Y_{ca}$ take at most
+two values each on $V_1$,
+and every difference $X_{tl}$, $Y_{tl}$ takes finitely many values on $V_1$. By Step~2 and the equations
+\eqref{eq:N2} and \eqref{eq:N3}, the coordinates $X_t$ and $Y_t$ take finitely many values on $V_1$.
+The set $V_1$ is therefore finite, which contradicts $\dim V_1 \ge 1$.
+\end{proof}
+
+The proposition uses no balancing condition and no theorem on the dimension of a tropical variety. A
+component on which bodies only separate, or on which one position tends to $0$, is excluded with the
+others, because on a component of dimension $2$ some $X_{tl} Y_{tl}$ takes values of every valuation.
+
+\begin{proof}[Proof of Theorem~\ref{thm:K}]
+Let $u_t = v(m_t)$, so that $u \in W_n(2n^2)$. By Lemma~\ref{lem:A} the weights of a solution form a
+weight datum $(u, \zeta, \omega)$. By Corollary~\ref{cor:bound}, with $\tau = 2n^2$, every solution and
+every body pair satisfy
+$v(X_{tl} Y_{tl}) = \zeta_{tl} + \omega_{tl} \le \tfrac23 (2n - 1) \sum_j |u_j| + 4 \max_j |u_j|$. By
+Proposition~\ref{prop:D2} no irreducible component of the set of solutions has dimension at least $2$,
+and by Lemma~\ref{lem:orbits} the solutions form finitely many orbits of the rotation.
+\end{proof}
+
+\section{Generic masses}\label{sec:generic}
+
+Let $R = \QQ[m_0, \dots, m_{n-1}]$ and $\cM = \Spec R$, and let $\pi \colon \cX \to \cM$ be the affine
+scheme of finite presentation over $\cM$ defined by the equations \eqref{eq:N1} to \eqref{eq:N3} in the
+unknowns $X_t$, $Y_t$, $P_{tl}$. For a field $k$ of characteristic $0$, a vector $m \in k^n$ is a
+morphism $\Spec k \to \cM$, and its image is the \emph{point of $\cM$ below $m$}. The scheme of the
+solutions at the masses $m$ is the fibre of $\cX$ at that point, extended to $k$. For a point $x$ of
+$\cX$, the \emph{fibre dimension at $x$}, written $\dim_x \cX_{\pi(x)}$, is the largest dimension of an
+irreducible component through $x$ of the fibre of $\pi$ that contains $x$. If $k$ is algebraically
+closed, the closed points of the scheme of the solutions are the solutions in $k$. They are dense in
+every irreducible component of the scheme, and the irreducible components of the scheme and of the
+Zariski-closed set of the solutions in $k$ correspond, with the same dimensions; nilpotent elements of
+the coordinate ring do not affect them.
+
+\begin{lemma}\label{lem:D0}
+There is a constructible subset $D$ of $\cM$ with the following two properties.
+\begin{enumerate}
+\item[(a)] For every algebraically closed field $k$ of characteristic $0$ and every $m \in k^n$, the
+system $\cN_n$ with the masses $m$ has infinitely many solutions in $k$ modulo the rotation if and only
+if the point of $\cM$ below $m$ lies in $D$.
+\item[(b)] If $D$ is dense in $\cM$, then for every $u^{*} \in \RR^n$ whose coordinates are linearly
+independent over $\QQ$, the point of $\cM$ below the vector
+$(T^{u^{*}_0}, \dots, T^{u^{*}_{n-1}}) \in K^n$ lies in $D$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+The set $\cX_{\ge 2} = \{ x \in \cX : \dim_x \cX_{\pi(x)} \ge 2 \}$ is closed in
+$\cX$~\cite[Tag~02FZ]{stacks}; this is Chevalley's semicontinuity theorem \cite[13.1.3]{ega4iii}. Let
+$D = \pi(\cX_{\ge 2})$. The morphism $\pi$ is affine and of finite presentation, and $\cX_{\ge 2}$ is a
+closed subset of a Noetherian scheme; therefore $D$ is constructible~\cite[Tag~054K]{stacks}.
+
+(a) Let $s$ be the point of $\cM$ below $m$, with residue field $\kappa(s) \subseteq k$. The scheme of
+the solutions over $k$ is $\cX_s \otimes_{\kappa(s)} k$. The fibre dimension at a point does not
+change under an extension of the base field, and every point of $\cX_s$ is the image of a point of
+$\cX_s \otimes_{\kappa(s)} k$~\cite[Tag~02FY, parts (1) and (3)]{stacks}. Hence the scheme of the
+solutions over $k$ has a point at which its dimension is at least $2$ if and only if $s \in D$. Such a
+point exists if and only if an irreducible component of the scheme has dimension at least $2$. By the
+correspondence stated before the lemma, this holds if and only if an irreducible component of the set
+of the solutions in $k$ has dimension at least $2$, and by Lemma~\ref{lem:orbits} if and only if there
+are infinitely many orbits.
+
+(b) The scheme $\cM$ is irreducible, and a dense constructible subset of an irreducible space contains
+its generic point~\cite[Tag~005K]{stacks}. The residue field of the generic point is
+$F = \QQ(m_0, \dots, m_{n-1})$. The ring homomorphism $R \to K$ with $m_t \mapsto T^{u^{*}_t}$ sends a
+polynomial $\sum_{\alpha} h_\alpha m^{\alpha}$ to $\sum_{\alpha} h_\alpha T^{u^{*} \cdot \alpha}$. The
+exponents $u^{*} \cdot \alpha$ are distinct for distinct $\alpha$, because the coordinates of $u^{*}$ are
+linearly independent over $\QQ$. The homomorphism is therefore injective, and the point of $\cM$ below
+$(T^{u^{*}_t})$ is the generic point.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:Nn}]
+The set $W_n(2n^2)$ is open and not empty, and hence it contains a vector $u^{*}$ whose coordinates are
+linearly independent over $\QQ$. By Theorem~\ref{thm:K} the system $\cN_n$ with the masses
+$m_t = T^{u^{*}_t}$ has finitely many solutions in $K$ modulo the rotation. By Lemma~\ref{lem:D0}(a) the
+point of $\cM$ below these masses does not lie in $D$, and by Lemma~\ref{lem:D0}(b) the set $D$ is not
+dense in $\cM$. There is therefore a nonzero polynomial $H \in R$ that vanishes on $D$. Let
+$\Sigma_n = \{ m \in \CC^n : H(m) = 0 \}$. If $\cN_n$ has infinitely many solutions in $\CC$ modulo the
+rotation at $m \in \CC^n$, then the point of $\cM$ below $m$ lies in $D$ by Lemma~\ref{lem:D0}(a), and
+$H(m) = 0$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let $\Sigma_n$ be the set of Theorem~\ref{thm:Nn} and let $m \in \RR_{>0}^n$ lie outside it. The system
+$\cN_n$ has finitely many solutions in $\CC$ modulo the rotation, and Lemma~\ref{lem:cc-sol}(c) gives the
+statement.
+\end{proof}
+
+\begin{remark}\label{rem:roberts}
+Theorem~\ref{thm:K} is stronger than what the proof of Theorem~\ref{thm:Nn} uses: it holds for all masses
+in $K$ with valuations in $W_n(2n^2)$, and, after a permutation of the bodies, for valuations in the
+image of $W_n(2n^2)$ under a permutation of the coordinates. This restricts the closure $\Sigma$ of the
+set $D$ of Lemma~\ref{lem:D0} in $\cM$, as follows. Because $D$ is constructible, it contains an open
+subset $U$ of $\Sigma$ that is dense in every irreducible component of $\Sigma$. Extend $\Sigma$ and
+$U$ to $K$ and consider the part where no mass is $0$, a closed subset of a torus over $K$. Each of its
+irreducible components lies over a component of $\Sigma$ and meets the extension of $U$. Suppose that a
+point over $K$ of such a component has its vector of valuations in one of the open cones. The points
+over $K$ of the component with that vector of valuations are then Zariski dense in
+it~\cite[Corollary~4.2, and Remark~2 of the erratum]{payne2009}, and one of them lies in the extension
+of $U$; at that point Lemma~\ref{lem:D0}(a) contradicts Theorem~\ref{thm:K}. Hence no point of $\Sigma$
+over $K$ with nonzero masses has its vector of valuations in these open cones. A family of masses with
+a known continuum of solutions modulo rotation and with a point over $K$, or over a valued field that
+embeds in $K$, whose valuations lie in $W_n(2n^2)$ would contradict the theorem.
+The examples of continua that the search of 17 November 2026 found (Section~\ref{sec:intro}) have
+equal valuations: Roberts' continuum for five
+bodies~\cite{roberts1999} has the masses $(1, 1, 1, 1, -1/4)$ up to a common factor. At the positive
+masses $(4, 4, 4, 4, 1)$ the system $\cN_5$ has a continuum of solutions in which $P_{t4}$ is the
+negative root for the four pairs that contain the light body
+\cite[p.~543 and Remark~8]{albouykaloshin2012}; these solutions are not central configurations, and
+Tomar~\cite{tomarspecial} finds 36 curves of them. If $n - 1$ masses are $0$ and $n \ge 3$, the
+massless bodies move freely on a circle about the heavy body; such masses are not in $(K^{*})^n$.
+\end{remark}
+
+\section{Where the hypotheses are used}\label{sec:hyp}
+
+Table~\ref{tab:hyp} lists, for each feature of the system and each hypothesis of Theorem~\ref{thm:K}, the
+step that uses it. The positivity of the masses is used in Lemma~\ref{lem:norm} only, and no proof uses an identity for the
+angular momentum of a cluster.
+
+\begin{table}[ht]
+\caption{The features of the system $\cN_n$ and the hypothesis on the mass weights, with the steps that
+use them.}\label{tab:hyp}
+\small
+\begin{tabular}{@{}>{\raggedright}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.58\textwidth}@{}}
+\toprule
+feature or hypothesis & where it is used \\
+\midrule
+the exponent $3$ of $P_{tl}$ in \eqref{eq:N2}, \eqref{eq:N3} & Lemma~\ref{lem:A} (the value $\Phi^z = \Psi + \omega$); Theorem~\ref{thm:D4}, Step~2 (the factor $3$ of $N$) and Step~4 (parity: a body pair contributes an even number to $q_t$ and an $O$-edge an odd one) \\
+the left sides $X_t$, $Y_t$ of \eqref{eq:N2}, \eqref{eq:N3} & the $O$-edges. With left sides $\theta X_t$, $\theta Y_t$ and a further unknown $\theta$, Step~2 has the additional term $(N/3)\, v(\theta)$, $\Ps$ is not bounded, and the system has a continuum by scaling \\
+every pair of bodies interacts & Corollary~\ref{cor:bound}: every body pair is an edge, and $\Psi \le \Ps$ bounds its collision \\
+$u \in W_n(\tau)$ with $\tau \ge n^2$ & Lemma~\ref{lem:C}, Steps~1 and~4; Example~\ref{ex:0011} shows that it is needed there \\
+$u \in W_n(\tau)$ with $\tau \ge 2n^2$ & Theorem~\ref{thm:D4}, Step~4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}\label{rem:u0123}
+We do not know whether Theorem~\ref{thm:D4}(c) holds for every vector $u$ with distinct coordinates. A
+floating-point search with linear programs (Section~\ref{sec:comp}) at $u = (0, 1, 2, 3)$ finds triples
+that satisfy the conditions of a weight datum within the tolerance of the search and have the closed
+alternating sequence
+$\{0, 2\}, \{2, O\}, \{0, O\}, \{0, 3\}$ with $N = 0$ and $q = (1, 0, -3, 2)$, and with values of $\Ps$
+up to the largest value that the search admits. Lemma~\ref{lem:B} excludes this vector $q$ in $W_4(\tau)$ for
+$\tau \ge 1/2$. This is evidence that the hypothesis on $u$ cannot be dropped from
+Theorem~\ref{thm:D4}; it says nothing about Theorem~\ref{thm:K}, because a weight datum need not come
+from a solution.
+\end{remark}
+
+\begin{remark}\label{rem:exponent}
+For a force with the exponent $\varrho$ in place of $3$ in \eqref{eq:N2} and \eqref{eq:N3}, the term
+of a body pair in a cut identity is $m_t m_l P_{tl}^{\varrho} X_{tl}$, and the value that takes the
+place of $\Psi(t, l)$ is $\tfrac12 (\varrho - 2)(\zeta_{tl} + \omega_{tl}) - u_t - u_l$. For
+$\varrho < 2$ the coefficient of $\zeta_{tl} + \omega_{tl}$ is negative. The triangle conditions of
+Step~4 of Lemma~\ref{lem:C} then bound $\Psi(x, x')$ from above, as the maximality of $\Po$ does, and
+the step gives no contradiction. Continua at an open set of masses exist for such forces: for the
+potentials $\sum m_t m_l\, r_{tl}^{2i}$ with an integer $i \ge 2$, which have $\varrho = 2 - 2i$,
+Nurowski~\cite{nurowski2026} gives one-parameter families of central configurations of $2(i + 1)$
+bodies that persist for all masses near the equal masses. In these
+families two bodies collide for some values of the parameter, and the force, a polynomial, vanishes
+there.
+\end{remark}
+
+\section{The formal proof}\label{sec:lean}
+
+All theorems, propositions, lemmas and corollaries of Sections~\ref{sec:system} to~\ref{sec:generic} are
+proved in the text. Table~\ref{tab:lean} lists those for which, in addition, a formal statement is
+proved in Lean~4~\cite{lean4} with the library Mathlib~\cite{mathlib}, and those for which there is
+none.
+
+\begin{table}[ht]
+\caption{The statements of this paper and their formal counterparts. The formal statements are in the
+files \repo{Challenge.lean} (280 lines) and \repo{ChallengeA.lean} (57 lines) of the directory
+\repo{lean/direct-route} of the repository of this paper.}\label{tab:lean}
+\small
+\begin{tabular}{@{}>{\raggedright}p{0.30\textwidth}>{\raggedright}p{0.25\textwidth}>{\raggedright\arraybackslash}p{0.38\textwidth}@{}}
+\toprule
+statement & formal name & what the formal statement covers \\
+\midrule
+Lemmas~\ref{lem:norm} to~\ref{lem:orbits} & none & not formalised \\
+Lemma~\ref{lem:tree} & none & not formalised as a statement \\
+Lemma~\ref{lem:A} & \repo{lemmaA} & the last sentence: the weights of a solution with nonzero masses form a weight datum, for every field with a valuation in $\RR \cup \{+\infty\}$. The identities \eqref{eq:cut} and the valuations of their terms are not formal statements \\
+Lemma~\ref{lem:B} & \repo{lemmaB} & $q \cdot u \ne 0$; the statement on the sign is not a formal statement \\
+Lemma~\ref{lem:C} & none & proved inside the formal proof of Corollary~\ref{cor:C}, as \repo{LC.Setup.contra}; not among the reviewed statements \\
+Corollary~\ref{cor:C} & \repo{lemmaC} & the whole statement \\
+Theorem~\ref{thm:D4}(a) & \repo{degree_two}, \repo{exists_cycle} & the whole statement, for every weight datum, with no hypothesis on $u$ \\
+Theorem~\ref{thm:D4}(b), (c) & \repo{cycle_relation} & $N \ne 0$ and $N\Ps + q \cdot u = 0$ for every simple cycle of $\Es$; these imply that a simple cycle has an $O$-edge. Not covered: closed alternating sequences that are not simple cycles \\
+Theorem~\ref{thm:D4}(d) & none & no formal statement \\
+Corollary~\ref{cor:bound} & \repo{collision_bound}, \repo{solution_bound} & the bound for a weight datum, and the same bound on $v(X_{tl} Y_{tl})$ at a solution over a valued field \\
+Examples~\ref{ex:n2} and~\ref{ex:n2cycle} & \repo{ex2_spec} & the weight datum at $u = (0, 2)$, its set $\Es$, its cycle, $N$ and $q$; the equation for $P_{01}$ and the formulas for a general $u$ are not formal statements \\
+Example~\ref{ex:0011} & \repo{ex4_cycle} & the whole statement \\
+$W_n(\tau) \ne \emptyset$ & \repo{chamber_nonempty} & for all $n$ and all $\tau \ge 0$ \\
+Proposition~\ref{prop:D2}, Lemma~\ref{lem:D0} & none & not formalised \\
+Theorems~\ref{thm:main}, \ref{thm:Nn}, \ref{thm:K} & none & not formalised \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Versions and the check} The formal proof uses Lean~4.36.0 and Mathlib at the tag
+\repo{v4.36.0}. It is checked with \repo{lake comparator}, the tool distributed with Lean that compares
+a file of statements, in which every proof is the placeholder \repo{sorry}, with a file of proofs: it
+accepts if every listed theorem is proved with the statement of the first file and the proof uses no
+axiom outside a permitted list. The permitted axioms are \repo{propext}, \repo{Quot.sound} and
+\repo{Classical.choice}. The placeholder occurs in the two statement files only: the files of proofs
+contain no \repo{sorry}, and a proof that used one would depend on the axiom \repo{sorryAx}, which is
+not permitted. With the option \repo{--paranoid} the proof is accepted by the kernel of Lean
+and by the five further checkers that the tool runs (\repo{leanchecker-paranoid}, \repo{lean4lean},
+\repo{nanoda}, \repo{con-leche}, \repo{con-ron}), on an ARM machine under macOS and on an x86-64
+machine under Linux. The tool can run the proof files inside a sandbox; on both machines it ran without
+the sandbox.
+
+\subsection*{The statements were fixed before the proofs} The file \repo{Challenge.lean} was written
+first and compared with Sections~\ref{sec:val} to~\ref{sec:D4} in a separate review, which had the
+file and the text of the proof and no formal proof. The review was made by a separate language-model session
+(Section~\ref{sec:llm}), and its report is in the repository. After the review the file was fixed at the commit \repo{9f47607}, and the
+proofs were written after that. The file \repo{ChallengeA.lean}, which states Lemma~\ref{lem:A} and
+the form of Corollary~\ref{cor:bound} at a solution, went through the same steps and was fixed at the
+commit \repo{af9d4d2}. The script \repo{scripts/allN/lean_gate.sh} checks that the two statement files,
+the lists of theorems and the files that select the versions are identical to those commits before it
+runs the comparison. Two controls were run: with a \repo{sorry} placed in one proof the check fails,
+and with a false hypothesis added to a statement the check fails because the statement file differs
+from the fixed one.
+
+\subsection*{Differences between the formal statements and the text} The formal statements differ from
+those of the text in the following ways.
+\begin{enumerate}
+\item The bodies are the natural numbers below $n$ and the vertex $O$ is the number $n$. Vectors are
+functions on the natural numbers, of which only the values at the indices below $n$ are used.
+\item The values $\xi_t$ and $\eta_t$ lie in the type of the real numbers with a top element, and the
+top element stands for $+\infty$. An $O$-edge $\{t, O\}$ is admitted as an edge only if $\xi_t$ and
+$\eta_t$ are both real; in the text an $O$-edge with an infinite value has $\Psi = -\infty$ and never
+lies in $\Es$. A term
+$\{t, O\}$ of a cut needs only the value of its own colour to be real, as in
+Definition~\ref{def:psi}.
+\item The number $\Ps$ is a parameter with the hypothesis that it bounds $\Psi$ on the edges and that
+an edge attains it.
+\item A cycle is given by two functions $i \mapsto f_i$ and $i \mapsto g_i$, as in
+Definition~\ref{def:alt}.
+\item Lemma~\ref{lem:B} is stated with sums over the indices up to a given index $p$ in place of the
+largest index with a nonzero coefficient.
+\item Theorem~\ref{thm:D4}(c) is stated for the simple cycles of $\Es$ and not for all closed
+alternating sequences, and Theorem~\ref{thm:D4}(b) is not a separate statement.
+\item The field of Lemma~\ref{lem:A} is any field with a valuation in the real numbers with a top
+element; $K$ is one such field.
+\item The formal counterparts of Theorem~\ref{thm:D4}(a) have no hypothesis on $u$; the proof of
+Step~1 uses none.
+\end{enumerate}
+The reviews list two further differences of encoding, which concern values that no statement uses:
+the diagonal entries of $\zeta$ and $\omega$, and the definition of $W_n(\tau)$ for $n < 2$.
+
+\subsection*{The hypotheses can hold} A statement whose hypotheses nothing satisfies is true and says
+nothing. The file \repo{Challenge.lean} therefore contains, as theorems that are proved with the
+others, a vector in $W_n(\tau)$ for all $n$ and all $\tau \ge 0$, the weight datum of Example~\ref{ex:n2} with its
+cycle, a weight datum for three bodies over the vector $(0, 1, 20)$ of $W_3(18)$, and two weight data in
+which a position has the valuation $+\infty$. The second review gives a solution of $\cN_2$ over $K$
+with mass weights $(3, 4)$, which satisfies the hypotheses of Lemma~\ref{lem:A} and of the form
+of Corollary~\ref{cor:bound} at a solution; this solution is not formalised.
+
+\section{Computations}\label{sec:comp}
+
+The searches of Table~\ref{tab:comp} are in floating point, with no certificates, and concern
+Theorem~\ref{thm:D4}. Two exact enumerations at the end of the section concern Lemma~\ref{lem:C}. All
+of them are evidence, and no proof uses them. The program \repo{scripts/allN/nk_fibre.py} of the
+repository (commit \repo{9234dec}) takes a vector $u$ and, for each ordered pair of binary trees on the
+$n + 1$ vertices, searches with linear programs (HiGHS~\cite{highs}) for heights $\zeta$, $\omega$ on
+these trees that satisfy every cut condition. A tie between two terms is accepted within the absolute
+tolerance $10^{-3}$. A second program, \repo{nk_cut_check.py}, tests the ultrametric conditions and the
+cut conditions of each recorded point without the trees and the linear programs, and a third,
+\repo{nk_cycle_check.py}, builds $\Es$ and $\Gamma(\Es)$ at each point and evaluates
+$N\Ps + q \cdot u$ on a basis of the cycles.
+
+\begin{table}[ht]
+\caption{Floating-point searches for weight data. ``Pairs of trees'' is the number of ordered pairs
+of binary trees searched and its share of all pairs. A threshold $R$ restricts the search to points
+with $\Ps \ge R$. The last column is the bound of Theorem~\ref{thm:D4}(d). The vectors marked
+with a dagger lie in no $W_n(\tau)$ with $\tau \ge (n - 2)(2n - 1) - 1$.}\label{tab:comp}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}l>{\raggedright}p{0.27\textwidth}>{\raggedright}p{0.13\textwidth}lrrr@{}}
+\toprule
+$n$ & $u$ & pairs of trees & $R$ & points & largest $\Ps$ & bound \\
+\midrule
+5 & $(0, 1, 12, 150, 1900)^{\dagger}$ & 893,025 (all) & 5 & 203 & 2,424.3 & 6,189 \\
+5 & $(0, 1, 2.37, 4.91, 8.53)^{\dagger}$ & 893,025 (all) & 3 & 30 & 5.52 & 50.4 \\
+5 & $(0, 1, 52, 2700, 140000)$ & 893,025 (all) & 5 & 204 & 184,831 & 428,259 \\
+6 & $(0, 1, 45, 2000, 89000, 3920000)$ & 100,000 (0.09\%) & none & 1,589 & 2,613,303 & 14,707,169 \\
+6 & $(0, 1, 45, 2000, 89000, 3920000)$ & 500,000 (0.46\%) & 5 & 189 & 7,749,636 & 14,707,169 \\
+6 & $(0, 1, 12, 150, 1900, 24000)^{\dagger}$ & 300,000 (0.28\%) & 5 & 108 & 31,837 & 95,564 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:comp} lists the searches for five and six bodies. At $n = 6$ the pairs of trees are a
+random sample of the 108,056,025 ordered pairs, drawn with the seed $29$. All $2{,}323$ points of the
+table pass the second program. At each of them every vertex of $\Gamma(\Es)$ lies on two edges, every
+cycle of the basis has $N \ne 0$, and $|N\Ps + q \cdot u| \le 2 \cdot 10^{-5}$; no point lies above the
+bound of the last column. The vector of the third row lies in $W_5(50)$, as Theorem~\ref{thm:D4} requires for $n = 5$.
+The vector of the fourth and fifth rows lies in $W_6(43)$ and not in $W_6(72)$. The proofs of
+Lemma~\ref{lem:C} and Theorem~\ref{thm:D4} use the hypothesis on $\tau$ only through the inequalities
+$\tau \ge (n - 2)(n + 1) - 1$ and $\tau \ge (n - 2)(2n - 1) - 1$, which read $\tau \ge 27$ and
+$\tau \ge 43$ for $n = 6$. At the three vectors with a dagger the theorem makes no statement, and the
+relation and the bound hold at every point found.
+
+The searches find a failure where there is one. With the threshold on $\Ps$ at $n = 3$ and
+$u = (0, 1, 30)$, where every weight datum has $\Ps = -1$, the search finds points for the thresholds
+$-40$, $-20$ and $-1.5$ and none for $-0.9$, $0$, $10$ and $1000$. The points of Remark~\ref{rem:u0123}, with $N = 0$, were
+found at $u = (0, 1, 2, 3)$ by a separate program with the same method
+(\repo{data/n7/allN/hier/r29/r29_batch.py}); the same program finds no such point at the vectors
+$(0, 1, 30, 900)$, $(0, 1, 4, 16)$ and $(0, 1, 2.37, 4.91)$.
+
+Steps~2 to~4 of the proof of Lemma~\ref{lem:C} are not tested by these searches below six bodies. An
+exact enumeration of all pairs of trees
+(the program \repo{search_balanced_cycles.py} in \repo{data/n7/allN/hier/r31} of the repository) finds, for $n \le 5$, no closed alternating
+sequence with $q = 0$ in which every pair consists of the two heaviest bodies of the intersection of
+its two nodes, a property that every pair of $\Eo$ has when the mass weights are distinct. It finds $96$
+such sequences for six bodies, each through all six, and we ran no search for $n \ge 7$.
+
+A second exact search tests Lemma~\ref{lem:C} itself at one vector for each $n$ from $2$ to $6$, namely
+$u_0 = 0$ and $u_j = (n^2 + 2)^{j-1}$ for $j \ge 1$, which lies in $W_n(n^2)$. The program
+\repo{search_alternating.cpp} in \repo{data/n7/allN/hier/r32} of the repository, written by the session
+that refereed this paper (Section~\ref{sec:llm}), enumerates for each colour the order types of the
+heights of an ultrametric on $n$ bodies, of which there are $9{,}012$ for $n = 6$. For each unordered
+pair of order types, $40{,}612{,}578$ for $n = 6$, it decides in integer arithmetic whether real heights
+of these types exist for which $\Eo$ contains a closed alternating sequence. It finds none for
+$n \le 6$. At $u = (0, 0, 1, 1)$ the same program finds $82$ such sequences, among them that of
+Example~\ref{ex:0011}. We ran the program again and obtained the same output.
+
+\section{Problems}\label{sec:problems}
+
+\begin{problem}
+Describe a set $\Sigma_n$ for which Theorem~\ref{thm:Nn} holds, or bound the number of solutions of
+$\cN_n$ modulo the rotation for masses outside it.
+\end{problem}
+
+\begin{problem}
+For which exponents $\varrho > 2$ of the force does the argument of this paper give finiteness outside
+a proper algebraic subset of the mass space? Lemma~\ref{lem:C} uses only that $\varrho - 2$ is positive,
+whereas Step~4 of Theorem~\ref{thm:D4} uses a parity that holds for $\varrho = 3$ and fails when
+$\varrho$ is an even integer.
+\end{problem}
+
+\begin{problem}
+Formalise Proposition~\ref{prop:D2} and Lemma~\ref{lem:D0}, and with them Theorem~\ref{thm:Nn}.
+\end{problem}
+
+\begin{problem}
+Does Theorem~\ref{thm:K} hold for all masses in $K$ whose valuations are distinct, or whose valuations
+are linearly independent over $\QQ$?
+\end{problem}
+
+\section{Use of language models}\label{sec:llm}
+
+This section records how the results of this paper were produced, which a reader needs in order to
+judge them.
+
+\subsection*{Division of labour} The author set the goal, the finiteness theorem outside a proper
+algebraic subset for every $n$, after a program on seven bodies that followed the six-body method of
+Tomar~\cite{tomar6}. The author also fixed the budget for the computations, decided which checks to
+run, and started the separate sessions described below. The mathematics was produced by a
+language-model agent (Claude Fable~5.2, Anthropic) with access to a terminal, to the repository and to
+rented machines. In working sessions that the author directed, the agent found and wrote the proofs of
+Sections~\ref{sec:val} to~\ref{sec:generic}, wrote and ran the programs of Section~\ref{sec:comp},
+wrote the two files of formal statements and the formal proofs of Section~\ref{sec:lean}, and wrote the
+text of this paper from the documents of the repository. At the time of writing, no person who works
+on central configurations or on algebraic geometry has read the proofs.
+
+\subsection*{Separate sessions} Six further sessions, each started by the author with no access to
+the working sessions, checked the work. The first used Qwen4 Max (Alibaba); the other five used
+GPT-6.2 Sol (OpenAI) at its highest setting of reasoning effort. The first three sessions read earlier
+write-ups of the proof and wrote their own programs to test it. The write-ups are the files \repo{docs/allN-direct-route.md} and
+\repo{docs/allN-direct-route-second-read.md} of the repository. Each reported that it found no error and asked for corrections of wording and of
+detail, which were made. The third session searched the literature and found that the survey of the
+working agent had missed the two six-body preprints~\cite{tomar6,chentong6} and the two claims for every
+$n$~\cite{tibboel2013,okolo2026}; Table~\ref{tab:known} follows the corrected survey. The fourth and
+fifth sessions compared the files of formal statements with the write-up before the formal proofs
+existed (Section~\ref{sec:lean}). The sixth session, run in OpenAI Codex, read a draft of this paper, at
+the commit \repo{66ca227} of the repository, with the instruction to judge the printed proofs alone.
+It found that the proof of Lemma~\ref{lem:tree}(d) cited part~(a) outside its hypotheses; the proof
+printed here is the repaired one. It reported no other error in the argument, asked for corrections to
+the introduction, to Table~\ref{tab:known}, to Remark~\ref{rem:roberts} and to Section~\ref{sec:lean},
+which were made, and wrote the second exact search of Section~\ref{sec:comp}. These six reads are not
+peer review, and their reports are in the repository (\repo{docs/n7-referee-R29.md} to
+\repo{docs/n7-referee-R32.md}, and \repo{docs/allN-direct-route-lean-review-1.md} and
+\repo{docs/allN-direct-route-lean-review-2.md}).
+
+\subsection*{What the reads and the formal proof cover in this text} The proof of Lemma~\ref{lem:C}
+follows the formal proof of Corollary~\ref{cor:C} and replaces a longer argument that the first three
+sessions read; the statement on the sign in Lemma~\ref{lem:B} and the form of Theorem~\ref{thm:D4} for
+closed alternating sequences were written with it. Lemma~\ref{lem:D0} is a restatement, with a shorter
+proof, of the lemma that those sessions read. Only the sixth session has read these proofs in their
+present form. After its report the text changed in the places that the report names, among them the
+proof of Lemma~\ref{lem:tree}(d), Step~3 of Proposition~\ref{prop:D2}, the paragraph before
+Lemma~\ref{lem:D0} and Remark~\ref{rem:roberts}, and no separate session has read these changes. For the
+statements of Table~\ref{tab:lean} that have a formal counterpart, the check does not rest on a
+language model: the statement files are short, they were fixed before the proofs were written, and the
+kernel of Lean and five further checkers accept the proofs. For
+Lemmas~\ref{lem:norm} to~\ref{lem:orbits}, Proposition~\ref{prop:D2} and Lemma~\ref{lem:D0}, the text
+of this paper is the only proof.
+
+\bibliographystyle{amsplain}
+\bibliography{references}
+
+\end{document}

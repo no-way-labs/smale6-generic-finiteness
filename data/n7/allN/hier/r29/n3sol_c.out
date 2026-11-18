@@ -1,0 +1,12 @@
+r29_n3sol: masses c = 1,1,1, u = 0,3,70, eps = 1e-15, 3350 digits; 114 solutions (54 of type L, 60 of type C)
+   largest relative residual of the nine equations over all solutions: 5.9e-3329
+   valuations rounded to multiples of 1/6; largest distance to the rounded value: 0.0250
+   failures (ultrametric, cut conditions recomputed from the monomials, statements of Theorem D4): none
+   type, Psi*, E*, (N, q) of the simple cycles of B: number of solutions
+      C  Psi* = -3  E* = [(0, 1), (1, 3)]  cycles [(-3, (-2, -3, 0))]: 60
+      L  Psi* = -3  E* = [(0, 1), (1, 3)]  cycles [(-3, (-2, -3, 0))]: 54
+   type, zeta + omega on the edges 01, 02, 0O, 12, 1O, 2O: number of solutions
+      C  0, 0, 6, 0, 0, 0: 30
+      C  0, 0, 6, 2, 0, 0: 18
+      C  0, 0, 6, 3, 0, 0: 12
+      L  0, 0, 6, 0, 0, 0: 54

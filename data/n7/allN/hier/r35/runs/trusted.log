@@ -1,0 +1,9 @@
+Challenge.lean: OK
+ChallengeA.lean: OK
+ChallengeB.lean: OK
+comparator.json: OK
+comparatorA.json: OK
+comparatorB.json: OK
+lakefile.toml: OK
+lake-manifest.json: OK
+lean-toolchain: OK

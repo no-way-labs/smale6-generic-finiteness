@@ -1,0 +1,23 @@
+{
+ "challenge_module": "Challenge",
+ "solution_module": "Solution",
+ "theorem_names": [
+  "lemmaB",
+  "lemmaC",
+  "degree_two",
+  "exists_cycle",
+  "cycle_relation",
+  "collision_bound",
+  "chamber_nonempty",
+  "ex2_spec",
+  "ex3_spec",
+  "ex3c_spec",
+  "ex3m_spec",
+  "ex4_cycle"
+ ],
+ "permitted_axioms": [
+  "propext",
+  "Quot.sound",
+  "Classical.choice"
+ ]
+}

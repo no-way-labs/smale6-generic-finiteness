@@ -1,0 +1,52 @@
+# runs of the author's scripts/allN/nk_fibre.py for comparison (R29)
+## nk_fibre.py 4 0,1,34,1156 --far-psi 746.5
+nk_fibre K=4 Psi >= 746.5 u=0,1,34,1156: pairs of trees 11025, zeta trees 0 done before and 105 now (COMPLETE), LPs 1608421, LPs with no verdict 0, solutions 8, distinct points 2, by dimension of the cell {1: 2}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {0: 4, 1: 4}; 46s
+   largest Psi at the distinct points: min 747, median 747, max 747
+   dim 1  xi [-373.5, -374.5, -374.5, -374.5]  eta [-372.5, -373.5, -372.5, -372.5]  zeta {'01': -374.5, '02': -374.5, '03': -374.5, '12': 1937.5, '13': 2685.5, '23': 1937.5}  omega {'01': -373.5, '02': 1936.5, '03': 2684.5, '12': -373.5, '13': -373.5, '23': 1936.5}
+   dim 1  xi [-372.5, -373.5, -372.5, -372.5]  eta [-373.5, -374.5, -374.5, -374.5]  zeta {'01': -373.5, '02': 1936.5, '03': 2684.5, '12': -373.5, '13': -373.5, '23': 1936.5}  omega {'01': -374.5, '02': -374.5, '03': -374.5, '12': 1937.5, '13': 2685.5, '23': 1937.5}
+## nk_fibre.py 4 0,1,34,1156 --far-psi 748
+nk_fibre K=4 Psi >= 748 u=0,1,34,1156: pairs of trees 11025, zeta trees 0 done before and 105 now (COMPLETE), LPs 1619623, LPs with no verdict 0, solutions 0, distinct points 0, by dimension of the cell {}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {}; 51s
+## nk_fibre.py 4 0,1,30,900 --zero-w 0
+nk_fibre K=4 Y_0 = 0 u=0,1,30,900: pairs of trees 11025, zeta trees 0 done before and 105 now (COMPLETE), LPs 216633, LPs with no verdict 0, solutions 7, distinct points 4, by dimension of the cell {1: 4}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {0: 3, 1: 2, 2: 2}; 6s
+   largest Psi at the distinct points: min -30.6667, median -1, max -1
+   RAY in the prevariety: xi [-0.0, -29.0, -0.0, -928.0]  eta [929.0, 29.0, 0.0, 928.0]  zeta {'01': -29.0, '02': -0.0, '03': -928.0, '12': -29.0, '13': -928.0, '23': -928.0}  omega {'01': 29.0, '02': 0.0, '03': 928.0, '12': 0.0, '13': 29.0, '23': 0.0}
+   RAY in the prevariety: xi [0.0, -899.0, -928.0, -0.0]  eta [929.0, 899.0, 928.0, -0.0]  zeta {'01': -899.0, '02': -928.0, '03': -0.0, '12': -928.0, '13': -899.0, '23': -928.0}  omega {'01': 899.0, '02': 928.0, '03': -0.0, '12': 899.0, '13': -0.0, '23': -0.0}
+   dim 1  xi [-3656.66667, 0.0, -29.0, -4556.66667]  eta [4557.66667, 58.66667, 29.66667, 4556.66667]  zeta {'01': -3656.66667, '02': -3656.66667, '03': -4556.66667, '12': -29.0, '13': -4556.66667, '23': -4556.66667}  omega {'01': 58.66667, '02': 29.66667, '03': 4556.66667, '12': 29.66667, '13': 58.66667, '23': 29.66667}
+   dim 1  xi [-0.0, -29.0, -0.0, -928.0]  eta [929.0, 29.0, 0.0, 928.0]  zeta {'01': -29.0, '02': -0.0, '03': -928.0, '12': -29.0, '13': -928.0, '23': -928.0}  omega {'01': 29.0, '02': 0.0, '03': 928.0, '12': 0.0, '13': 29.0, '23': 0.0}
+   dim 1  xi [29.0, -0.0, 29.0, -899.0]  eta [900.0, 0.0, -29.0, 899.0]  zeta {'01': -0.0, '02': 29.0, '03': -899.0, '12': -0.0, '13': -899.0, '23': -899.0}  omega {'01': 0.0, '02': -29.0, '03': 899.0, '12': -29.0, '13': 0.0, '23': -29.0}
+   dim 1  xi [-0.0, -899.0, -928.0, 0.0]  eta [929.0, 899.0, 928.0, -0.0]  zeta {'01': -899.0, '02': -928.0, '03': -0.0, '12': -928.0, '13': -899.0, '23': -928.0}  omega {'01': 899.0, '02': 928.0, '03': -0.0, '12': 899.0, '13': -0.0, '23': -0.0}
+## nk_fibre.py 4 0,1,30,900 --zero-w 0 --torque
+nk_fibre K=4 with torque generators Y_0 = 0 u=0,1,30,900: pairs of trees 11025, zeta trees 0 done before and 105 now (COMPLETE), LPs 478673, LPs with no verdict 0, solutions 0, distinct points 0, by dimension of the cell {}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {}; 14s
+## nk_fibre.py 4 0,1,30,900 --zero-w 1
+nk_fibre K=4 Y_1 = 0 u=0,1,30,900: pairs of trees 11025, zeta trees 0 done before and 105 now (COMPLETE), LPs 249896, LPs with no verdict 0, solutions 7, distinct points 4, by dimension of the cell {1: 4}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {0: 3, 1: 2, 2: 2}; 7s
+   largest Psi at the distinct points: min -30, median -0.66667, max -0.66667
+   RAY in the prevariety: xi [-29.33333, 0.66667, 0.66667, -929.33333]  eta [30.0, 931.0, 0.0, 930.0]  zeta {'01': -29.33333, '02': -29.33333, '03': -929.33333, '12': 0.66667, '13': -929.33333, '23': -929.33333}  omega {'01': 30.0, '02': 0.0, '03': 30.0, '12': 0.0, '13': 930.0, '23': 0.0}
+   RAY in the prevariety: xi [31.66667, 931.66667, 1.66667, 931.66667]  eta [-31.0, 0.0, -1.0, -931.0]  zeta {'01': 31.66667, '02': 1.66667, '03': 31.66667, '12': 1.66667, '13': 931.66667, '23': 1.66667}  omega {'01': -31.0, '02': -31.0, '03': -931.0, '12': -1.0, '13': -931.0, '23': -931.0}
+   dim 1  xi [-29.33333, 0.66667, 0.66667, -929.33333]  eta [30.0, 931.0, 0.0, 930.0]  zeta {'01': -29.33333, '02': -29.33333, '03': -929.33333, '12': 0.66667, '13': -929.33333, '23': -929.33333}  omega {'01': 30.0, '02': 0.0, '03': 30.0, '12': 0.0, '13': 930.0, '23': 0.0}
+   dim 1  xi [4556.33333, 899.0, 4526.33333, 0.0]  eta [-4496.33333, 1.66667, -4526.33333, 0.66667]  zeta {'01': 899.0, '02': 4526.33333, '03': 0.0, '12': 899.0, '13': 0.0, '23': 0.0}  omega {'01': -4496.33333, '02': -4526.33333, '03': -4496.33333, '12': -4526.33333, '13': 0.66667, '23': -4526.33333}
+   dim 1  xi [31.66667, 931.66667, 1.66667, 931.66667]  eta [-31.0, 0.0, -1.0, -931.0]  zeta {'01': 31.66667, '02': 1.66667, '03': 31.66667, '12': 1.66667, '13': 931.66667, '23': 1.66667}  omega {'01': -31.0, '02': -31.0, '03': -931.0, '12': -1.0, '13': -931.0, '23': -931.0}
+   dim 1  xi [-900.0, 0.0, -930.0, 0.0]  eta [900.66667, 931.66667, 930.66667, 0.66667]  zeta {'01': -900.0, '02': -930.0, '03': -900.0, '12': -930.0, '13': -0.0, '23': -930.0}  omega {'01': 900.66667, '02': 900.66667, '03': 0.66667, '12': 930.66667, '13': 0.66667, '23': 0.66667}
+## nk_fibre.py 4 0,1,30,900 --zero-w 1 --torque
+nk_fibre K=4 with torque generators Y_1 = 0 u=0,1,30,900: pairs of trees 11025, zeta trees 0 done before and 105 now (COMPLETE), LPs 260024, LPs with no verdict 0, solutions 0, distinct points 0, by dimension of the cell {}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {}; 8s
+## nk_fibre.py 4 0,1,30,900 --zero-w 2
+nk_fibre K=4 Y_2 = 0 u=0,1,30,900: pairs of trees 11025, zeta trees 0 done before and 105 now (COMPLETE), LPs 250082, LPs with no verdict 0, solutions 3, distinct points 3, by dimension of the cell {0: 1, 1: 2}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {0: 3}; 7s
+   largest Psi at the distinct points: min -1, median -1, max 579
+   dim 1  xi [893.5, 892.5, 892.5, 21.0]  eta [-891.5, -892.5, 0.0, -1.0]  zeta {'01': 892.5, '02': 892.5, '03': 21.0, '12': 893.5, '13': 21.0, '23': 21.0}  omega {'01': -892.5, '02': -891.5, '03': -891.5, '12': -892.5, '13': -892.5, '23': -1.0}
+   dim 1  xi [1.0, -0.0, -3521.0, -4391.0]  eta [1.0, 0.0, 4412.0, 4411.0]  zeta {'01': -0.0, '02': -3521.0, '03': -4391.0, '12': -3521.0, '13': -4391.0, '23': -4391.0}  omega {'01': 0.0, '02': 1.0, '03': 1.0, '12': 0.0, '13': 0.0, '23': 4411.0}
+   dim 0  xi [1799.0, 1798.0, 1798.0, 1798.0]  eta [-2377.0, -2378.0, -2377.0, -2377.0]  zeta {'01': 1798.0, '02': 1798.0, '03': 1798.0, '12': 3598.0, '13': 4178.0, '23': 3598.0}  omega {'01': -2378.0, '02': -580.0, '03': 0.0, '12': -2378.0, '13': -2378.0, '23': -580.0}
+## nk_fibre.py 4 0,1,30,900 --zero-w 2 --torque
+nk_fibre K=4 with torque generators Y_2 = 0 u=0,1,30,900: pairs of trees 11025, zeta trees 0 done before and 105 now (COMPLETE), LPs 280808, LPs with no verdict 0, solutions 0, distinct points 0, by dimension of the cell {}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {}; 8s
+## nk_fibre.py 4 0,1,30,900 --zero-w 3
+nk_fibre K=4 Y_3 = 0 u=0,1,30,900: pairs of trees 11025, zeta trees 0 done before and 105 now (COMPLETE), LPs 250183, LPs with no verdict 0, solutions 10, distinct points 9, by dimension of the cell {0: 6, 1: 3}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {0: 10}; 7s
+   largest Psi at the distinct points: min -1, median -1, max 579
+   dim 1  xi [3.0, 2.0, 1.0, 1.0]  eta [-1.0, -2.0, -1.0, 0.0]  zeta {'01': 2.0, '02': 1.0, '03': 1.0, '12': 1.0, '13': 1.0, '23': 21.0}  omega {'01': -2.0, '02': -1.0, '03': -1.0, '12': -2.0, '13': -2.0, '23': -1.0}
+   dim 1  xi [-18.0, -19.0, -20.0, -20.0]  eta [20.0, 19.0, 20.0, 21.0]  zeta {'01': -19.0, '02': -20.0, '03': -20.0, '12': -20.0, '13': -20.0, '23': 0.0}  omega {'01': 19.0, '02': 20.0, '03': 20.0, '12': 19.0, '13': 19.0, '23': 20.0}
+   dim 1  xi [1.0, -0.0, -1.0, -1.0]  eta [1.0, 0.0, 1.0, 2.0]  zeta {'01': -0.0, '02': -1.0, '03': -1.0, '12': -1.0, '13': -1.0, '23': 19.0}  omega {'01': 0.0, '02': 1.0, '03': 1.0, '12': 0.0, '13': 0.0, '23': 1.0}
+   dim 0  xi [-2379.0, -2380.0, -2380.0, -2380.0]  eta [1801.0, 1800.0, 1801.0, 1801.0]  zeta {'01': -2380.0, '02': -2380.0, '03': -2380.0, '12': -580.0, '13': 0.0, '23': -580.0}  omega {'01': 1800.0, '02': 3598.0, '03': 4178.0, '12': 1800.0, '13': 1800.0, '23': 3598.0}
+   dim 0  xi [0.0, -1.0, -2.0, -2.0]  eta [2.0, 1.0, 2.0, 2.0]  zeta {'01': -1.0, '02': -2.0, '03': -2.0, '12': -2.0, '13': -2.0, '23': 18.0}  omega {'01': 1.0, '02': 2.0, '03': 2.0, '12': 1.0, '13': 1.0, '23': 2.0}
+   dim 0  xi [2.0, 1.0, -0.0, -0.0]  eta [-0.0, -1.0, -0.0, -0.0]  zeta {'01': 1.0, '02': -0.0, '03': -0.0, '12': -0.0, '13': -0.0, '23': 20.0}  omega {'01': -1.0, '02': 0.0, '03': 0.0, '12': -1.0, '13': -1.0, '23': 0.0}
+   dim 0  xi [62.0, 61.0, 60.0, 20.0]  eta [-60.0, -61.0, -60.0, -60.0]  zeta {'01': 61.0, '02': 60.0, '03': 20.0, '12': 60.0, '13': 20.0, '23': 20.0}  omega {'01': -61.0, '02': -60.0, '03': -60.0, '12': -61.0, '13': -61.0, '23': 0.0}
+   dim 0  xi [2.0, 1.0, -0.0, 1.0]  eta [-0.0, -1.0, -0.0, -0.0]  zeta {'01': 1.0, '02': -0.0, '03': 1.0, '12': -0.0, '13': 2.0, '23': -0.0}  omega {'01': -1.0, '02': 0.0, '03': 0.0, '12': -1.0, '13': -1.0, '23': 20.33333}
+   dim 0  xi [-1710.0, -1710.0, -1740.0, -1710.0]  eta [1141.0, 1140.0, 1141.0, 1141.0]  zeta {'01': 0.0, '02': -1740.0, '03': 0.0, '12': -1740.0, '13': 600.0, '23': -1740.0}  omega {'01': 1140.0, '02': 2938.0, '03': 2938.0, '12': 1140.0, '13': 1140.0, '23': 3538.0}
+## nk_fibre.py 4 0,1,30,900 --zero-w 3 --torque
+nk_fibre K=4 with torque generators Y_3 = 0 u=0,1,30,900: pairs of trees 11025, zeta trees 0 done before and 105 now (COMPLETE), LPs 252979, LPs with no verdict 0, solutions 0, distinct points 0, by dimension of the cell {}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {}; 7s

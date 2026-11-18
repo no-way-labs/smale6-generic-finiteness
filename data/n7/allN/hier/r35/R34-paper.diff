@@ -1,0 +1,245 @@
+--- docs/as-read/R34-paper.tex	2026-11-18 07:52:53
++++ paper/alln/main.tex	2026-11-18 07:52:53
+@@ -64,3 +64,4 @@
+-hence that the valuation of the square of every mutual distance of a solution, which measures how
+-closely two bodies approach, is bounded. A continuum of solutions modulo rotation would contain
+-solutions in which this valuation is as large as one likes. The proof contains no
++hence that at every solution the valuation of the square of every mutual distance, in the complex
++coordinates of that system, is bounded above; a large valuation means that two bodies are close. If
++there were infinitely many solutions modulo rotation, the square of some mutual distance would take
++values of arbitrarily large valuation. The proof contains no
+@@ -126 +127 @@
+-all & not stated & Okolo~\cite{okolo2026} & only the title is public \\
++all & not stated & Okolo~\cite{okolo2026} & a record with restricted files; we could read its title only \\
+@@ -133,2 +134 @@
+-open sets of masses in the usual topology, and say nothing outside them. Of the two claims for every $n$, one was withdrawn and the other is a record whose
+-abstract and file are not public. The following theorem gives finiteness outside a proper algebraic
++open sets of masses in the usual topology, and say nothing outside them. Of the two claims for every $n$, one was withdrawn and the other is a record of which we could read the title only. The following theorem gives finiteness outside a proper algebraic
+@@ -184,4 +184,7 @@
+-When the number of solutions of $\cN_n$ modulo the rotation is finite, it is at most
+-$4^{2n + \binom{n}{2}}$: the solutions with $X_{01} = 1$ contain one point of each orbit, and they are
+-the common zeros of $2n + \binom{n}{2}$ polynomials of degree at most $4$ and one of degree $1$, to
+-which B\'ezout's inequality~\cite{heintz1983} applies. In
++When the number of solutions of $\cN_n$ modulo the rotation, over an algebraically closed field, is
++finite, it is at most $4^{2n + \binom{n}{2}}$. Every orbit contains exactly one solution with
++$X_{01} = 1$, because $X_{01} \ne 0$ by \eqref{eq:N1}. These solutions are the common zeros of the
++$2n + \binom{n}{2}$ polynomials of \eqref{eq:N1} to \eqref{eq:N3}, of degree at most $4$, and of
++$X_{01} - 1$. B\'ezout's inequality for closed subsets of an affine
++space~\cite[Theorem~1]{heintz1983} bounds the degree of their set by the product of these degrees, and
++the degree of a finite set is its number of points. In
+@@ -813 +816,2 @@
+-others, because on a component of dimension at least $2$ some $X_{tl} Y_{tl}$ takes values of every valuation.
++others, because on a component of dimension at least $2$ some $X_{tl} Y_{tl}$ takes values of every real
++valuation.
+@@ -898,2 +902,4 @@
+-$U$ to $K$ and consider the part where no mass is $0$, a closed subset of a torus over $K$. Each of its
+-irreducible components lies over a component of $\Sigma$ and meets the extension of $U$, because the
++$U$ to $K$, and let $\Sigma'$ be the part of the extension of $\Sigma$ where no mass is $0$. It is a
++closed subset of the torus of the nonzero masses over $K$, and the extension of $U$ meets it in an open
++subset. Each irreducible component of $\Sigma'$ lies over a component of $\Sigma$ and meets the
++extension of $U$, because the
+@@ -937 +943 @@
+-$u \in W_n(\tau)$ with $\tau \ge 2n^2$ & Theorem~\ref{thm:D4}, Step~4 \\
++$u \in W_n(\tau)$ with $\tau \ge 2n^2$ & Theorem~\ref{thm:D4}, Step~4; Remark~\ref{rem:u0123} shows that parts~(c) and~(d) fail at $u = (0, 1, 2, 3)$ \\
+@@ -943,9 +949,15 @@
+-We do not know whether Theorem~\ref{thm:D4}(c) holds for every vector $u$ with distinct coordinates. A
+-floating-point search with linear programs (Section~\ref{sec:comp}) at $u = (0, 1, 2, 3)$ finds triples
+-that satisfy the conditions of a weight datum within the tolerance of the search and have the closed
+-alternating sequence
+-$\{0, 2\}, \{2, O\}, \{0, O\}, \{0, 3\}$ with $N = 0$ and $q = (1, 0, -3, 2)$, and with values of $\Ps$
+-up to the largest value that the search admits. Lemma~\ref{lem:B} excludes this vector $q$ in $W_4(\tau)$ for
+-$\tau \ge 1/2$. This is evidence that the hypothesis on $u$ cannot be dropped from
+-Theorem~\ref{thm:D4}; it says nothing about Theorem~\ref{thm:K}, because a weight datum need not come
+-from a solution.
++Theorem~\ref{thm:D4}(c) and~(d) do not hold for every vector $u$ with distinct coordinates. Let
++$u = (0, 1, 2, 3)$ and let $\chi > 3$ be real. Put
++\begin{align*}
++  & \zeta_{01} = \zeta_{12} = \zeta_{13} = \xi_1 = -\chi - 3, \quad \zeta_{02} = \zeta_{03} = 2\chi + 4, \quad
++    \zeta_{23} = 2\chi + 6, \quad \xi_0 = \xi_2 = \xi_3 = -\chi - 2, \\
++  & \omega_{02} = \omega_{12} = \omega_{23} = \eta_2 = 0, \quad \omega_{01} = \omega_{03} = \eta_0 = 2, \quad
++    \omega_{13} = \eta_1 = \chi + 5, \quad \eta_3 = +\infty .
++\end{align*}
++Then $(u, \zeta, \omega)$ is a weight datum with $\Ps = \chi$, and $\Es$ consists of the closed alternating
++sequence $\{0, 2\}, \{2, O\}, \{0, O\}, \{0, 3\}$, which has $N = 0$ and $q = (1, 0, -3, 2)$. The program
++\repo{scripts/allN/wd_u0123_check.py} of the repository checks this in exact arithmetic from
++Definition~\ref{def:psi}, for all $\chi > 3$ at once (Section~\ref{sec:comp}). Lemma~\ref{lem:B} excludes
++this vector $q$ in $W_4(\tau)$ for $\tau \ge 1/2$. The example shows that Theorem~\ref{thm:D4} needs a
++hypothesis on $u$; it says nothing about Theorem~\ref{thm:K}, because a weight datum need not come from
++a solution.
+@@ -962,4 +974,5 @@
+-Nurowski~\cite{nurowski2026} gives one-parameter families of central configurations of $2(i + 1)$
+-bodies that persist for all masses near the equal masses. In these
+-families two bodies collide for some values of the parameter, and the force, a polynomial, vanishes
+-there.
++Nurowski~\cite[Theorems~1.10 and~1.11]{nurowski2026} gives, at equal masses, a one-parameter family of
++central configurations of $2(i + 1)$ bodies, two concentric regular polygons turned against each other
++by an angle, and shows that a family of dimension one persists, without collisions, for all masses
++near the equal masses. At the angles that the family excludes two bodies coincide, and the force
++between them, a polynomial, vanishes there.
+@@ -1013 +1026 @@
+-another declaration, because the list of permitted axioms excludes it. With the option \repo{--paranoid} the proof is accepted by the kernel of Lean
++another declaration, because the list of permitted axioms excludes it. In our runs with the option \repo{--paranoid} the three lists of theorems were accepted by the kernel of Lean
+@@ -1016,2 +1029,4 @@
+-Linux. The tool can run the proof files inside a sandbox; on
+-both machines it ran without the sandbox.
++Linux. The logs of the Linux run are in the directory \repo{data/n7/allN/hier/lean} of the repository.
++The tool can run the proof files inside a sandbox. On both machines it ran without the sandbox, so that
++the proof files were built with the permissions of the user; on the Linux machine the sandbox could not
++be started.
+@@ -1030 +1045,2 @@
+-before it runs the comparison. Two controls were run: with a \repo{sorry} placed in one
++before it runs the comparison. That file is the reference of the script, and Table~\ref{tab:sha} lets a
++reader compare the three statement files without it. Two controls were run: with a \repo{sorry} placed in one
+@@ -1089,7 +1105,19 @@
+-Theorem~\ref{thm:D4}. Two exact enumerations at the end of the section concern Lemma~\ref{lem:C}. All
+-of them are evidence, and no proof uses them. The program \repo{scripts/allN/nk_fibre.py} of the
+-repository takes a vector $u$ and, for each ordered pair of binary trees on the
+-$n + 1$ vertices, searches with linear programs (HiGHS~\cite{highs}) for heights $\zeta$, $\omega$ on
+-these trees that satisfy every cut condition. A tie between two terms is accepted within the absolute
+-tolerance $10^{-3}$. A second program, \repo{nk_cut_check.py}, tests the ultrametric conditions and the
+-cut conditions of each recorded point without the trees and the linear programs, and a third,
++Theorem~\ref{thm:D4}. Three exact computations at the end of the section concern Lemma~\ref{lem:C} and
++Remark~\ref{rem:u0123}. No proof of a theorem, proposition, lemma or corollary of this paper uses any
++of them; the third verifies the example of Remark~\ref{rem:u0123}.
++
++The program \repo{scripts/allN/nk_fibre.py} of the repository takes a vector $u$ and a pair of binary
++trees on the $n + 1$ vertices, one for each colour, and searches with linear programs
++(HiGHS~\cite{highs}) for real heights $\zeta$, $\omega$ on these trees that satisfy every cut
++condition. It therefore covers the weight data in which every $\xi_t$ and every $\eta_t$ is real. The
++exchange of the two colours maps a weight datum over $u$ to a weight datum over $u$ with the same
++function $\Psi$. The five-body searches use this: they treat one pair of trees from each class of
++ordered pairs under the exchange, which makes $446{,}985$ pairs for the $893{,}025$ ordered pairs of
++the $945$ trees. The six-body searches treat a random sample of the $108{,}056{,}025$ ordered pairs,
++drawn with the seed $29$. Two terms of a cut count as equal if they differ by at most
++$10^{-7} (1 + |\Phi|)$, where $\Phi$ is the larger value, in the five-body searches, and by at most
++$10^{-3}$ in the six-body searches, in which heights of the order of $10^{6}$ occur. The five-body
++searches ran with an earlier version of the program, which has neither the sample nor the second
++tolerance; it is kept with their data as \repo{nk_fibre.as-run.py}. A second program,
++\repo{nk_cut_check.py}, tests the ultrametric conditions and the cut conditions of each recorded point
++without the trees and the linear programs, within the tolerance $10^{-3}$, and a third,
+@@ -1100,3 +1128,5 @@
+-\caption{Floating-point searches for weight data. ``Pairs of trees'' is the number of ordered pairs
+-of binary trees searched and its share of all pairs. A threshold $R$ restricts the search to points
+-with $\Ps \ge R$. The last column is the bound of Theorem~\ref{thm:D4}(d). The vectors marked
++\caption{Floating-point searches for weight data. ``Pairs of trees'' is the number of pairs of binary
++trees searched: for $n = 5$ one pair from each class under the exchange of the two colours, which
++covers all ordered pairs, and for $n = 6$ a random sample of the ordered pairs, with its share. A
++threshold $R$ restricts the search to points with $\Ps \ge R$. The last column is the bound of
++Theorem~\ref{thm:D4}(d). The last two columns are rounded to the digits shown. The vectors marked
+@@ -1110,3 +1140,3 @@
+-5 & $(0, 1, 12, 150, 1900)^{\dagger}$ & 893,025 (all) & 5 & 203 & 2,424.3 & 6,189 \\
+-5 & $(0, 1, 2.37, 4.91, 8.53)^{\dagger}$ & 893,025 (all) & 3 & 30 & 5.52 & 50.4 \\
+-5 & $(0, 1, 52, 2700, 140000)$ & 893,025 (all) & 5 & 204 & 184,831 & 428,259 \\
++5 & $(0, 1, 12, 150, 1900)^{\dagger}$ & 446,985 (all classes) & 5 & 203 & 2,424.3 & 6,189 \\
++5 & $(0, 1, 2.37, 4.91, 8.53)^{\dagger}$ & 446,985 (all classes) & 3 & 30 & 5.52 & 50.4 \\
++5 & $(0, 1, 52, 2700, 140000)$ & 446,985 (all classes) & 5 & 204 & 184,831 & 428,259 \\
+@@ -1120,2 +1150 @@
+-Table~\ref{tab:comp} lists the searches for five and six bodies. At $n = 6$ the pairs of trees are a
+-random sample of the 108,056,025 ordered pairs, drawn with the seed $29$. All $2{,}323$ points of the
++Table~\ref{tab:comp} lists the searches for five and six bodies. All $2{,}323$ points of the
+@@ -1124 +1153,3 @@
+-bound of the last column. The vector of the third row lies in $W_5(50)$, as Theorem~\ref{thm:D4} requires for $n = 5$.
++bound of the last column. A program written independently by the session that read the release
++(\repo{independent_points.py} in \repo{data/n7/allN/hier/r34}; Section~\ref{sec:llm}) recomputes
++these statements from the recorded heights in integer arithmetic, with the same result. The vector of the third row lies in $W_5(50)$, as Theorem~\ref{thm:D4} requires for $n = 5$.
+@@ -1131,5 +1162,7 @@
+-The searches find a failure where there is one. With the threshold on $\Ps$ at $n = 3$ and
+-$u = (0, 1, 30)$, where every weight datum has $\Ps = -1$, the search finds points for the thresholds
+-$-40$, $-20$ and $-1.5$ and none for $-0.9$, $0$, $10$ and $1000$. The points of Remark~\ref{rem:u0123}, with $N = 0$, were
+-found at $u = (0, 1, 2, 3)$ by a separate program with the same method
+-(\repo{data/n7/allN/hier/r29/r29_batch.py}); the same program finds no such point at the vectors
++Two controls were run, the first at $n = 3$ and $u = (0, 1, 30)$, where every weight datum has
++$\Ps = -1$; the session that read the release confirmed this with an exact solver for linear constraints
++(\repo{independent_small_data.py} in \repo{data/n7/allN/hier/r34}). With the threshold on $\Ps$ the
++search finds points there for the thresholds $-40$, $-20$ and $-1.5$ and none for $-0.9$, $0$, $10$ and
++$1000$. The second control is at $u = (0, 1, 2, 3)$, where a separate program with the same method
++(\repo{data/n7/allN/hier/r29/r29_batch.py}) found points with the closed alternating sequence of
++Remark~\ref{rem:u0123}, which has $N = 0$; the same program finds no such point at the vectors
+@@ -1138,6 +1171,12 @@
+-Steps~2 to~4 of the proof of Lemma~\ref{lem:C} are not tested by these searches below six bodies. An
+-exact enumeration of all pairs of trees
+-(the program \repo{search_balanced_cycles.py} in \repo{data/n7/allN/hier/r31} of the repository) finds, for $n \le 5$, no closed alternating
+-sequence with $q = 0$ in which every pair consists of the two heaviest bodies of the intersection of
+-its two nodes, a property that every pair of $\Eo$ has when the mass weights are distinct. It finds $96$
+-such sequences for six bodies, each through all six, and we ran no search for $n \ge 7$.
++The first exact computation concerns Steps~2 to~4 of the proof of Lemma~\ref{lem:C}, which the searches
++above do not test below six bodies. A \emph{hierarchy} is the set of the nodes of an ultrametric on the
++$n$ bodies. For every pair of hierarchies, one for each colour, the computation lists the simple cycles
++of nodes with $q = 0$ in which every pair consists of the two heaviest bodies of the intersection of its
++two nodes, a property that every pair of $\Eo$ has when the mass weights are distinct. It finds no such
++cycle for $n \le 5$, and for six bodies it finds $96$ over the unordered pairs of the $2{,}752$
++hierarchies, which are $192$ over the ordered pairs, each through all six bodies. The count was made by the second
++separate session (the programs \repo{check2.py} and \repo{check6fast.py} in
++\repo{data/n7/allN/hier/r30}) and again by the session that read the release, with the single program
++\repo{independent_cycles.cpp} in \repo{data/n7/allN/hier/r34}. No complete enumeration was made for
++$n \ge 7$: the second and the third separate session sampled pairs of hierarchies for seven and eight
++bodies and tested particular cycles for $8$ to $13$ bodies, and their reports describe these searches.
+@@ -1145 +1184 @@
+-A second exact search tests Lemma~\ref{lem:C} itself at one vector for each $n$ from $2$ to $6$, namely
++The second exact computation tests Lemma~\ref{lem:C} itself at one vector for each $n$ from $2$ to $6$, namely
+@@ -1148 +1187 @@
+-that refereed this paper (Section~\ref{sec:llm}), enumerates for each colour the order types of the
++that refereed a draft of this paper (Section~\ref{sec:llm}), enumerates for each colour the order types of the
+@@ -1154,3 +1193,3 @@
+-Example~\ref{ex:0011}. We ran the program again and obtained the same output, and a second program,
+-written independently by another session (\repo{check_rank_cycles.cpp} in \repo{data/n7/allN/hier/r33}),
+-reproduces all counts.
++Example~\ref{ex:0011}. We ran the program again and obtained the same output. Two further programs,
++written independently by two other sessions, reproduce these numbers: \repo{check_rank_cycles.cpp} in
++\repo{data/n7/allN/hier/r33} and \repo{independent_cycles.cpp} in \repo{data/n7/allN/hier/r34}.
+@@ -1157,0 +1197,7 @@
++The third exact computation is the program \repo{scripts/allN/wd_u0123_check.py} of
++Remark~\ref{rem:u0123}. It treats each height of the family as a polynomial of degree at most $1$ in
++$\chi$, compares two values by their order for large $\chi$, and records the number at which two
++compared polynomials cross. The largest such number is $3$, and above it every comparison made has the
++outcome that the check used. The member $\chi = 1000$ of the family was found by the session that read
++the release, with the exact solver named above; the family and its check are ours.
++
+@@ -1193,3 +1239,3 @@
+-Sections~\ref{sec:val} to~\ref{sec:generic}, wrote and ran the programs of Section~\ref{sec:comp},
+-wrote the two files of formal statements and the formal proofs of Section~\ref{sec:lean}, and wrote the
+-text of this paper from the documents of the repository. At the time of writing, no person who works
++Sections~\ref{sec:val} to~\ref{sec:generic}, wrote and ran the programs of Section~\ref{sec:comp} that the section does not attribute to a
++separate session, wrote the three files of formal statements and the formal proofs of
++Section~\ref{sec:lean}, and wrote the text of this paper from the documents of the repository. At the time of writing, no person who works
+@@ -1198,3 +1244,4 @@
+-\subsection*{Separate sessions} Eight further sessions, each started by the author with no access to
+-the working sessions, checked the work. The first used Qwen4 Max (Alibaba); the other seven used
+-GPT-6.2 Sol (OpenAI) at its highest setting of reasoning effort. Three sessions read earlier write-ups
++\subsection*{Separate sessions} Nine further sessions, each started by the author with no access to
++the working sessions, checked the work. The first used Qwen4 Max (Alibaba); the other eight used
++GPT-6.2 Sol (OpenAI) at its highest setting of reasoning effort. These names are those of the author's
++configuration; each report names its model as far as the session could identify it. Three sessions read earlier write-ups
+@@ -1202 +1249 @@
+-two readers of this paper judged are kept as they were read, in the directory \repo{docs/as-read} of
++three readers of this paper judged are kept as they were read, in the directory \repo{docs/as-read} of
+@@ -1219,2 +1266,16 @@
+-program of its own. These eight reads are not peer review. Their reports are in the directory \repo{docs} of the
+-repository: the files \repo{n7-referee-R29.md} to \repo{n7-referee-R33.md}, and the three files
++program of its own.
++
++The ninth session read the release as a reader who had seen neither the paper nor the repository: the
++text \repo{docs/as-read/R34-paper.tex} in full, then the repository by following its instructions, then
++the literature. It reported no error in the proofs, and it found that Section~\ref{sec:comp} gave the
++number of pairs of trees and the tolerance of the five-body searches wrongly and named the wrong
++program for the count of the $96$ cycles, and it identified the theorem of~\cite{heintz1983} that
++Remark~\ref{rem:scope} uses. It asked for corrections of wording in the abstract, in
++Remarks~\ref{rem:scope}, \ref{rem:roberts} and~\ref{rem:exponent}, in Table~\ref{tab:known} and in
++Sections~\ref{sec:lean} and~\ref{sec:llm}, and for corrections to the instructions of the repository, all of which were made. It recomputed the recorded points and the exact searches with programs of its own
++(Section~\ref{sec:comp}), and it found with an exact solver a weight datum at $u = (0, 1, 2, 3)$ with
++$N = 0$, where the draft had only points of a floating-point search; Remark~\ref{rem:u0123} now states
++the family that contains it.
++
++These nine reads are not peer review. Their reports are in the directory \repo{docs} of the
++repository: the files \repo{n7-referee-R29.md} to \repo{n7-referee-R34.md}, and the three files
+@@ -1227,5 +1288,5 @@
+-that those sessions read. The two sessions that read drafts of this paper judged these proofs as
+-printed in those two drafts. After the second report the text changed in
+-the places that the report names: wording in the abstract, the introduction, Remark~\ref{rem:scope} and
+-Remark~\ref{rem:roberts}, and Sections~\ref{sec:lean} to~\ref{sec:llm}; no separate session has read
+-these last changes. For the statements of Table~\ref{tab:lean} that have a formal counterpart, the
++that those sessions read. The three sessions that read drafts of this paper judged these proofs as
++printed in those drafts, and the third of them read every section. After its report the text changed
++in the places named above and in the bibliography. Remark~\ref{rem:u0123} in its present form, with
++the family of weight data and its check, was written after that report, and no separate session has
++read it or the other last changes. For the statements of Table~\ref{tab:lean} that have a formal counterpart, the

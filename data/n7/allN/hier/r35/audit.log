@@ -1,0 +1,47 @@
+index status Counter({'A ': 168})
+branch release-draft remote origin	https://github.com/no-way-labs/smale6-generic-finiteness (fetch)
+origin	https://github.com/no-way-labs/smale6-generic-finiteness (push) reachable 0 ignored ''
+listed digests 167 staged 168
+files by size [(94923, 'data/n7/allN/hier/nk/nk6s_cmp_FGjNKJfP0oC61aDnBF97m_-I/AP.jsonl.gz'), (115408, 'data/n7/allN/hier/nk/nk6s_cmp_FGjNKJfP0oC61aDnBF97m_-I/BP.jsonl.gz'), (190530, 'data/n7/allN/hier/nk/nk6s_cmp_FGjNKJfP0oC61aDnBF97m_-I/BL.json.gz'), (253581, 'data/n7/allN/hier/nk/nk6s_cmp_FGjNKJfP0oC61aDnBF97m_-I/BL.jsonl.gz'), (465784, 'paper/alln/main.pdf')]
+bytes total 2884934
+Title:           
+Subject:         
+Keywords:        
+Author:          
+Creator:         LaTeX with hyperref
+Producer:        pdfTeX-1.40.26
+CreationDate:    Wed Nov 18 07:50:13 2026 EST
+ModDate:         Wed Nov 18 07:50:13 2026 EST
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           22
+Encrypted:       no
+Page size:       612 x 792 pts (letter)
+Page rot:        0
+File size:       465784 bytes
+Optimized:       no
+PDF version:     1.5
+
+PDF destinations 138 actions Counter({'/GoTo': 351, '/URI': 7}) bad destinations []
+all digests and stage blobs matched; areas {'.': 6, 'lean': 11, 'nk': 23, 'r29': 24, 'r30': 10, 'r31': 2, 'r32': 2, 'r33': 4, 'r34': 26, 'docs': 14, 'docs/as-read': 9, 'lean/direct-route': 14, 'lean/direct-route/DirectRoute': 11, 'paper/alln': 3, 'scripts/allN': 9} gzip members 23 scanned content bytes 11645713
+proof token matches []
+positive control tokens in Challenge: 12
+email hits 1 in 1 files; distinct ['person@example.net']
+machine_path hits 9 in 6 files; distinct ['/root/.elan', '/Users/tester', '~/Github/smale6-generic-finiteness/smale6-generic-finiteness', '~/Github/smale6-dev', '~/Github/smale6-generic-finiteness/R34-report', '~/Github/smale6-generic-finiteness/r34/', '/users/sampayne']
+temporary_path hits 23 in 7 files; distinct ['/tmp/nk_src/nk_fibre.py', '/tmp/nk_res/GP.json', '/tmp/nk_res/GP.jsonl', '/tmp/nk_res/HP.json', '/tmp/nk_res/HP.jsonl', '/tmp/nk_res/WP.json', '/tmp/nk_res/WP.jsonl', '/tmp/nk_res/AP.json', '/tmp/nk_res/AP.jsonl', '/tmp/nk_res/BL.json', '/tmp/nk_res/BL.jsonl', '/tmp/nk_res/BP.json', '/tmp/nk_res/BP.jsonl', '/tmp/r30env', '/tmp/r30/', '/tmp/r30', '/tmp/r30/check_cycles.py']
+host hits 2 in 2 files; distinct ['Linux [hostname]', 'hostname']
+secret hits 1 in 1 files; distinct ['<candidate requiring inspection>']
+service hits 0 in 0 files; distinct []
+internal hits 15 in 4 files; distinct ['todo', 'redact']
+machine_id hits 0 in 0 files; distinct []
+ip hits 0 in 0 files; distinct []
+unresolved relative Markdown links [('docs/n7-referee-R31.md', 3, 'allN-direct-route-second-read.md')]
+CFF {'cff-version': '1.2.0', 'message': 'If you use this repository, please cite the paper below.', 'title': 'smale6-generic-finiteness: generic finiteness of planar central configurations for every number of bodies', 'authors': [{'family-names': 'Aquino-Michaels', 'given-names': 'Keston', 'affiliation': 'No Way Labs'}], 'repository-code': 'https://github.com/no-way-labs/smale6-generic-finiteness', 'license': 'MIT', 'keywords': ['central configurations', 'n-body problem', "Smale's sixth problem", 'valuations', 'tropical geometry', 'formal proof', 'Lean'], 'preferred-citation': {'type': 'unpublished', 'title': 'Generic finiteness of planar central configurations for every number of bodies', 'authors': [{'family-names': 'Aquino-Michaels', 'given-names': 'Keston'}], 'year': 2026}}
+two licenses [('LICENSE', ['MIT License', '']), ('LICENSE-CC-BY-4.0', ['Attribution 4.0 International', ''])]
+historical version entry only comparator-stage1.json
+version hashes verified

@@ -1,0 +1,6 @@
+for every real s > 3: zeta and omega are ultrametrics, the 30 cut conditions hold, the largest Psi is s,
+  and the edges that attain it are f = [(0, 2), (0, 4)], g = [(2, 4), (0, 3)] (4 = O), a closed alternating sequence
+  with N = 0, q = [1, 0, -3, 2] and q.u = 0
+checked again with numbers at s = 1000 and s = 4
+controls: zeta_02 raised by 1 is no ultrametric; omega_01 = omega_03 = omega_0O = 3 is an ultrametric at which 18 cut conditions fail
+q.u at u = (0, 1, 30, 900): 1710

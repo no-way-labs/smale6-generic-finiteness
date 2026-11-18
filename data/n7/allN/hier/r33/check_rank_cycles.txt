@@ -1,0 +1,9 @@
+Compile with clang++ -std=c++20 -O2 -Wall -Wextra -Wpedantic check_rank_cycles.cpp
+control n=4 u=(0,0,1,1) types=32 pairs=528 pairs_with_cycles=73 candidate_cycles=82 balanced_cycles=82 feasible_cycles=82 feasible_length_2=78 feasible_length_4=4
+printed_example n=4 u=(0,0,1,1) types=2 pairs=1 pairs_with_cycles=1 candidate_cycles=6 balanced_cycles=6 feasible_cycles=6 feasible_length_2=2 feasible_length_4=4
+chamber n=2 u=(0,1) types=1 pairs=1 pairs_with_cycles=0 candidate_cycles=0 balanced_cycles=0 feasible_cycles=0 feasible_length_2=0 feasible_length_4=0
+chamber n=3 u=(0,1,11) types=4 pairs=10 pairs_with_cycles=0 candidate_cycles=0 balanced_cycles=0 feasible_cycles=0 feasible_length_2=0 feasible_length_4=0
+chamber n=4 u=(0,1,18,324) types=32 pairs=528 pairs_with_cycles=8 candidate_cycles=8 balanced_cycles=0 feasible_cycles=0 feasible_length_2=0 feasible_length_4=0
+chamber n=5 u=(0,1,27,729,19683) types=436 pairs=95266 pairs_with_cycles=3342 candidate_cycles=3596 balanced_cycles=0 feasible_cycles=0 feasible_length_2=0 feasible_length_4=0
+chamber n=6 u=(0,1,38,1444,54872,2085136) types=9012 pairs=40612578 pairs_with_cycles=2193590 candidate_cycles=2543192 balanced_cycles=144 feasible_cycles=0 feasible_length_2=0 feasible_length_4=0
+Search elapsed: 1.834 s; maximum child RSS on macOS: 7667712 bytes

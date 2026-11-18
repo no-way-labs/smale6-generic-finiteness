@@ -1,0 +1,26 @@
+GP.json.gz: points 30, with an ultrametric failure 0, with a cut condition that fails 0 (largest gap 0; tol 0.001)
+HP.json.gz: points 203, with an ultrametric failure 0, with a cut condition that fails 0 (largest gap 0; tol 0.001)
+WP.json.gz: points 204, with an ultrametric failure 0, with a cut condition that fails 0 (largest gap 0; tol 0.001)
+AP.json.gz: points 108, with an ultrametric failure 0, with a cut condition that fails 0 (largest gap 0; tol 0.001)
+BP.json.gz: points 189, with an ultrametric failure 0, with a cut condition that fails 0 (largest gap 0; tol 0.001)
+BL.json.gz: points 1589, with an ultrametric failure 0, with a cut condition that fails 0 (largest gap 0; tol 0.001)
+real 1.04
+user 1.01
+sys 0.00
+            34373632  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                2419  page reclaims
+                 355  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  44  voluntary context switches
+                  98  involuntary context switches
+         19516733472  instructions retired
+          3869212353  cycles elapsed
+            23839936  peak memory footprint

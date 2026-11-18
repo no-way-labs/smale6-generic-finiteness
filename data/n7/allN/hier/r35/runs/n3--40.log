@@ -1,0 +1,8 @@
+Running HiGHS 1.16.0 (git hash: f3f113d): Copyright (c) 2026 under MIT licence terms
+Includes third-party software components, see THIRD_PARTY_NOTICES.md for full details
+nk_fibre K=3 Psi >= -40 u=0,1,30: pairs of trees 225, zeta trees 0 done before and 15 now (COMPLETE), LPs 11148, LPs with no verdict 0, solutions 32, distinct points 4, by dimension of the cell {1: 4}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {0: 21, 1: 11}; 1s
+   largest Psi at the distinct points: min -1, median -1, max -1
+   dim 1  xi [1.11111, 0.11111, 0.11111]  eta [0.88889, -0.11111, -0.11111]  zeta {'01': 0.11111, '02': 0.11111, '12': 0.11111}  omega {'01': -0.11111, '02': -0.11111, '12': 0.55556}
+   dim 1  xi [1.0, -0.0, -0.0]  eta [1.0, -0.0, -0.0]  zeta {'01': -0.0, '02': -0.0, '12': -0.0}  omega {'01': -0.0, '02': -0.0, '12': -0.0}
+   dim 1  xi [1.33333, 0.33333, -0.66667]  eta [0.66667, -0.33333, 0.66667]  zeta {'01': 0.33333, '02': -0.66667, '12': -0.66667}  omega {'01': -0.33333, '02': 0.66667, '12': -0.33333}
+   dim 1  xi [0.66667, -0.33333, 0.66667]  eta [1.33333, 0.33333, -0.66667]  zeta {'01': -0.33333, '02': 0.66667, '12': -0.33333}  omega {'01': 0.33333, '02': -0.66667, '12': -0.66667}

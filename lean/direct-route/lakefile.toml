@@ -1,0 +1,28 @@
+name = "directRoute"
+defaultTargets = ["Challenge", "Solution"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.36.0"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
+
+[[lean_lib]]
+name = "DirectRoute"
+
+[[lean_lib]]
+name = "ChallengeA"
+
+[[lean_lib]]
+name = "SolutionA"
+
+[[lean_lib]]
+name = "ChallengeB"
+
+[[lean_lib]]
+name = "SolutionB"

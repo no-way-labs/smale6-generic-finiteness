@@ -1,0 +1,36 @@
+r29_lp n = 4, u = 0,1,30,900, stratum Y_0 = 0, mode list: 1575 pairs of trees; LPs 81250; LPs neither optimal nor infeasible 0; 2 s
+   points found: 7; not ultrametric 0; with a cut condition that fails (recomputed from the monomials) 0; simple cycles of B over all points 7
+   failures of the statements of Theorem D4: none
+   distinct values of Psi* (2): -30.6667, -1
+   largest Psi* = -1; bound of Theorem D4 = 2172.33
+   example with Psi* = -1: E* = [(0, 1), (1, 4)]
+      zeta  = {'01': 29.0, '02': -0.0, '03': 928.0, '0O': 928.0, '12': -0.0, '13': 29.0, '1O': 29.0, '23': -0.0, '2O': -0.0, '3O': 928.0}
+      omega = {'01': -29.0, '02': -0.0, '03': -928.0, '0O': inf, '12': -29.0, '13': -928.0, '1O': -29.0, '23': -928.0, '2O': -0.0, '3O': -928.0}
+      cycle [(0, 1), (1, 4)]: N = -3, q = [-2, -3, 0, 0], N Psi* + q.u = 0.00e+00
+r29_lp n = 4, u = 0,1,30,900, stratum Y_1 = 0, mode list: 1575 pairs of trees; LPs 105534; LPs neither optimal nor infeasible 0; 2 s
+   points found: 7; not ultrametric 0; with a cut condition that fails (recomputed from the monomials) 0; simple cycles of B over all points 7
+   failures of the statements of Theorem D4: none
+   distinct values of Psi* (2): -30, -0.6667
+   largest Psi* = -0.6667; bound of Theorem D4 = 2172.33
+   example with Psi* = -0.6667: E* = [(0, 1), (0, 4)]
+      zeta  = {'01': 30.0, '02': -0.0, '03': 30.0, '0O': 30.0, '12': -0.0, '13': 930.0, '1O': 930.0, '23': -0.0, '2O': -0.0, '3O': 930.0}
+      omega = {'01': -29.3333, '02': -29.3333, '03': -929.3333, '0O': -29.3333, '12': 0.6667, '13': -929.3333, '1O': inf, '23': -929.3333, '2O': 0.6667, '3O': -929.3333}
+      cycle [(0, 1), (0, 4)]: N = -3, q = [-3, -2, 0, 0], N Psi* + q.u = -1.78e-15
+r29_lp n = 4, u = 0,1,30,900, stratum Y_2 = 0, mode list: 1575 pairs of trees; LPs 162132; LPs neither optimal nor infeasible 0; 4 s
+   points found: 2; not ultrametric 0; with a cut condition that fails (recomputed from the monomials) 0; simple cycles of B over all points 2
+   failures of the statements of Theorem D4: none
+   distinct values of Psi* (1): -1
+   largest Psi* = -1; bound of Theorem D4 = 2172.33
+   example with Psi* = -1: E* = [(0, 1), (1, 4)]
+      zeta  = {'01': 4391.0, '02': 870.0, '03': -0.0, '0O': 4392.0, '12': 870.0, '13': -0.0, '1O': 4391.0, '23': -0.0, '2O': 870.0, '3O': -0.0}
+      omega = {'01': -4391.0, '02': -4390.0, '03': -4390.0, '0O': -4390.0, '12': -4391.0, '13': -4391.0, '1O': -4391.0, '23': 20.0, '2O': inf, '3O': 20.0}
+      cycle [(0, 1), (1, 4)]: N = -3, q = [-2, -3, 0, 0], N Psi* + q.u = 0.00e+00
+r29_lp n = 4, u = 0,1,30,900, stratum Y_3 = 0, mode list: 1575 pairs of trees; LPs 178931; LPs neither optimal nor infeasible 0; 4 s
+   points found: 3; not ultrametric 0; with a cut condition that fails (recomputed from the monomials) 0; simple cycles of B over all points 3
+   failures of the statements of Theorem D4: none
+   distinct values of Psi* (1): -1
+   largest Psi* = -1; bound of Theorem D4 = 2172.33
+   example with Psi* = -1: E* = [(0, 1), (1, 4)]
+      zeta  = {'01': 1.0, '02': -0.0, '03': -0.0, '0O': 2.0, '12': -0.0, '13': -0.0, '1O': 1.0, '23': 20.0, '2O': -0.0, '3O': -0.0}
+      omega = {'01': -1.0, '02': -0.0, '03': -0.0, '0O': -0.0, '12': -1.0, '13': -1.0, '1O': -1.0, '23': -0.0, '2O': -0.0, '3O': inf}
+      cycle [(0, 1), (1, 4)]: N = -3, q = [-2, -3, 0, 0], N Psi* + q.u = 0.00e+00

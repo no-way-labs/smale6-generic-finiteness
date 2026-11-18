@@ -1,0 +1,7 @@
+u=chamber tau=36: 0/192 survivors feasible (eps=0)
+u=chamber tau=37: 0/192 survivors feasible (eps=0)
+u=mild (0,1,2,3,4,5): 0/192 survivors feasible (eps=0)
+u=equal u=0: 192/192 survivors feasible (eps=0)
+  example feasible: [(0, 1), (0, 3), (3, 5), (1, 2), (2, 4), (4, 5)] all cycle edges at max: True
+u=geom 2^j: 0/192 survivors feasible (eps=0)
+newly certified: 192/192; total 192/192

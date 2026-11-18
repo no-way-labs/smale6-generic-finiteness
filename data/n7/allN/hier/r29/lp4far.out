@@ -1,0 +1,26 @@
+r29_lp n = 4, u = 0,1,34,1156, stratum main, mode far R = 748.0: 11025 pairs of trees; LPs 4946036; LPs neither optimal nor infeasible 0; 139 s
+   points found: 0
+r29_lp n = 4, u = 0,1,34,1156, stratum main, mode far R = 2780.0: 11025 pairs of trees; LPs 4726836; LPs neither optimal nor infeasible 0; 130 s
+   points found: 0
+r29_lp n = 4, u = 0,1,34,1156, stratum main, mode far R = 100000.0: 11025 pairs of trees; LPs 4715064; LPs neither optimal nor infeasible 0; 124 s
+   points found: 0
+r29_lp n = 4, u = 0,1,34,1156, stratum main, mode far R = 746.5: 11025 pairs of trees; LPs 4965217; LPs neither optimal nor infeasible 0; 134 s
+   points found: 8; not ultrametric 0; with a cut condition that fails (recomputed from the monomials) 0; simple cycles of B over all points 8
+   failures of the statements of Theorem D4: none
+   distinct values of Psi* (1): 747
+   largest Psi* = 747; bound of Theorem D4 = 2779
+   example with Psi* = 747: E* = [(0, 2), (1, 2), (1, 4), (2, 3)]
+      zeta  = {'01': -0.0, '02': 2310.0, '03': 3058.0, '0O': 1.0, '12': -0.0, '13': -0.0, '1O': -0.0, '23': 2310.0, '2O': 1.0, '3O': 1.0}
+      omega = {'01': -748.0, '02': -748.0, '03': -748.0, '0O': -747.0, '12': 1564.0, '13': 2312.0, '1O': -748.0, '23': 1564.0, '2O': -748.0, '3O': -748.0}
+      cycle [(0, 2), (2, 3), (1, 2), (1, 4)]: N = -3, q = [-2, -3, -2, 2], N Psi* + q.u = 0.00e+00
+r29_lp n = 4, u = 0,0,0,0, stratum main, mode far R = 100000.0: 11025 pairs of trees; LPs 1837762; LPs neither optimal nor infeasible 0; 50 s
+   points found: 81558; not ultrametric 0; with a cut condition that fails (recomputed from the monomials) 0; simple cycles of B over all points 1165898
+   failures of the statements of Theorem D4: {'a cycle with N = 0': 1165898}
+   distinct values of Psi* (2): 100000, 150000
+   largest Psi* = 150000; bound of Theorem D4 = 0
+   example with Psi* = 150000: E* = [(0, 1), (0, 2), (1, 2)]
+      zeta  = {'01': 300000.0, '02': 300000.0, '03': 300000.0, '0O': -0.0, '12': 300000.0, '13': 300000.0, '1O': -0.0, '23': 300000.0, '2O': -0.0, '3O': -0.0}
+      omega = {'01': -0.0, '02': 0.0, '03': -100000.0, '0O': -100000.0, '12': 0.0, '13': -100000.0, '1O': -100000.0, '23': -100000.0, '2O': -100000.0, '3O': -100000.0}
+      cycle [(0, 1), (0, 2)]: N = 0, q = [0, -2, 2, 0], N Psi* + q.u = 0.00e+00
+      cycle [(0, 1), (1, 2)]: N = 0, q = [-2, 0, 2, 0], N Psi* + q.u = 0.00e+00
+      cycle [(0, 2), (1, 2)]: N = 0, q = [-2, 2, 0, 0], N Psi* + q.u = 0.00e+00

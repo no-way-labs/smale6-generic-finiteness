@@ -1,0 +1,9 @@
+{
+ "host_threads": 61,
+ "sha256": {
+  "fixedu_enum.py": "4fe2f9b9ddd5530802953f2b2435f1e546b3147f663ce249c7218ec7c21e31ca",
+  "nk_fibre.py": "09969dd4ba8d8c5bbbef62b537f84498ce97b9a7a08cd726dc7ae194c4fa324f"
+ },
+ "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           48 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  128\nOn-line CPU(s) list:                     0-127\nVendor ID:                               AuthenticAMD\nModel name:                              AMD Ryzen Threadripper PRO 5995WX 64-Cores\nCPU family:                              25\nModel:                                   8\nThread(s) per core:                      2\nCore(s) per socket:                      64\nSocket(s):                               1\nStepping:                                2\nFrequency boost:                         enabled\nCPU(s) scaling MHz:                      68%\nCPU max MHz:                             4575.1641\nCPU min MHz:                             413.4190\nBogoMIPS:                                5389.55\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx c",
+ "uptime": " 18:59:46 up 7 days,  5:09,  0 users,  load average: 50.59, 21.33, 11.87\n"
+}

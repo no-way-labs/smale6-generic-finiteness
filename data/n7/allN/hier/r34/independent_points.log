@@ -1,0 +1,39 @@
+Control: exact two-body witness recovered, including its cycle relation. Corrupted height rejected.
+GP.json.gz: n=5, weights=0.0, 1.0, 2.37, 4.91, 8.53, all_ordered_pairs=893025, candidate_pairs=446985, sym=True, sample=None, seed=None, threshold=3.0
+  points=30, max_psi=5.52, bound=5043/100, max_cut_gap=0.00001, max_triangle_gap=0, max_residual=0.00002, max_delta_from_stored_psi=0.00001
+  {'over_bound': 0, 'below_threshold': 0, 'triangle_fail': 0, 'cut_fail': 0, 'nonexact_cut': 30, 'degree_not_two': 0, 'node_disagreements': 0, 'cycles': 30, 'zero_N': 0}
+HP.json.gz: n=5, weights=0.0, 1.0, 12.0, 150.0, 1900.0, all_ordered_pairs=893025, candidate_pairs=446985, sym=True, sample=None, seed=None, threshold=5.0
+  points=203, max_psi=2424.33334, bound=6189, max_cut_gap=0.000015, max_triangle_gap=0, max_residual=0.00002, max_delta_from_stored_psi=0.00001
+  {'over_bound': 0, 'below_threshold': 0, 'triangle_fail': 0, 'cut_fail': 0, 'nonexact_cut': 162, 'degree_not_two': 0, 'node_disagreements': 0, 'cycles': 203, 'zero_N': 0}
+WP.json.gz: n=5, weights=0.0, 1.0, 52.0, 2700.0, 140000.0, all_ordered_pairs=893025, candidate_pairs=446985, sym=True, sample=None, seed=None, threshold=5.0
+  points=204, max_psi=184831, bound=428259, max_cut_gap=0.000015, max_triangle_gap=0, max_residual=0.00002, max_delta_from_stored_psi=0.00001
+  {'over_bound': 0, 'below_threshold': 0, 'triangle_fail': 0, 'cut_fail': 0, 'nonexact_cut': 192, 'degree_not_two': 0, 'node_disagreements': 0, 'cycles': 204, 'zero_N': 0}
+AP.json.gz: n=6, weights=0.0, 1.0, 12.0, 150.0, 1900.0, 24000.0, all_ordered_pairs=108056025, candidate_pairs=300000, sym=False, sample=300000, seed=29, threshold=5.0
+  points=108, max_psi=31837.33334, bound=286693/3, max_cut_gap=0.00001, max_triangle_gap=0, max_residual=0.00002, max_delta_from_stored_psi=0.00001
+  {'over_bound': 0, 'below_threshold': 0, 'triangle_fail': 0, 'cut_fail': 0, 'nonexact_cut': 89, 'degree_not_two': 0, 'node_disagreements': 0, 'cycles': 108, 'zero_N': 0}
+BP.json.gz: n=6, weights=0.0, 1.0, 45.0, 2000.0, 89000.0, 3920000.0, all_ordered_pairs=108056025, candidate_pairs=500000, sym=False, sample=500000, seed=29, threshold=5.0
+  points=189, max_psi=7749636, bound=44121506/3, max_cut_gap=0.000015, max_triangle_gap=0, max_residual=0.00002, max_delta_from_stored_psi=0.00001
+  {'over_bound': 0, 'below_threshold': 0, 'triangle_fail': 0, 'cut_fail': 0, 'nonexact_cut': 175, 'degree_not_two': 0, 'node_disagreements': 0, 'cycles': 189, 'zero_N': 0}
+BL.json.gz: n=6, weights=0.0, 1.0, 45.0, 2000.0, 89000.0, 3920000.0, all_ordered_pairs=108056025, candidate_pairs=100000, sym=False, sample=100000, seed=29, threshold=None
+  points=1589, max_psi=2613302.66667, bound=44121506/3, max_cut_gap=0.000015, max_triangle_gap=0, max_residual=0.00002, max_delta_from_stored_psi=0.00001
+  {'over_bound': 0, 'below_threshold': 0, 'triangle_fail': 0, 'cut_fail': 0, 'nonexact_cut': 1101, 'degree_not_two': 0, 'node_disagreements': 0, 'cycles': 1589, 'zero_N': 0}
+real 0.85
+user 0.79
+sys 0.01
+            53460992  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                3688  page reclaims
+                 392  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                 113  voluntary context switches
+                 189  involuntary context switches
+         13632757894  instructions retired
+          3088472488  cycles elapsed
+            42452160  peak memory footprint

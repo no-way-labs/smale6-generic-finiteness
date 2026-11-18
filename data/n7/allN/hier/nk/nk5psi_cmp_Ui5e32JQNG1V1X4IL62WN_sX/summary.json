@@ -1,0 +1,14 @@
+{
+ "HP": {
+  "rc": 0,
+  "line": "nk_fibre K=5 Psi >= 5 u=0,1,12,150,1900: pairs of trees 893025, zeta trees 0 done before and 945 now (COMPLETE), LPs 278969607, LPs with no verdict 0, solutions 1040, distinct points 203, by dimension of the cell {1: 203}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {0: 853, 1: 187}; 2744s"
+ },
+ "GP": {
+  "rc": 0,
+  "line": "nk_fibre K=5 Psi >= 3 u=0,1,2.37,4.91,8.53: pairs of trees 893025, zeta trees 0 done before and 945 now (COMPLETE), LPs 278165376, LPs with no verdict 0, solutions 156, distinct points 30, by dimension of the cell {1: 30}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {0: 108, 1: 48}; 2768s"
+ },
+ "WP": {
+  "rc": 0,
+  "line": "nk_fibre K=5 Psi >= 5 u=0,1,52,2700,140000: pairs of trees 893025, zeta trees 0 done before and 945 now (COMPLETE), LPs 273423658, LPs with no verdict 0, solutions 1048, distinct points 204, by dimension of the cell {1: 204}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {0: 844, 1: 204}; 2610s"
+ }
+}

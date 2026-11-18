@@ -1,0 +1,116 @@
+--- a/paper/alln/main.tex
++++ b/paper/alln/main.tex
+@@ -186,7 +186,7 @@
+ $X_{01} = 1$, because $X_{01} \ne 0$ by \eqref{eq:N1}. These solutions are the common zeros of the
+ $2n + \binom{n}{2}$ polynomials of \eqref{eq:N1} to \eqref{eq:N3}, of degree at most $4$, and of
+ $X_{01} - 1$. B\'ezout's inequality for closed subsets of an affine
+-space~\cite[Theorem~1]{heintz1983} bounds the degree of their set by the product of these degrees, and
++space~\cite[Theorem~1, p.~251, with the corrigendum]{heintz1983} bounds the degree of their set by the product of these degrees, and
+ the degree of a finite set is its number of points. In
+ Theorem~\ref{thm:Nn} the set $\Sigma_n$ cannot avoid the positive masses: for $n = 5$ it contains
+ $(4, 4, 4, 4, 1)$, where $\cN_5$ has a continuum of solutions that are not central configurations
+@@ -937,9 +937,9 @@
+ feature or hypothesis & where it is used \\
+ \midrule
+ the exponent $3$ of $P_{tl}$ in \eqref{eq:N2}, \eqref{eq:N3} & Lemma~\ref{lem:A} (the value $\Phi^z = \Psi + \omega$); Theorem~\ref{thm:D4}, Step~2 (the factor $3$ of $N$) and Step~4 (parity: a body pair contributes an even number to $q_t$ and an $O$-edge an odd one) \\
+-the left sides $X_t$, $Y_t$ of \eqref{eq:N2}, \eqref{eq:N3} & the $O$-edges. With left sides $\theta X_t$, $\theta Y_t$ and a further unknown $\theta$, Step~2 has the additional term $(N/3)\, v(\theta)$, $\Ps$ is not bounded, and the system has a continuum by scaling \\
++the left sides $X_t$, $Y_t$ of \eqref{eq:N2}, \eqref{eq:N3} & the $O$-edges. With a free multiplier $\theta\ne0$, use $\Psi(t,O)=-v(\theta)-u_t-\xi_t-\eta_t$. Step~2 then adds $(N/3)v(\theta)$ to the relation. Scaling any solution gives unbounded $\Ps$ and infinitely many rotation orbits \\
+ every pair of bodies interacts & Corollary~\ref{cor:bound}: every body pair is an edge, and $\Psi \le \Ps$ bounds the valuation of $X_{tl} Y_{tl}$ \\
+-$u \in W_n(\tau)$ with $\tau \ge n^2$ & Lemma~\ref{lem:C}, Steps~1 and~4; Example~\ref{ex:0011} shows that it is needed there \\
++$u \in W_n(\tau)$ with $\tau \ge n^2$ & Lemma~\ref{lem:C}, Steps~1 and~4; Example~\ref{ex:0011} shows failure without a restriction on the weights \\
+ $u \in W_n(\tau)$ with $\tau \ge 2n^2$ & Theorem~\ref{thm:D4}, Step~4; Remark~\ref{rem:u0123} shows that parts~(c) and~(d) fail at $u = (0, 1, 2, 3)$ \\
+ \bottomrule
+ \end{tabular}
+@@ -1043,9 +1043,9 @@
+ \repo{lean/direct-route/TRUSTED.sha256} holds these digests and those of the lists of theorems and of
+ the files that select the versions, and the script \repo{scripts/allN/lean_gate.sh} checks all of them
+ before it runs the comparison. That file is the reference of the script, and Table~\ref{tab:sha} lets a
+-reader compare the three statement files without it. Two controls were run: with a \repo{sorry} placed in one
+-proof the check fails, and with a false hypothesis added to a statement the check fails because the
+-statement file differs from the fixed one.
++reader compare the three statement files without it. In two further runs we observed rejection after inserting a \repo{sorry} into a proof and a digest
++mismatch after adding a false hypothesis to a fixed statement. The archived transcripts document
++the Linux comparator runs.
+ 
+ \begin{table}[ht]
+ \caption{SHA-256 digests of the three files of formal statements.}\label{tab:sha}
+@@ -1109,7 +1109,7 @@
+ The program \repo{scripts/allN/nk_fibre.py} of the repository takes a vector $u$ and a pair of binary
+ trees on the $n + 1$ vertices, one for each colour, and searches with linear programs
+ (HiGHS~\cite{highs}) for real heights $\zeta$, $\omega$ on these trees that satisfy every cut
+-condition. It therefore covers the weight data in which every $\xi_t$ and every $\eta_t$ is real. The
++condition. These tree pairs parametrise the stratum where every $\xi_t$ and $\eta_t$ is real, allowing adjacent nodes to have equal heights. The
+ exchange of the two colours maps a weight datum over $u$ to a weight datum over $u$ with the same
+ function $\Psi$. The five-body searches use this: they treat one pair of trees from each class of
+ ordered pairs under the exchange, which makes $446{,}985$ pairs for the $893{,}025$ ordered pairs of
+@@ -1178,8 +1178,8 @@
+ separate session (the programs \repo{check2.py} and \repo{check6fast.py} in
+ \repo{data/n7/allN/hier/r30}) and again by the session that read the release, with the single program
+ \repo{independent_cycles.cpp} in \repo{data/n7/allN/hier/r34}. No complete enumeration was made for
+-$n \ge 7$: the second and the third separate session sampled pairs of hierarchies for seven and eight
+-bodies and tested particular cycles for $8$ to $13$ bodies, and their reports describe these searches.
++$n \ge 7$: R30 sampled pairs of hierarchies for seven and eight bodies, and R31 tested particular cycles for
++$8$ to $13$ bodies. Their reports describe these searches.
+ 
+ The second exact computation tests Lemma~\ref{lem:C} itself at one vector for each $n$ from $2$ to $6$, namely
+ $u_0 = 0$ and $u_j = (n^2 + 2)^{j-1}$ for $j \ge 1$, which lies in $W_n(n^2)$. The program
+--- a/paper/alln/references.bib
++++ b/paper/alln/references.bib
+@@ -125,6 +125,7 @@
+   number  = {3},
+   year    = {1983},
+   pages   = {239--277},
++  note    = {Corrigendum, Theoret. Comput. Sci. 39 (1985), 343},
+ }
+ 
+ @article{moeckel2001,
+--- a/docs/README.md
++++ b/docs/README.md
+@@ -50,7 +50,7 @@
+   comments were left as they are. For what a statement or a program does, the paper is the reference:
+   Sections 3 to 6 and 10 for the Lean files, Section 11 for the programs.
+ - R34 read the release before the corrections that it asked for. `as-read/R34-paper.tex` is the paper as
+-  it read it; the READMEs, which it also read, have changed since in the places that its report names.
++  it read it. The READMEs have also changed. R34’s discussion of Heintz quotes the original constructible-set statement. The 1985 corrigendum qualifies that statement, and Remark 1.4 uses only closed sets.
+ - The first review led to three clearer comments and two further examples in `Challenge.lean`; no review
+   asked for a change to the statement of a theorem. The statement files in `lean/direct-route` are the
+   final ones.
+--- a/README.md
++++ b/README.md
+@@ -74,8 +74,7 @@
+ 
+ `--local` runs the comparator without its sandbox, also when `--final` is given: the proof files are then
+ built with your permissions, so read them or run in a container if you do not trust them. On Linux with
+-bubblewrap and unprivileged user namespaces you can leave `--local` out. We ran the gate on macOS (ARM)
+-and on Linux (x86-64), both without the sandbox; on our Linux machine the sandbox could not be started.
++bubblewrap and unprivileged user namespaces you can leave `--local` out. We ran the comparisons on macOS (ARM) and Linux (x86-64). Both successful runs used the unsandboxed option. On the Linux host, namespace creation failed in the sandboxed runs.
+ The logs of the Linux run are in `data/n7/allN/hier/lean/`. That the six checkers accepted the proofs is
+ our report of these two runs, and the command above repeats the check.
+ 
+@@ -112,7 +111,7 @@
+ The six-body runs used `scripts/allN/nk_fibre.py` as it is here, with `--abs-tol 0.001`. The five-body runs
+ used an earlier version, with the option `--sym` and the relative tolerance 1e-7 that is still the default.
+ That version is `nk_fibre.as-run.py` in their directory; it is a record and is not meant to be run from
+-there. `versions.json` in each directory holds the SHA-256 digest of the program that the run used.
++there. `versions.json` in each directory holds the SHA-256 digest of the program that the run used. The historical `ray` flags describe directions found by floating-point searches with selected objectives. A zero flag means the search found no qualifying direction. The one-projection `--far` diagnostic and these flags provide no certificate of boundedness.
+ 
+ The exact computations are single files and run in a few seconds:
+ 
+@@ -121,8 +120,7 @@
+     clang++ -std=c++20 -O2 -o cycles data/n7/allN/hier/r34/independent_cycles.cpp && ./cycles
+     python3 scripts/allN/wd_u0123_check.py
+ 
+-The expected outputs of the first two are the `.txt` files next to them, and that of the third is the first
+-eleven lines of `independent_cycles.log`. The third also gives the 96 cycles of six bodies of Section 11
++The seven output lines of each of the first two programs are lines 2–8 of its adjacent `.txt` file. The third program prints the first eleven lines of `independent_cycles.log`. The third also gives the 96 cycles of six bodies of Section 11
+ (its last line). The fourth checks the family of weight data of Remark 9.1.
+ 
+ ## The record of the checks
+--- a/.gitignore
++++ b/.gitignore
+@@ -14,4 +14,5 @@
+ *.pyc
+ /search
+ /check
++/cycles
+ .DS_Store

@@ -1,0 +1,14 @@
+u=chamber tau=36: 0/192 survivors feasible (eps=0)
+u=chamber tau=37: 0/192 survivors feasible (eps=0)
+u=mild (0,1,2,3,4,5): 0/192 survivors feasible (eps=0)
+u=equal u=0: 192/192 survivors feasible (eps=0)
+  example feasible: [(0, 1), (0, 3), (3, 5), (1, 2), (2, 4), (4, 5)] all cycle edges at max: True
+u=geom 2^j: 0/192 survivors feasible (eps=0)
+random chamber tests (eps=0):
+  u=[np.int64(0), np.int64(2), np.int64(84), np.int64(3124), np.int64(125777), np.int64(4873960)]: feasible 0/192
+  u=[np.int64(0), np.int64(2), np.int64(75), np.int64(2979), np.int64(116387), np.int64(4446903)]: feasible 0/192
+  u=[np.int64(0), np.int64(1), np.int64(41), np.int64(1519), np.int64(60483), np.int64(2365103)]: feasible 0/192
+  u=[np.int64(0), np.int64(1), np.int64(38), np.int64(1447), np.int64(60436), np.int64(2514437)]: feasible 0/192
+  u=[np.int64(0), np.int64(2), np.int64(85), np.int64(3324), np.int64(125205), np.int64(5053496)]: feasible 0/192
+exact rational Farkas certificates: 0/192 at u=[np.int64(0), np.int64(1), np.int64(39), np.int64(1483), np.int64(56355), np.int64(2141491)]
+uncertified: [(2071, 2658, (0, 2, 13, 5, 10, 14)), (2071, 2660, (0, 2, 13, 5, 10, 14)), (2071, 2662, (0, 2, 13, 5, 10, 14)), (2071, 2664, (0, 2, 13, 5, 10, 14)), (2073, 2658, (0, 2, 13, 5, 10, 14))]

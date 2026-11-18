@@ -1,0 +1,13 @@
+paper rc 0 seconds 2.51 sampled peak bytes 81281024
+statements rc 0 seconds 0.17 sampled peak bytes 2179072
+cuts rc 0 seconds 1.01 sampled peak bytes 32800768
+cycles-points rc 0 seconds 1.03 sampled peak bytes 85491712
+small rc 0 seconds 40.08 sampled peak bytes 122109952
+exact-r32 rc 0 seconds 2.53 sampled peak bytes 131710976
+exact-r33 rc 0 seconds 2.35 sampled peak bytes 156565504
+exact-r34 rc 0 seconds 2.18 sampled peak bytes 156499968
+remark rc 0 seconds 0.17 sampled peak bytes 2179072
+trusted rc 0 seconds 0.17 sampled peak bytes 2179072
+exact-r32 linewise identical False
+exact-r33 linewise identical False
+exact-r34 linewise identical True

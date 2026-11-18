@@ -1,0 +1,19 @@
+{
+ "challenge_module": "ChallengeB",
+ "solution_module": "SolutionB",
+ "theorem_names": [
+  "lemmaB_sign",
+  "lemmaC_alt",
+  "cycle_alt_bodies",
+  "alt_relation",
+  "cycle_alt",
+  "psi_star_bound",
+  "ex2_alt",
+  "ex4_alt"
+ ],
+ "permitted_axioms": [
+  "propext",
+  "Quot.sound",
+  "Classical.choice"
+ ]
+}

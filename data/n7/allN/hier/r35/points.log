@@ -1,0 +1,18 @@
+HP # /usr/local/bin/python -u /tmp/nk_src/nk_fibre.py 5 0,1,12,150,1900 --sym --procs 32 --maxfound 200 --out /tmp/nk_res/HP.json --far-psi=5 --parts /tmp/nk_res/HP.jsonl --resume --hours 8.667
+ points 203 parts 945 max 121216667/50000 bound 6189 maximum cut gap 3/200000 maximum triangle gap 0 nonexact cuts 162 tolerance changes E* 122 cycles 203 residual 1/50000
+ supremum of allowable tau (strict) 11
+GP # /usr/local/bin/python -u /tmp/nk_src/nk_fibre.py 5 0,1,2.37,4.91,8.53 --sym --procs 32 --maxfound 200 --out /tmp/nk_res/GP.json --far-psi=3 --parts /tmp/nk_res/GP.jsonl --resume --hours 7.904
+ points 30 parts 945 max 138/25 bound 5043/100 maximum cut gap 1/100000 maximum triangle gap 0 nonexact cuts 30 tolerance changes E* 26 cycles 30 residual 1/50000
+ supremum of allowable tau (strict) 362/491
+WP # /usr/local/bin/python -u /tmp/nk_src/nk_fibre.py 5 0,1,52,2700,140000 --sym --procs 32 --maxfound 200 --out /tmp/nk_res/WP.json --far-psi=5 --parts /tmp/nk_res/WP.jsonl --resume --hours 7.135
+ points 204 parts 945 max 184831 bound 428259 maximum cut gap 3/200000 maximum triangle gap 0 nonexact cuts 192 tolerance changes E* 165 cycles 204 residual 1/50000
+ supremum of allowable tau (strict) 1373/27
+BL # /usr/local/bin/python -u /tmp/nk_src/nk_fibre.py 6 0,1,45,2000,89000,3920000 --procs 61 --maxfound 200 --out /tmp/nk_res/BL.json --sample 100000 --seed 29 --abs-tol 0.001 --parts /tmp/nk_res/BL.jsonl --resume --hours 8.667
+ points 1589 parts 10395 max 261330266667/100000 bound 44121506/3 maximum cut gap 3/200000 maximum triangle gap 0 nonexact cuts 1101 tolerance changes E* 267 cycles 1589 residual 1/50000
+ supremum of allowable tau (strict) 3831/89
+BP # /usr/local/bin/python -u /tmp/nk_src/nk_fibre.py 6 0,1,45,2000,89000,3920000 --procs 61 --maxfound 200 --out /tmp/nk_res/BP.json --sample 500000 --seed 29 --abs-tol 0.001 --far-psi=5 --parts /tmp/nk_res/BP.jsonl --resume --hours 8.370
+ points 189 parts 10395 max 7749636 bound 44121506/3 maximum cut gap 3/200000 maximum triangle gap 0 nonexact cuts 175 tolerance changes E* 148 cycles 189 residual 1/50000
+ supremum of allowable tau (strict) 3831/89
+AP # /usr/local/bin/python -u /tmp/nk_src/nk_fibre.py 6 0,1,12,150,1900,24000 --procs 61 --maxfound 200 --out /tmp/nk_res/AP.json --sample 300000 --seed 29 --abs-tol 0.001 --far-psi=5 --parts /tmp/nk_res/AP.jsonl --resume --hours 5.475
+ points 108 parts 10395 max 1591866667/50000 bound 286693/3 maximum cut gap 1/100000 maximum triangle gap 0 nonexact cuts 89 tolerance changes E* 66 cycles 108 residual 1/50000
+ supremum of allowable tau (strict) 11

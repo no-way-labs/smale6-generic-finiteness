@@ -1,0 +1,96 @@
+{
+ "freeze": "946cc9e",
+ "trusted_files_equal_freeze": true,
+ "elan": 0,
+ "cache": 0,
+ "build": 0,
+ "lean_version": [
+  "Decompressed 9117 file(s)",
+  "Already decompressed 9117 file(s)",
+  "# rc 0"
+ ],
+ "bwrap_test": 1,
+ "bwrap_test_tail": [
+  "# bwrap --ro-bind / / --unshare-net --dev /dev --proc /proc true",
+  "bwrap: Creating new namespace failed: Operation not permitted",
+  "# rc 1"
+ ],
+ "runs": {
+  "comparator.json": {
+   "sandboxed_rc": 1,
+   "sandboxed_tail": [
+    "# lake comparator --paranoid --config comparator.json",
+    "bwrap: No permissions to create a new namespace, likely because the kernel does not allow non-privileged user namespaces. See <https://deb.li/bubblewrap> or <file:///usr/share/doc/bubblewrap/README.Debian.gz>.",
+    "error: Child exited with 1",
+    "Resolving dependencies",
+    "# rc 1"
+   ],
+   "nosandbox_rc": 0,
+   "nosandbox_tail": [
+    "Running con-leche kernel on solution",
+    "con-leche: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)",
+    "con-leche: accepted 13765 declarations (--verified)",
+    "con-leche kernel accepts the solution",
+    "Running con-ron kernel on solution",
+    "con-ron: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)",
+    "con-ron: accepted 13765 declarations (--verified)",
+    "con-ron kernel accepts the solution",
+    "Running Lean default kernel on solution",
+    "Lean default kernel accepts the solution",
+    "Your solution is okay!",
+    "# rc 0"
+   ]
+  },
+  "comparatorA.json": {
+   "sandboxed_rc": 1,
+   "sandboxed_tail": [
+    "# lake comparator --paranoid --config comparatorA.json",
+    "bwrap: No permissions to create a new namespace, likely because the kernel does not allow non-privileged user namespaces. See <https://deb.li/bubblewrap> or <file:///usr/share/doc/bubblewrap/README.Debian.gz>.",
+    "error: Child exited with 1",
+    "Resolving dependencies",
+    "# rc 1"
+   ],
+   "nosandbox_rc": 0,
+   "nosandbox_tail": [
+    "Running con-leche kernel on solution",
+    "con-leche: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)",
+    "con-leche: accepted 24665 declarations (--verified)",
+    "con-leche kernel accepts the solution",
+    "Running con-ron kernel on solution",
+    "con-ron: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)",
+    "con-ron: accepted 24665 declarations (--verified)",
+    "con-ron kernel accepts the solution",
+    "Running Lean default kernel on solution",
+    "Lean default kernel accepts the solution",
+    "Your solution is okay!",
+    "# rc 0"
+   ]
+  },
+  "comparatorB.json": {
+   "sandboxed_rc": 1,
+   "sandboxed_tail": [
+    "# lake comparator --paranoid --config comparatorB.json",
+    "bwrap: No permissions to create a new namespace, likely because the kernel does not allow non-privileged user namespaces. See <https://deb.li/bubblewrap> or <file:///usr/share/doc/bubblewrap/README.Debian.gz>.",
+    "error: Child exited with 1",
+    "Resolving dependencies",
+    "# rc 1"
+   ],
+   "nosandbox_rc": 0,
+   "nosandbox_tail": [
+    "Running con-leche kernel on solution",
+    "con-leche: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)",
+    "con-leche: accepted 13722 declarations (--verified)",
+    "con-leche kernel accepts the solution",
+    "Running con-ron kernel on solution",
+    "con-ron: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)",
+    "con-ron: accepted 13722 declarations (--verified)",
+    "con-ron kernel accepts the solution",
+    "Running Lean default kernel on solution",
+    "Lean default kernel accepts the solution",
+    "Your solution is okay!",
+    "# rc 0"
+   ]
+  }
+ },
+ "secs": 484
+}

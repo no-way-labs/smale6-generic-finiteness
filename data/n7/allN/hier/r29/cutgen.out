@@ -1,0 +1,4 @@
+n = 2: 6 cut generators (both colours) equal to the edge form, 12 terms, 3 partitions of the 3 vertices, each once; 2400 term values equal to Psi + omega (z) or Psi + zeta (w) at 200 random points; I - U and the 2 torque identities hold
+n = 3: 14 cut generators (both colours) equal to the edge form, 48 terms, 7 partitions of the 4 vertices, each once; 9600 term values equal to Psi + omega (z) or Psi + zeta (w) at 200 random points; I - U and the 3 torque identities hold
+n = 4: 30 cut generators (both colours) equal to the edge form, 160 terms, 15 partitions of the 5 vertices, each once; 32000 term values equal to Psi + omega (z) or Psi + zeta (w) at 200 random points; I - U and the 4 torque identities hold
+n = 5: 62 cut generators (both colours) equal to the edge form, 480 terms, 31 partitions of the 6 vertices, each once; 96000 term values equal to Psi + omega (z) or Psi + zeta (w) at 200 random points; I - U and the 5 torque identities hold

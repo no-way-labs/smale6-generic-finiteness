@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the paper below."
+title: "smale6-generic-finiteness: generic finiteness of planar central configurations for every number of bodies"
+authors:
+  - family-names: "Aquino-Michaels"
+    given-names: "Keston"
+    affiliation: "No Way Labs"
+repository-code: "https://github.com/no-way-labs/smale6-generic-finiteness"
+license:
+  - MIT
+  - CC-BY-4.0
+keywords:
+  - central configurations
+  - n-body problem
+  - Smale's sixth problem
+  - valuations
+  - tropical geometry
+  - formal proof
+  - Lean
+preferred-citation:
+  type: unpublished
+  title: "Generic finiteness of planar central configurations for every number of bodies"
+  authors:
+    - family-names: "Aquino-Michaels"
+      given-names: "Keston"
+  year: 2026

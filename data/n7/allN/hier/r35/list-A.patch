@@ -1,0 +1,325 @@
+--- a/paper/alln/main.tex
++++ b/paper/alln/main.tex
+@@ -122,7 +122,7 @@
+ 5, 6, 7 & equal masses & Moczurad and Zgliczy\'nski~\cite{moczuradzgliczynski2019} & published; computer-assisted; all configurations are listed \\
+ 4 to 7 & a neighbourhood of the equal masses in the usual topology & Moczurad and Zgliczy\'nski~\cite{moczuradzgliczynski2020} & published; computer-assisted; the configurations are counted \\
+ all & Dziobek configurations (of dimension $n - 2$, planar only for $n = 4$), outside a proper algebraic subset & Moeckel~\cite{moeckel2001} & published \\
+-all & some open sets of positive masses in the usual topology & Xia~\cite{xia1991} & published; the configurations are counted \\
++all & some open sets of positive masses in the usual topology & Xia~\cite{xia1991} & published; exact planar counts up to direct similarity \\
+ all & all positive & Tibboel~\cite{tibboel2013} & withdrawn by the author \\
+ all & not stated & Okolo~\cite{okolo2026} & a record with restricted files; we could read its title only \\
+ \bottomrule
+@@ -130,8 +130,9 @@
+ \end{table}
+ 
+ No entry of Table~\ref{tab:known} gives finiteness outside a proper algebraic subset of the mass space
+-for any $n \ge 7$. The results of Xia and of Moczurad and Zgliczy\'nski hold at the equal masses or on
+-open sets of masses in the usual topology, and say nothing outside them. Of the two claims for every $n$, one was withdrawn and the other is a record of which we could read the title only. The following theorem gives finiteness outside a proper algebraic
++for any $n \ge 7$. Xia counts configurations on certain open sets of positive masses. Moczurad and Zgliczy\'nski give
++counts at and near equal masses. Neither counting result establishes finiteness on a Zariski-open
++set of masses for $n\ge7$. Of the two claims for every $n$, one was withdrawn and the other is a record of which we could read the title only. The following theorem gives finiteness outside a proper algebraic
+ subset for every $n$.
+ 
+ \begin{theorem}\label{thm:main}
+@@ -917,8 +918,9 @@
+ bodies~\cite{roberts1999} has the masses $(1, 1, 1, 1, -1/4)$ up to a common factor. At the positive
+ masses $(4, 4, 4, 4, 1)$ the system $\cN_5$ has a continuum of solutions in which $P_{t4}$ is the
+ negative root for the four pairs that contain the light body
+-\cite[p.~543 and Remark~8]{albouykaloshin2012}; these solutions are not central configurations, and
+-Tomar~\cite{tomarspecial} finds 36 curves of them. If $n - 1$ masses are $0$ and $n \ge 3$, the
++\cite[p.~543 and Remark~8]{albouykaloshin2012}; these signed solutions do not give physical central configurations. Tomar finds 36 irreducible curves
++in the complex rotation slice at these masses. Six have real configuration points, and none contains
++a positive normalised central configuration~\cite[Theorem~1.1 and Proposition~3.2]{tomarspecial}. If $n - 1$ masses are $0$ and $n \ge 3$, the
+ massless bodies move freely on a circle about the heavy body; such masses are not in $(K^{*})^n$.
+ \end{remark}
+ 
+@@ -1037,7 +1039,7 @@
+ the definitions and the statements of Sections~\ref{sec:chamber} to~\ref{sec:D4} for simple cycles. The
+ file \repo{ChallengeA.lean} states Lemma~\ref{lem:A} and the form of Corollary~\ref{cor:bound} at a
+ solution. The file \repo{ChallengeB.lean} states Lemma~\ref{lem:B} with the sign, Lemma~\ref{lem:C}, and
+-Theorem~\ref{thm:D4}(b), (c) and~(d) in the form printed here. No review asked for a change to the
++Theorem~\ref{thm:D4}(b) and (c) for closed alternating sequences, and the inequality of~(d). No review asked for a change to the
+ statement of a theorem; the first proposed two further examples, which were added. The three files are
+ fixed, and Table~\ref{tab:sha} gives their SHA-256 digests. The file
+ \repo{lean/direct-route/TRUSTED.sha256} holds these digests and those of the lists of theorems and of
+@@ -1120,9 +1122,9 @@
+ searches ran with an earlier version of the program, which has neither the sample nor the second
+ tolerance; it is kept with their data as \repo{nk_fibre.as-run.py}. A second program,
+ \repo{nk_cut_check.py}, tests the ultrametric conditions and the cut conditions of each recorded point
+-without the trees and the linear programs, within the tolerance $10^{-3}$, and a third,
+-\repo{nk_cycle_check.py}, builds $\Es$ and $\Gamma(\Es)$ at each point and evaluates
+-$N\Ps + q \cdot u$ on a basis of the cycles.
++without the trees and the linear programs, within the tolerance $10^{-3}$. A third program,
++\repo{nk_cycle_check.py}, retains edges with $\Ps-\Psi(e)<10^{-3}$ and merges adjacent tree nodes
++whose heights differ by at most $10^{-3}$. It evaluates $N\Ps+q\cdot u$ on a cycle basis of this graph.
+ 
+ \begin{table}[ht]
+ \caption{Floating-point searches for weight data. ``Pairs of trees'' is the number of pairs of binary
+@@ -1148,16 +1150,16 @@
+ \end{table}
+ 
+ Table~\ref{tab:comp} lists the searches for five and six bodies. All $2{,}323$ points of the
+-table pass the second program. At each of them every vertex of $\Gamma(\Es)$ lies on two edges, every
+-cycle of the basis has $N \ne 0$, and $|N\Ps + q \cdot u| \le 2 \cdot 10^{-5}$; no point lies above the
+-bound of the last column. A program written independently by the session that read the release
++table pass the second program. In the graph constructed with these tolerances, every vertex at each
++recorded point has degree two, every basis cycle has $N\ne0$, and its residual satisfies
++$|N\Ps+q\cdot u|\le 2\cdot10^{-5}$. Every recorded maximum is below the corresponding unrounded bound. A program written independently by the session that read the release
+ (\repo{independent_points.py} in \repo{data/n7/allN/hier/r34}; Section~\ref{sec:llm}) recomputes
+ these statements from the recorded heights in integer arithmetic, with the same result. The vector of the third row lies in $W_5(50)$, as Theorem~\ref{thm:D4} requires for $n = 5$.
+ The vector of the fourth and fifth rows lies in $W_6(43)$ and not in $W_6(72)$. The proofs of
+ Lemma~\ref{lem:C} and Theorem~\ref{thm:D4} use the hypothesis on $\tau$ only through the inequalities
+ $\tau \ge (n - 2)(n + 1) - 1$ and $\tau \ge (n - 2)(2n - 1) - 1$, which read $\tau \ge 27$ and
+-$\tau \ge 43$ for $n = 6$. At the three vectors with a dagger the theorem makes no statement, and the
+-relation and the bound hold at every point found.
++$\tau \ge 43$ for $n = 6$. For the three vectors with a dagger, the recorded points satisfy the same residual and bound checks
++outside the theorem's hypotheses.
+ 
+ Two controls were run, the first at $n = 3$ and $u = (0, 1, 30)$, where every weight datum has
+ $\Ps = -1$; the session that read the release confirmed this with an exact solver for linear constraints
+@@ -1204,9 +1206,8 @@
+ \section{Problems}\label{sec:problems}
+ 
+ \begin{problem}
+-Describe a set $\Sigma_n$ for which Theorem~\ref{thm:Nn} holds, or give a bound for the number of
+-solutions of $\cN_n$ modulo the rotation, for masses outside it, that is sharper than the bound of
+-Remark~\ref{rem:scope}.
++Give explicit equations, as a function of $n$, for a proper exceptional set $\Sigma_n$ in
++Theorem~\ref{thm:Nn}, or determine the generic number of complex rotation orbits of $\cN_n$.
+ \end{problem}
+ 
+ \begin{problem}
+@@ -1221,8 +1222,9 @@
+ \end{problem}
+ 
+ \begin{problem}
+-Does Theorem~\ref{thm:K} hold for all masses in $K$ whose valuations are distinct, or whose valuations
+-are linearly independent over $\QQ$?
++Does Theorem~\ref{thm:K} hold for nonzero masses in $K$ with pairwise distinct valuations?
++Rationally independent valuations give a generic mass point by the least-term argument of
++Lemma~\ref{lem:D0}, so finiteness in that case follows from Section~\ref{sec:generic}.
+ \end{problem}
+ 
+ \section{Use of language models}\label{sec:llm}
+@@ -1243,13 +1245,12 @@
+ 
+ \subsection*{Separate sessions} Nine further sessions, each started by the author with no access to
+ the working sessions, checked the work. The first used Qwen4 Max (Alibaba); the other eight used
+-GPT-6.2 Sol (OpenAI) at its highest setting of reasoning effort. These names are those of the author's
+-configuration; each report names its model as far as the session could identify it. Three sessions read earlier write-ups
++GPT-6.2 Sol (OpenAI) at its highest setting of reasoning effort. The model names and reasoning settings are from the author's configuration. Several reports also identify the model family visible to the session. Three sessions read earlier write-ups
+ of the proof and wrote their own programs to test it. The texts that these three sessions and the
+ three readers of this paper judged are kept as they were read, in the directory \repo{docs/as-read} of
+ the repository.
+-Each of the three reported that it found no error and asked for corrections of wording and of detail,
+-which were made. The third searched the literature and found that the survey of the working agent had
++All three accepted the main proof after clarifications. R29 also found a false assertion about the
++four-body origin strata and a faulty tree test. R31 corrected the scope of a six-body cycle count. The third searched the literature and found that the survey of the working agent had
+ missed the two six-body preprints~\cite{tomar6,chentong6} and the two claims for every
+ $n$~\cite{tibboel2013,okolo2026}; Table~\ref{tab:known} follows the corrected survey. Three sessions
+ compared the three files of formal statements with the text, without access to the formal proofs
+@@ -1272,7 +1273,7 @@
+ program for the count of the $96$ cycles, and it identified the theorem of~\cite{heintz1983} that
+ Remark~\ref{rem:scope} uses. It asked for corrections of wording in the abstract, in
+ Remarks~\ref{rem:scope}, \ref{rem:roberts} and~\ref{rem:exponent}, in Table~\ref{tab:known} and in
+-Sections~\ref{sec:lean} and~\ref{sec:llm}, and for corrections to the instructions of the repository, all of which were made. It recomputed the recorded points and the exact searches with programs of its own
++Sections~\ref{sec:lean} and~\ref{sec:llm}, and to the instructions of the repository. The release incorporates the revisions described here. It recomputed the recorded points and the exact searches with programs of its own
+ (Section~\ref{sec:comp}), and it found with an exact solver a weight datum at $u = (0, 1, 2, 3)$ with
+ $N = 0$, where the draft had only points of a floating-point search; Remark~\ref{rem:u0123} now states
+ the family that contains it.
+@@ -1285,11 +1286,10 @@
+ follows the formal proof and replaces a longer argument that the first three sessions read; the
+ statement on the sign in Lemma~\ref{lem:B} and the form of Theorem~\ref{thm:D4} for closed alternating
+ sequences were written with it. Lemma~\ref{lem:D0} is a restatement, with a shorter proof, of the lemma
+-that those sessions read. The three sessions that read drafts of this paper judged these proofs as
+-printed in those drafts, and the third of them read every section. After its report the text changed
++that those sessions read. R32 examined the proofs assigned in its draft, R33 checked the revisions, and R34 read every
++section of its draft. After its report the text changed
+ in the places named above and in the bibliography. Remark~\ref{rem:u0123} in its present form, with
+-the family of weight data and its check, was written after that report, and no separate session has
+-read it or the other last changes. For the statements of Table~\ref{tab:lean} that have a formal counterpart, the
++the family of weight data and its check, postdates all nine reports archived here. For the statements of Table~\ref{tab:lean} that have a formal counterpart, the
+ proofs are checked by the kernel of Lean and five further checkers, and not by a language model. What
+ remains to be trusted there is that the three statement files, which are short, say what the text
+ says. For Lemmas~\ref{lem:norm} to~\ref{lem:orbits}, Proposition~\ref{prop:D2} and Lemma~\ref{lem:D0},
+--- a/lean/direct-route/README.md
++++ b/lean/direct-route/README.md
+@@ -10,7 +10,7 @@
+ |---|---|---|
+ | `Challenge.lean` (280 lines) | the definitions; the statements for simple cycles; six examples | yes |
+ | `ChallengeA.lean` (57 lines) | a solution of the system over a valued field; Lemma 3.4; Corollary 6.3 at a solution | yes |
+-| `ChallengeB.lean` (103 lines) | closed alternating sequences; Lemma 4.1 with the sign; Lemma 5.2; Theorem 6.2 (b), (c), (d) | yes |
++| `ChallengeB.lean` (103 lines) | closed alternating sequences; Lemma 4.1 with the sign; Lemma 5.2; Theorem 6.2 (b), (c) and the inequality of (d) | yes |
+ | `comparator.json`, `comparatorA.json`, `comparatorB.json` | for each statement file: the names of its theorems and the permitted axioms | yes |
+ | `lakefile.toml`, `lake-manifest.json`, `lean-toolchain` | what is built, and against which Lean and Mathlib | yes |
+ | `TRUSTED.sha256` | the SHA-256 digests of the nine files above | |
+@@ -70,6 +70,6 @@
+ | `DirectRoute/Degree.lean` | Theorem 6.2 (a), first sentence; written by `scripts/allN/lean_gen_degree.py` from one template for the two colours |
+ | `DirectRoute/Cycle.lean` | Theorem 6.2 (a), the simple cycle; Corollary 6.3 |
+ | `DirectRoute/Relation.lean` | Theorem 6.2 (b), (c) for simple cycles |
+-| `DirectRoute/Alt.lean` | Lemma 4.1 with the sign, Lemma 5.2 and Theorem 6.2 (b), (c), (d) in the form of the paper; written by `scripts/allN/lean_gen_alt.py` from `Relation.lean` |
++| `DirectRoute/Alt.lean` | Lemma 4.1 with the sign, Lemma 5.2 and Theorem 6.2 (b), (c) for closed alternating sequences and the inequality of (d); written by `scripts/allN/lean_gen_alt.py` from `Relation.lean` |
+ | `DirectRoute/LemmaA.lean` | Lemma 3.4 and Corollary 6.3 at a solution; written by `scripts/allN/lean_gen_lemmaA.py` |
+ | `DirectRoute/Examples.lean` | the examples |
+--- a/README.md
++++ b/README.md
+@@ -28,7 +28,7 @@
+ |---|---|
+ | The statements about valuations: Lemma 3.4 (last sentence), Lemma 4.1, Lemma 5.2, Corollary 5.3, Theorem 6.2 (a), (b), (c) and the inequality of (d), Corollary 6.3 | proved in the paper, and formal counterparts are proved in Lean 4 (`lean/direct-route`); in our runs six proof checkers accepted them |
+ | The reduction: Lemmas 2.1 to 2.4, Proposition 7.1, Lemma 8.1, and with them Theorems 1.1 to 1.3 | proved in the paper only; not formalised |
+-| The computations of Section 11 | evidence; no proof uses them |
++| The computations of Section 11 | The searches give evidence. The exact calculation in Remark 9.1 verifies its example. The proofs of the theorems, propositions, lemmas and corollaries are independent of these computations. |
+ 
+ The paper has not been peer reviewed, and no person who works on central configurations or on algebraic
+ geometry has read the proofs. The mathematics was produced by a language-model agent in sessions that
+@@ -132,5 +132,4 @@
+ 
+ ## Licence and citation
+ 
+-The code is under the MIT licence (`LICENSE`). The paper and the documents of `docs/` are under CC BY 4.0
+-(`LICENSE-CC-BY-4.0`). To cite this work, see `CITATION.cff`.
++The source code, including Lean proofs and programs archived under `data/`, and software configuration files are under the MIT licence (`LICENSE`). The paper, the documents and session reports in `docs/`, and the project's recorded data and outputs in `data/` are under CC BY 4.0 (`LICENSE-CC-BY-4.0`). The preferred paper citation is in `CITATION.cff`.
+--- a/data/n7/allN/hier/lean/leangate3_cmp_za6lxQYhmPdbSfiCnWljhkD9/versions.json
++++ b/data/n7/allN/hier/lean/leangate3_cmp_za6lxQYhmPdbSfiCnWljhkD9/versions.json
+@@ -27,7 +27,7 @@
+   "lean-toolchain": "582a63f8f9c5128067b688778c1051cf1464c3ca9d57b9325025c051c29b774a"
+  },
+  "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           43 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  32\nOn-line CPU(s) list:                     0-31\nVendor ID:                               AuthenticAMD\nModel name:                              AMD Ryzen 9 3950X 16-Core Processor\nCPU family:                              23\nModel:                                   113\nThread(s) per core:                      2\nCore(s) per socket:                      16\nSocket(s):                               1\nStepping:                                0\nFrequency boost:                         enabled\nCPU(s) scaling MHz:                      64%\nCPU max MHz:                             5034.6611\nCPU min MHz:                             2200.0000\nBogoMIPS:                                7400.66\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_p",
+- "uname": "Linux [hostname] 6.8.0-138-generic #138~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug  7 13:43:15 UTC  x86_64 GNU/Linux\n",
++ "uname": "Linux [hostname omitted] 6.8.0-138-generic #138~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug  7 13:43:15 UTC  x86_64 GNU/Linux\n",
+  "id": "uid=0(root) gid=0(root) groups=0(root)\n",
+  "userns": "1\n513837\n",
+  "bwrap": "bubblewrap 0.11.1\n-rwxr-xr-x 1 root root 80424 Sep 17 20:12 /usr/bin/bwrap\n"
+--- a/docs/allN-release-read-prompt.md
++++ b/docs/allN-release-read-prompt.md
+@@ -10,14 +10,11 @@
+ more bodies if the proof is right. Read as a referee who expects to find an error, and as a stranger who
+ follows the README and expects it to fail.
+ 
+-**Where you work.** The release is the directory
+-`~/Github/smale6-generic-finiteness/smale6-generic-finiteness`. Read only files inside it, and public
+-sources on the web. Do not open any other directory of this machine; in particular not
+-`~/Github/smale6-dev`. Do not run `git commit`, `git push`, `git checkout` or any command that changes the
++**Where you work.** Use the release directory as your working directory. Read only its files and public
++sources on the web. Keep the development checkout closed. Do not run `git commit`, `git push`, `git checkout` or any command that changes the
+ repository, and edit no file in it.
+ 
+-**Where you write.** Your report goes to `~/Github/smale6-generic-finiteness/R34-report.md`, one level
+-above the repository, and your programs and outputs to `~/Github/smale6-generic-finiteness/r34/`. Create
++**Where you write.** From the release root, write the report to `../R34-report.md` and your programs and outputs to `../r34/`. Create
+ the report file at once with a one-line header. Build products of your tests (LaTeX, compiled programs)
+ go to a copy of the tree under `r34/`, not into the repository.
+ 
+--- a/docs/README.md
++++ b/docs/README.md
+@@ -1,9 +1,7 @@
+ # The record of the checks
+ 
+ Nine language-model sessions checked this work. Each was started with no access to the sessions that
+-produced it. None of this is peer review. Section 13 of the paper describes the sessions; this directory
+-holds what they were given and what they wrote. The reports are unchanged, with one exception that the
+-report R34 states in its second line.
++produced it. None of this is peer review. Section 13 of the paper describes the sessions. This directory holds the reports, surviving prompts and the six texts listed below. Release edits retarget the R31 brief link, the third Lean review’s line links and R34’s links to its outputs, and repair the rendering of two R31 table cells. The review verdicts are preserved.
+ 
+ ## Reports
+ 
+@@ -19,8 +17,7 @@
+ | `allN-direct-route-lean-review-2.md` | the statement file `ChallengeA.lean` | GPT-6.2 Sol |
+ | `allN-direct-route-lean-review-3.md` | the statement file `ChallengeB.lean` | GPT-6.2 Sol |
+ 
+-The model names are those of the author's configuration. A report names its model as far as the session
+-could identify it; R32, R33 and R34 say "GPT-6" and that the variant was not visible to them.
++The model names are those of the author's configuration. R32, R33 and R34 identify GPT-6 and say that the serving variant was unavailable. Several other reports give no model name.
+ 
+ The programs and outputs of the referees are in `data/n7/allN/hier/r29/` to `r34/`.
+ 
+@@ -28,13 +25,12 @@
+ 
+ `allN-paper-referee-prompt.md` (R32), `allN-paper-referee-prompt-2.md` (R33),
+ `allN-release-read-prompt.md` (R34) and `allN-direct-route-lean-review-3-prompt.md` (the third review) are
+-the prompts as given. The write-up read
++the archived prompts. The public copy of the R34 prompt uses relative directory names. The write-up read
+ by R30 and R31 contains its own instructions to the reader (its sections 0, 10 and 11).
+ 
+ ## How to read these files
+ 
+-- The texts of `as-read/` are the versions that the referees judged. Each report states a commit of the
+-  development repository; the file here is the text at that commit. They are earlier than the paper and
++- The texts of `as-read/` are the versions that the referees judged. The R29, R31, R32 and R33 reports identify development commits. R30 identifies its brief and R34 identifies its release snapshot. They are earlier than the paper and
+   differ from it: the paper proves Lemma 5.2 by a shorter argument, states Lemma 8.1 in another form, and
+   numbers its statements differently. Where they differ, the paper is the claim and these are the history.
+ - The reports and the older texts name files of the development repository that are not part of this
+--- a/CITATION.cff
++++ b/CITATION.cff
+@@ -6,7 +6,9 @@
+     given-names: "Keston"
+     affiliation: "No Way Labs"
+ repository-code: "https://github.com/no-way-labs/smale6-generic-finiteness"
+-license: MIT
++license:
++  - MIT
++  - CC-BY-4.0
+ keywords:
+   - central configurations
+   - n-body problem
+--- a/docs/n7-referee-R31.md
++++ b/docs/n7-referee-R31.md
+@@ -1,6 +1,6 @@
+ # Referee R31 — Generic finiteness of planar central configurations
+ 
+-17 November 2026. I read [the second-read brief](allN-direct-route-second-read.md) at commit `7421729`.
++17 November 2026. I read [the second-read brief](as-read/R31-write-up.md) at commit `7421729`.
+ 
+ **Sound with fixes.** Lemma C’s corner argument holds, including when the lightest body occurs in four or more cycle pairs. The scheme-theoretic passage in Lemma D0 works when stated over the rational mass scheme with the source-side fibre dimension. Two 2026 preprints give proofs of the positive-real generic statement for six bodies. I found no Newtonian planar continuum at masses meeting D5′’s valuation hypothesis.
+ 
+@@ -88,10 +88,10 @@
+ | **S2** | **holds** | Mass weighting cancels each internal force in pairs. Substituting $v(P)=-(\zeta+\omega)/2$ gives the two stated $\Phi$ formulas. A zero position deletes its own-colour term and the other-colour formula still has its stated value. With nonzero masses a proper cut has a nonzero body-pair term, and the full body set has at least one nonzero position term in each colour by (F1). Cancellation then requires at least two terms of minimum valuation. For clarity, §2 can define children only at finite height, or define the relation by equality of the two labels or $d_{pp'}>h$. The strict inequality alone is irreflexive when $h=+\infty$. |
+ | **S3** | **holds with a fix** | Replace the compressed “local dimension” and generic-point sentences with the scheme formulation above. Use the fibre-neighbourhood dimension on $\mathcal X$, Chevalley over $\mathbb Q$, and base change from the generic point of $\operatorname{Spec}\mathbb Q[m]$. |
+ | **S4** | **holds with a fix** | Cite Chevalley at line 196. For a nonconstant regular function on an irreducible component, the image is constructible and dense in $\mathbb A^1$, hence cofinite on $K$-points. The set $\overline{\mathbb Q}^{\,*}T^\gamma$ of a prescribed valuation is infinite. Once all squared distances are fixed, the inverse distances have finitely many root choices and the slice quadratic has nonzero leading coefficient $-d_{ab}$. Then (N2)–(N3) recover the positions. In the final sentence of §4 replace “takes every value” with “has cofinite image, hence takes values of arbitrarily large valuation.” The function always omits zero by (N1). |
+-| **S5** | **holds** | Subtracting $u_0$ uses $\sum q_j=0$. For largest index $j>1$, the leading term has absolute value greater than $(1+\tau)|q_j|(u_{j-1}-u_0)$, which dominates the sum of the preceding terms at the stated threshold. For $j=1$ the expression is $q_1(u_1-u_0)$. |
++| **S5** | **holds** | Subtracting $u_0$ uses $\sum q_j=0$. For largest index $j>1$, the leading term has absolute value greater than $(1+\tau)\lvert q_j\rvert(u_{j-1}-u_0)$, which dominates the sum of the preceding terms at the stated threshold. For $j=1$ the expression is $q_1(u_1-u_0)$. |
+ | **S6** | **holds with a fix** | The proof, including the path signs, opposite staircase, corner threshold and count, holds as checked above. Amend the (C1) heading to refer to the intersection of its nodes and qualify or drop the ancillary minimal-size census sentence. |
+ | **S7** | **holds** | A cut made from children at a real $\omega$-height ties only on $E^*$ at that same node. If $Y_r=0$, $r$ and $O$ lie together at every real $\omega$ level and their edge cannot cross this cut. The symmetric argument applies when $X_r=0$. The two ties per incident node give minimum degree two and hence a simple cycle, possibly formed by two parallel edges. The alternating sum gives $2S_p-S_O=3S_p$ and $\sum q_j=5S_p$. When $O$ is removed, node containment of both defining pairs forces equality of two nodes whose restrictions agree. Each O-edge contributes one odd coordinate to $q$ since it occurs only once. If $N=0$, Lemma B would require $\tau<(n-2)(2n-1)-1=2n^2-5n+1$, using $\lvert q_j\rvert\le2n-1$ and at most $n-2$ preceding terms. |
+-| **S8** | **holds** | D4 bounds $v(X_{tl}Y_{tl})$ above by $2M_0+4\max |u_j|$ for all pairs and points. D2 and D0(i) give D5′. The open chamber contains a point outside the countable union of rational hyperplanes, so D0 gives D5 by contradiction and the rational closure argument applies. |
++| **S8** | **holds** | D4 bounds $v(X_{tl}Y_{tl})$ above by $2M_0+4\max \lvert u_j\rvert$ for all pairs and points. D2 and D0(i) give D5′. The open chamber contains a point outside the countable union of rational hyperplanes, so D0 gives D5 by contradiction and the rational closure argument applies. |
+ | **S9** | **holds** | Within the literature searched I found no contradiction to D5 or D5′. The signed and modified Roberts continua and the other fixed mass rays discussed above have equal valuations on all masses after any common rescaling. |
+ 
+ **Q1.** Yes for $n=6$ at the level of explicit preprint proofs of §0, by Tomar and by Chen–Tong. For arbitrary $n$, Tibboel’s claim was withdrawn and Okolo’s public title claim has restricted contents. I found no accessible standing unrestricted planar generic proof for $n\ge7$. The antecedents for the complexification, cut sums, distance-to-zero step and use of valued masses are given above.
+--- a/docs/allN-direct-route-lean-review-3.md
++++ b/docs/allN-direct-route-lean-review-3.md
+@@ -2,15 +2,15 @@
+ 
+ | Declaration | Passage of the paper | Finding |
+ | --- | --- | --- |
+-| `IsAltSeq` | “Let $E$ be a set of edges on which $\zeta$ and $\omega$ are real. A closed alternating sequence in $E$ is a sequence $f_0, g_0, f_1, g_1, \dots, f_{r-1}, g_{r-1}$ of $2r$ distinct edges of $E$, with $r \ge 1$, such that $\omega_{f_i} = \omega_{g_i}$ and $\zeta_{g_i} = \zeta_{f_{i+1}}$ for $0 \le i < r$, where $f_r = f_0$.” [Definition 5.1](../paper/alln/main.tex#L516) | The two injectivity fields and cross-family inequality together are equivalent to pairwise distinctness of all $2r$ entries. Both edge sets used here encode each unordered edge once, with increasing endpoints, and supply finite heights. The generic predicate leaves those domain conditions to the caller. The two colour equalities have the paper’s order, and $(i+1)\bmod r$ wraps exactly at $i=r-1$. Positivity rules out an empty sequence. At $r=1$ the conditions still require two distinct edges of equal height in both colours. |
+-| `lemmaB_sign` | “Let $n \ge 2$, $\tau \ge 0$ and $u \in W_n(\tau)$. Let $q \in \mathbb Z^n$ be a nonzero vector with $\sum_j q_j = 0$, and let $p$ be the largest index with $q_p \ne 0$. If $\tau \ge \frac{1}{\lvert q_p\rvert} \sum_{1 \le j < p} \lvert q_j\rvert - 1$, then $q \cdot u \ne 0$, and $q \cdot u$ has the sign of $q_p$.” [Lemma 4.1](../paper/alln/main.tex#L483) | Set $p=m$ and interpret the Lean prefix through $m$ as a vector of length $n$ extended by zeros. All sums ignore the tail of the input function. `Ico 1 m` has the required endpoints and the two forms of the quotient agree. The zero sum and $q_m\ne0$ force $m\ge1$, so $m<n$ supplies $n\ge2$. A strictly positive product asserts the same sign and nonvanishing. For $n=2$, $\tau=0$, $u=(0,1)$, $q=(1,-1)$ and $m=1$, the ratio minus one is $-1$ and the product is $1$. |
+-| `lemmaC_alt` | “Let $n \ge 2$, $\tau \ge n^2$ and $u \in W_n(\tau)$, and let $\zeta$ and $\omega$ be ultrametrics on the $n$ bodies with real values. Let $E^\circ$ be the set of the pairs of bodies at which $\Psi(a, b) = \tfrac12(\zeta_{ab} + \omega_{ab}) - u_a - u_b$ takes its largest value. Then there is no closed alternating sequence in $E^\circ$.” [Lemma 5.2](../paper/alln/main.tex#L533) | The chamber, threshold, and real ultrametrics match. `psiPair` computes $\Psi$, and `topPairs` includes every maximizing pair. The explicit `hn` matches the paper. For $n<2$ the Lean conclusion would follow from the absence of body pairs. For a genuine input, take $n=4$, $\tau=16$, $u=(0,1,18,324)$ and both heights $17$ on $\{0,2\}$ and $0$ on all other pairs. The chamber and ultrametric conditions hold, and $E^\circ$ contains two pairs, $\{0,1\}$ and $\{0,2\}$. Example 5.4 below shows that the conclusion can fail when the chamber condition is dropped. |
+-| `cycle_alt_bodies` | “Two edges with the same node have the same height by Lemma 3.2(a), and hence the conditions on the nodes imply the conditions on the heights.” “Under the hypotheses of Lemma 5.2 the graph $\Gamma(E^\circ)$ has no simple cycle.” [After Definition 5.1](../paper/alln/main.tex#L525), [Corollary 5.3](../paper/alln/main.tex#L540) | This is the implication used to obtain the corollary. `topPairs` supplies distinct endpoints in range. Equal nodes give equal heights under the two ultrametric hypotheses, and `IsCycle` supplies the edge membership, distinctness and wraparound. Thus the implication has the direction needed for `lemmaC_alt` to imply `lemmaC`. The four-body example supplies a source cycle. Its two $\omega$ nodes are the whole body set and $\{0,2,3\}$, and its two $\zeta$ nodes are the whole set and $\{1,2,3\}$. |
+-| `alt_relation` | “Let $n \ge 2$, $\tau \ge 2n^2$ and $u \in W_n(\tau)$, and let $(u, \zeta, \omega)$ be a weight datum.” “Every closed alternating sequence in $E^*$ contains an $O$-edge.” “For every closed alternating sequence in $E^*$, the numbers of Definition 6.1 satisfy $N \ne 0$ and $N \Psi^* + q \cdot u = 0$.” [Theorem 6.2(b,c)](../paper/alln/main.tex#L650) | `IsWeightDatum` includes $n\ge2$, both ultrametrics and both cut conditions. `IsPsiStar` identifies $P$ with the attained maximum. `Estar` enforces real heights and increasing endpoints, so second endpoint $n$ is exactly the $O$-edge test. In `cycN` and `cycQ`, $f$ has sign $-1$ and $g$ has sign $+1$. The factors are $3$ in $N$ for a body pair, $2$ per body endpoint in $q$ for a body pair, and $-1$ at the body endpoint in $q$ for an $O$-edge, before applying the sign. These agree with Definition 6.1. The dot product covers all $n$ bodies. The `ex2_alt` row gives a witness to the joint hypotheses. |
+-| `cycle_alt` | “Two edges with the same node have the same height by Lemma 3.2(a), and hence the conditions on the nodes imply the conditions on the heights.” In the weight-datum setting, “The graph $\Gamma(E^*)$ has a simple cycle.” [After Definition 5.1](../paper/alln/main.tex#L525), [Theorem 6.2(a)](../paper/alln/main.tex#L653) | This applies the same node-to-height implication to `Estar P`. The full weight-datum hypothesis specializes the general observation to §6 and is already a hypothesis of `cycle_relation`. The local implication uses the ultrametrics and finite heights, and works at any real $\Psi$ level $P$. In particular, at the maximum, the implication allows `alt_relation` to recover `cycle_relation`. The two-body example gives a source cycle, with node $\{0,1,O\}$ for both edges in each colour. |
+-| `psi_star_bound` | “The number $\Psi^*$ belongs to a finite set that depends on $n$ and $u$ only, and $\Psi^* \le \tfrac13 (2n - 1) \sum_j \lvert u_j\rvert$.” [Theorem 6.2(d)](../paper/alln/main.tex#L659) | The hypotheses match Theorem 6.2 and the inequality is exact. The uniform finite-set conclusion for fixed $n$ and $u$ is outside the scope of this declaration and should be recorded as absent in the paper’s table. The two-body example satisfies the hypotheses and gives $-2\le2$. With those same weights, assigning height $10$ to every edge in each colour gives maximum $8$ and fails the cut condition on the full body set. |
+-| `ex2_alt` | “In Example 3.5 the two edges of $E^*$ form the simple cycle $f_0 = \{0, 1\}$, $g_0 = \{1, O\}$, with $N = -3$ and $q = (-2, -3)$.” [Example 6.4](../paper/alln/main.tex#L743) | This states the alternating-sequence portion at $u=(0,2)$. The values of $\Psi$ on $\{0,1\}$, $\{0,O\}$ and $\{1,O\}$ are $-2,-4,-2$, respectively. The two selected edges have heights $(0,0)$, so the single index checks both equalities. Both ultrametrics have triangle heights $0,0,2$, and each cut has two terms tied at $-2$ in both colours. At $\tau=8$, the chamber condition is $0<2$. This supplies all the hypotheses of `alt_relation` at once. The coefficients evaluate to the paper’s $N=-3$, $q=(-2,-3)$. |
+-| `ex4_alt` | “The hypothesis on $u$ is needed, as the following data for $n = 4$ and $u = (0, 0, 1, 1)$ show.” “Then $\Psi = 0$ on all six pairs, and $\{0, 1\}, \{1, 2\}, \{2, 3\}, \{0, 3\}$ is a simple cycle of $E^\circ$.” [Example 5.4](../paper/alln/main.tex#L626) | The type asserts the alternating-sequence portion of the example. The six values of $\Psi$ are all zero. The four successive shared heights are $\omega=0$, $\zeta=2$, $\omega=2$ and $\zeta=0$, the last on the wraparound. Each height function is a real two-level ultrametric. At $\tau=16$, the threshold and all other hypotheses of `lemmaC_alt` hold, and $u_0=u_1$ violates the chamber condition. This is a counterexample to dropping that condition. |
++| `IsAltSeq` | “Let $E$ be a set of edges on which $\zeta$ and $\omega$ are real. A closed alternating sequence in $E$ is a sequence $f_0, g_0, f_1, g_1, \dots, f_{r-1}, g_{r-1}$ of $2r$ distinct edges of $E$, with $r \ge 1$, such that $\omega_{f_i} = \omega_{g_i}$ and $\zeta_{g_i} = \zeta_{f_{i+1}}$ for $0 \le i < r$, where $f_r = f_0$.” [Definition 5.1](as-read/R33-paper.tex#L516) | The two injectivity fields and cross-family inequality together are equivalent to pairwise distinctness of all $2r$ entries. Both edge sets used here encode each unordered edge once, with increasing endpoints, and supply finite heights. The generic predicate leaves those domain conditions to the caller. The two colour equalities have the paper’s order, and $(i+1)\bmod r$ wraps exactly at $i=r-1$. Positivity rules out an empty sequence. At $r=1$ the conditions still require two distinct edges of equal height in both colours. |
++| `lemmaB_sign` | “Let $n \ge 2$, $\tau \ge 0$ and $u \in W_n(\tau)$. Let $q \in \mathbb Z^n$ be a nonzero vector with $\sum_j q_j = 0$, and let $p$ be the largest index with $q_p \ne 0$. If $\tau \ge \frac{1}{\lvert q_p\rvert} \sum_{1 \le j < p} \lvert q_j\rvert - 1$, then $q \cdot u \ne 0$, and $q \cdot u$ has the sign of $q_p$.” [Lemma 4.1](as-read/R33-paper.tex#L483) | Set $p=m$ and interpret the Lean prefix through $m$ as a vector of length $n$ extended by zeros. All sums ignore the tail of the input function. `Ico 1 m` has the required endpoints and the two forms of the quotient agree. The zero sum and $q_m\ne0$ force $m\ge1$, so $m<n$ supplies $n\ge2$. A strictly positive product asserts the same sign and nonvanishing. For $n=2$, $\tau=0$, $u=(0,1)$, $q=(1,-1)$ and $m=1$, the ratio minus one is $-1$ and the product is $1$. |
++| `lemmaC_alt` | “Let $n \ge 2$, $\tau \ge n^2$ and $u \in W_n(\tau)$, and let $\zeta$ and $\omega$ be ultrametrics on the $n$ bodies with real values. Let $E^\circ$ be the set of the pairs of bodies at which $\Psi(a, b) = \tfrac12(\zeta_{ab} + \omega_{ab}) - u_a - u_b$ takes its largest value. Then there is no closed alternating sequence in $E^\circ$.” [Lemma 5.2](as-read/R33-paper.tex#L533) | The chamber, threshold, and real ultrametrics match. `psiPair` computes $\Psi$, and `topPairs` includes every maximizing pair. The explicit `hn` matches the paper. For $n<2$ the Lean conclusion would follow from the absence of body pairs. For a genuine input, take $n=4$, $\tau=16$, $u=(0,1,18,324)$ and both heights $17$ on $\{0,2\}$ and $0$ on all other pairs. The chamber and ultrametric conditions hold, and $E^\circ$ contains two pairs, $\{0,1\}$ and $\{0,2\}$. Example 5.4 below shows that the conclusion can fail when the chamber condition is dropped. |
++| `cycle_alt_bodies` | “Two edges with the same node have the same height by Lemma 3.2(a), and hence the conditions on the nodes imply the conditions on the heights.” “Under the hypotheses of Lemma 5.2 the graph $\Gamma(E^\circ)$ has no simple cycle.” [After Definition 5.1](as-read/R33-paper.tex#L525), [Corollary 5.3](as-read/R33-paper.tex#L540) | This is the implication used to obtain the corollary. `topPairs` supplies distinct endpoints in range. Equal nodes give equal heights under the two ultrametric hypotheses, and `IsCycle` supplies the edge membership, distinctness and wraparound. Thus the implication has the direction needed for `lemmaC_alt` to imply `lemmaC`. The four-body example supplies a source cycle. Its two $\omega$ nodes are the whole body set and $\{0,2,3\}$, and its two $\zeta$ nodes are the whole set and $\{1,2,3\}$. |
++| `alt_relation` | “Let $n \ge 2$, $\tau \ge 2n^2$ and $u \in W_n(\tau)$, and let $(u, \zeta, \omega)$ be a weight datum.” “Every closed alternating sequence in $E^*$ contains an $O$-edge.” “For every closed alternating sequence in $E^*$, the numbers of Definition 6.1 satisfy $N \ne 0$ and $N \Psi^* + q \cdot u = 0$.” [Theorem 6.2(b,c)](as-read/R33-paper.tex#L650) | `IsWeightDatum` includes $n\ge2$, both ultrametrics and both cut conditions. `IsPsiStar` identifies $P$ with the attained maximum. `Estar` enforces real heights and increasing endpoints, so second endpoint $n$ is exactly the $O$-edge test. In `cycN` and `cycQ`, $f$ has sign $-1$ and $g$ has sign $+1$. The factors are $3$ in $N$ for a body pair, $2$ per body endpoint in $q$ for a body pair, and $-1$ at the body endpoint in $q$ for an $O$-edge, before applying the sign. These agree with Definition 6.1. The dot product covers all $n$ bodies. The `ex2_alt` row gives a witness to the joint hypotheses. |
++| `cycle_alt` | “Two edges with the same node have the same height by Lemma 3.2(a), and hence the conditions on the nodes imply the conditions on the heights.” In the weight-datum setting, “The graph $\Gamma(E^*)$ has a simple cycle.” [After Definition 5.1](as-read/R33-paper.tex#L525), [Theorem 6.2(a)](as-read/R33-paper.tex#L653) | This applies the same node-to-height implication to `Estar P`. The full weight-datum hypothesis specializes the general observation to §6 and is already a hypothesis of `cycle_relation`. The local implication uses the ultrametrics and finite heights, and works at any real $\Psi$ level $P$. In particular, at the maximum, the implication allows `alt_relation` to recover `cycle_relation`. The two-body example gives a source cycle, with node $\{0,1,O\}$ for both edges in each colour. |
++| `psi_star_bound` | “The number $\Psi^*$ belongs to a finite set that depends on $n$ and $u$ only, and $\Psi^* \le \tfrac13 (2n - 1) \sum_j \lvert u_j\rvert$.” [Theorem 6.2(d)](as-read/R33-paper.tex#L659) | The hypotheses match Theorem 6.2 and the inequality is exact. The uniform finite-set conclusion for fixed $n$ and $u$ is outside the scope of this declaration and should be recorded as absent in the paper’s table. The two-body example satisfies the hypotheses and gives $-2\le2$. With those same weights, assigning height $10$ to every edge in each colour gives maximum $8$ and fails the cut condition on the full body set. |
++| `ex2_alt` | “In Example 3.5 the two edges of $E^*$ form the simple cycle $f_0 = \{0, 1\}$, $g_0 = \{1, O\}$, with $N = -3$ and $q = (-2, -3)$.” [Example 6.4](as-read/R33-paper.tex#L743) | This states the alternating-sequence portion at $u=(0,2)$. The values of $\Psi$ on $\{0,1\}$, $\{0,O\}$ and $\{1,O\}$ are $-2,-4,-2$, respectively. The two selected edges have heights $(0,0)$, so the single index checks both equalities. Both ultrametrics have triangle heights $0,0,2$, and each cut has two terms tied at $-2$ in both colours. At $\tau=8$, the chamber condition is $0<2$. This supplies all the hypotheses of `alt_relation` at once. The coefficients evaluate to the paper’s $N=-3$, $q=(-2,-3)$. |
++| `ex4_alt` | “The hypothesis on $u$ is needed, as the following data for $n = 4$ and $u = (0, 0, 1, 1)$ show.” “Then $\Psi = 0$ on all six pairs, and $\{0, 1\}, \{1, 2\}, \{2, 3\}, \{0, 3\}$ is a simple cycle of $E^\circ$.” [Example 5.4](as-read/R33-paper.tex#L626) | The type asserts the alternating-sequence portion of the example. The six values of $\Psi$ are all zero. The four successive shared heights are $\omega=0$, $\zeta=2$, $\omega=2$ and $\zeta=0$, the last on the wraparound. Each height function is a real two-level ultrametric. At $\tau=16$, the threshold and all other hypotheses of `lemmaC_alt` hold, and $u_0=u_1$ violates the chamber condition. This is a counterexample to dropping that condition. |
+ 
+ **Model** — GPT-6 (OpenAI Codex).
+ 
+--- a/data/n7/allN/hier/r30/cert6b.py
++++ b/data/n7/allN/hier/r30/cert6b.py
+@@ -86,7 +86,7 @@
+         ncert += 1
+     else:
+         still.append((iz, iw, cyc, tag))
+-print(f"newly certified: {ncert}/{len(fails)}; total {108+ncert}/192")
++print(f"newly certified: {ncert}/{len(fails)}; total {len(surv) - len(still)}/{len(surv)}")
+ for s in still[:10]:
+     print("  still uncertified:", s)
+ pickle.dump(still, open("cert6_still.pkl", "wb"))

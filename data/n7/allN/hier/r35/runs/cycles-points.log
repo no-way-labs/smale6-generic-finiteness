@@ -1,0 +1,30 @@
+data/n7/allN/hier/nk/nk5psi_cmp_Ui5e32JQNG1V1X4IL62WN_sX/GP.json.gz: K=5 u=[0.0, 1.0, 2.37, 4.91, 8.53]
+  points 30; a vertex of B of degree 1: 0 points; cycles of the bases 30; relation N Psi* + q.u = 0 fails on 0 (largest residue over all cycles 2e-05; tolerance of a tie 0.001)
+  points with a cycle with N != 0: 30; without: 0; cycles with N = 0 and q != 0: 0; with N = 0 and q = 0: 0
+  E* has: {'position pair': 30}; sizes of E*: {4: 18, 6: 6, 8: 6}
+  values -q.u/N of the cycles with N != 0 (count of cycles): {'233/75': 18, '257/75': 2, '233/60': 2, '253/60': 2, '473/100': 2, '1519/300': 2, '138/25': 2}
+data/n7/allN/hier/nk/nk5psi_cmp_Ui5e32JQNG1V1X4IL62WN_sX/HP.json.gz: K=5 u=[0.0, 1.0, 12.0, 150.0, 1900.0]
+  points 203; a vertex of B of degree 1: 0 points; cycles of the bases 203; relation N Psi* + q.u = 0 fails on 0 (largest residue over all cycles 2e-05; tolerance of a tie 0.001)
+  points with a cycle with N != 0: 203; without: 0; cycles with N = 0 and q != 0: 0; with N = 0 and q = 0: 0
+  E* has: {'position pair': 203}; sizes of E*: {4: 123, 6: 74, 8: 6}
+  values -q.u/N of the cycles with N != 0 (count of cycles): {'87': 20, '262/3': 19, '91': 19, '1104': 1, '3313/3': 1, '3314/3': 2, '3323/3': 2, '1108': 4, '3325/3': 2, '3326/3': 4, '3347/3': 10, '1116': 10, '3461/3': 4, '1154': 5, '3463/3': 3, '3464/3': 6, '3473/3': 4, '3475/3': 4, '3485/3': 3, '1162': 3, '3497/3': 7, '3761/3': 20, '1254': 19, '3773/3': 19, '7112/3': 2, '7123/3': 2, '7124/3': 2, '7261/3': 2, '7262/3': 2, '7273/3': 2}
+data/n7/allN/hier/nk/nk5psi_cmp_Ui5e32JQNG1V1X4IL62WN_sX/WP.json.gz: K=5 u=[0.0, 1.0, 52.0, 2700.0, 140000.0]
+  points 204; a vertex of B of degree 1: 0 points; cycles of the bases 204; relation N Psi* + q.u = 0 fails on 0 (largest residue over all cycles 2e-05; tolerance of a tie 0.001)
+  points with a cycle with N != 0: 204; without: 0; cycles with N = 0 and q != 0: 0; with N = 0 and q = 0: 0
+  E* has: {'position pair': 204}; sizes of E*: {4: 123, 6: 75, 8: 6}
+  values -q.u/N of the cycles with N != 0 (count of cycles): {'1747': 20, '5242/3': 19, '5293/3': 19, '271742/3': 1, '90581': 1, '271744/3': 2, '271793/3': 2, '90598': 4, '271795/3': 2, '271796/3': 4, '271897/3': 11, '271898/3': 10, '274441/3': 4, '274442/3': 5, '91481': 3, '274444/3': 6, '274493/3': 4, '274495/3': 4, '91515': 3, '274546/3': 3, '274597/3': 7, '279841/3': 20, '279842/3': 19, '279893/3': 19, '183914': 2, '183931': 2, '551794/3': 2, '554441/3': 2, '184814': 2, '184831': 2}
+data/n7/allN/hier/nk/nk6s_cmp_FGjNKJfP0oC61aDnBF97m_-I/AP.json.gz: K=6 u=[0.0, 1.0, 12.0, 150.0, 1900.0, 24000.0]
+  points 108; a vertex of B of degree 1: 0 points; cycles of the bases 108; relation N Psi* + q.u = 0 fails on 0 (largest residue over all cycles 2e-05; tolerance of a tie 0.001)
+  points with a cycle with N != 0: 108; without: 0; cycles with N = 0 and q != 0: 0; with N = 0 and q = 0: 0
+  E* has: {'position pair': 108}; sizes of E*: {4: 68, 6: 35, 8: 5}
+  values -q.u/N of the cycles with N != 0 (count of cycles): {'87': 5, '262/3': 4, '91': 6, '274/3': 2, '3325/3': 3, '3347/3': 3, '1116': 5, '3464/3': 2, '3485/3': 1, '3497/3': 1, '3761/3': 5, '1254': 1, '3773/3': 3, '7123/3': 1, '41998/3': 3, '14092': 3, '14099': 2, '42298/3': 1, '43726/3': 2, '14621': 3, '43900/3': 3, '44047/3': 4, '44161/3': 1, '44164/3': 1, '44185/3': 2, '44197/3': 2, '44198/3': 2, '15838': 2, '15842': 1, '15849': 2, '47548/3': 2, '47662/3': 4, '15888': 1, '15891': 1, '15892': 2, '47686/3': 1, '15987': 1, '47962/3': 8, '15991': 4, '47974/3': 2, '17154': 1, '29991': 1, '89974/3': 1, '30625': 1, '92161/3': 1, '95512/3': 1}
+data/n7/allN/hier/nk/nk6s_cmp_FGjNKJfP0oC61aDnBF97m_-I/BP.json.gz: K=6 u=[0.0, 1.0, 45.0, 2000.0, 89000.0, 3920000.0]
+  points 189; a vertex of B of degree 1: 0 points; cycles of the bases 189; relation N Psi* + q.u = 0 fails on 0 (largest residue over all cycles 2e-05; tolerance of a tie 0.001)
+  points with a cycle with N != 0: 189; without: 0; cycles with N = 0 and q != 0: 0; with N = 0 and q = 0: 0
+  E* has: {'position pair': 189}; sizes of E*: {4: 133, 6: 46, 8: 10}
+  values -q.u/N of the cycles with N != 0 (count of cycles): {'3862/3': 7, '3863/3': 7, '3907/3': 6, '3908/3': 3, '171908/3': 1, '57303': 3, '171997/3': 4, '171998/3': 5, '173863/3': 2, '57955': 3, '173909/3': 1, '57984': 1, '57999': 3, '173998/3': 1, '177862/3': 7, '177863/3': 4, '177907/3': 12, '349907/3': 1, '7567000/3': 1, '7568998/3': 7, '7572908/3': 3, '7572910/3': 4, '7572997/3': 2, '7572998/3': 2, '2551970': 2, '2552000': 4, '7657864/3': 3, '7658000/3': 4, '7659997/3': 4, '2553954': 1, '7661863/3': 1, '2553955': 1, '2553970': 3, '2553984': 4, '2553999': 4, '7661998/3': 3, '7833865/3': 2, '7833908/3': 1, '7833910/3': 2, '7833997/3': 2, '7833998/3': 5, '7835863/3': 4, '2611955': 1, '2611969': 1, '7835909/3': 6, '2611970': 3, '7835953/3': 1, '2611999': 1, '7835998/3': 1, '7839862/3': 1, '7839863/3': 8, '7839907/3': 9, '7839908/3': 3, '2670621': 1, '8013863/3': 1, '15408907/3': 1, '15408908/3': 1, '15495865/3': 2, '15497909/3': 1, '15501862/3': 1, '5224621': 1, '5224636': 3, '15675862/3': 1, '7749636': 1}
+data/n7/allN/hier/nk/nk6s_cmp_FGjNKJfP0oC61aDnBF97m_-I/BL.json.gz: K=6 u=[0.0, 1.0, 45.0, 2000.0, 89000.0, 3920000.0]
+  points 1589; a vertex of B of degree 1: 0 points; cycles of the bases 1589; relation N Psi* + q.u = 0 fails on 0 (largest residue over all cycles 2e-05; tolerance of a tie 0.001)
+  points with a cycle with N != 0: 1589; without: 0; cycles with N = 0 and q != 0: 0; with N = 0 and q = 0: 0
+  E* has: {'position pair': 1589}; sizes of E*: {2: 1550, 4: 26, 6: 13}
+  values -q.u/N of the cycles with N != 0 (count of cycles): {'-2030': 6, '-2000': 4, '-4000/3': 2, '-2092/3': 3, '-75': 1, '-137/3': 53, '-45': 55, '-31': 25, '-30': 28, '-47/3': 4, '-1': 1196, '-2/3': 174, '3863/3': 3, '3907/3': 2, '3908/3': 1, '171997/3': 1, '171998/3': 2, '57984': 1, '57999': 1, '177862/3': 2, '177907/3': 3, '7572910/3': 1, '7572998/3': 1, '7657864/3': 3, '7658000/3': 1, '7659997/3': 4, '2553955': 1, '2553984': 2, '7661998/3': 1, '7835863/3': 1, '2611955': 1, '2611970': 1, '7839863/3': 2, '7839907/3': 2, '7839908/3': 1}

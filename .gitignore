@@ -1,0 +1,18 @@
+# Lean build output and the Mathlib cache
+lean/**/.lake/
+# LaTeX build output
+paper/alln/*.aux
+paper/alln/*.bbl
+paper/alln/*.blg
+paper/alln/*.fdb_latexmk
+paper/alln/*.fls
+paper/alln/*.log
+paper/alln/*.out
+paper/alln/*.synctex.gz
+# Python and compiled programs
+__pycache__/
+*.pyc
+/search
+/check
+/cycles
+.DS_Store

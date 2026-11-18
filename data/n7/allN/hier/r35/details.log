@@ -1,0 +1,39 @@
+593
+572 lines
+wrote DefsB.lean and Alt.lean
+Challenge.lean 280 ['lemmaB', 'lemmaC', 'degree_two', 'exists_cycle', 'cycle_relation', 'collision_bound', 'chamber_nonempty', 'ex2_spec', 'ex3_spec', 'ex3c_spec', 'ex3m_spec', 'ex4_cycle'] Table 4 or supplementary examples: [('ex3_spec', False), ('ex3c_spec', False), ('ex3m_spec', False)]
+comparator.nosandbox.log.gz ['Lean paranoid kernel accepts the solution', 'lean4lean kernel accepts the solution', 'nanoda kernel accepts the solution', 'con-leche kernel accepts the solution', 'con-ron kernel accepts the solution', 'Lean default kernel accepts the solution'] # rc 0
+ChallengeA.lean 57 ['lemmaA', 'solution_bound'] Table 4 or supplementary examples: []
+comparatorA.nosandbox.log.gz ['Lean paranoid kernel accepts the solution', 'lean4lean kernel accepts the solution', 'nanoda kernel accepts the solution', 'con-leche kernel accepts the solution', 'con-ron kernel accepts the solution', 'Lean default kernel accepts the solution'] # rc 0
+ChallengeB.lean 103 ['lemmaB_sign', 'lemmaC_alt', 'cycle_alt_bodies', 'alt_relation', 'cycle_alt', 'psi_star_bound', 'ex2_alt', 'ex4_alt'] Table 4 or supplementary examples: []
+comparatorB.nosandbox.log.gz ['Lean paranoid kernel accepts the solution', 'lean4lean kernel accepts the solution', 'nanoda kernel accepts the solution', 'con-leche kernel accepts the solution', 'con-ron kernel accepts the solution', 'Lean default kernel accepts the solution'] # rc 0
+paper ['-64,3 +64,4', '-126 +127', '-133,2 +134', '-184,4 +184,7', '-813 +816,2', '-898,2 +902,4', '-937 +943', '-943,9 +949,15', '-962,4 +974,5', '-1013 +1026', '-1016,2 +1029,4', '-1030 +1045,2', '-1089,7 +1105,19', '-1100,3 +1128,5', '-1110,3 +1140,3', '-1120,2 +1150', '-1124 +1153,3', '-1131,5 +1162,7', '-1138,6 +1171,12', '-1145 +1184', '-1148 +1187', '-1154,3 +1193,3', '-1157,0 +1197,7', '-1193,3 +1239,3', '-1198,3 +1244,4', '-1202 +1249', '-1219,2 +1266,16', '-1227,5 +1288,5']
+references ['-183,0 +184', '-190 +191']
+bib entries 32 cited 30 unused {'dias2026', 'moulton1910'} unresolved set()
+source refs 58 labels 59
+suggested CFF licenses valid
+job IDs in path components ['cmp_FGjNKJfP0oC61aDnBF97m_-I', 'cmp_Ui5e32JQNG1V1X4IL62WN_sX', 'cmp_za6lxQYhmPdbSfiCnWljhkD9']
+GFM delimiter count docs/n7-referee-R31.md 91 3 5
+GFM delimiter count docs/n7-referee-R31.md 94 3 5
+old line 516 \begin{definition}\label{def:alt}
+old line 483 \begin{lemma}\label{lem:B}
+old line 533 \begin{lemma}\label{lem:C}
+old line 525 A simple cycle of $E$ is a simple cycle, in the usual sense, of the following bipartite multigraph
+old line 540 \begin{corollary}\label{cor:C}
+old line 650 \begin{theorem}\label{thm:D4}
+old line 525 A simple cycle of $E$ is a simple cycle, in the usual sense, of the following bipartite multigraph
+old line 653 \item[(a)] For every edge $e \in \Es$ there is an edge $e' \in \Es$ with $e' \ne e$ and
+old line 659 \item[(d)] The number $\Ps$ belongs to a finite set that depends on $n$ and $u$ only, and
+old line 743 \begin{example}\label{ex:n2cycle}
+old line 626 \begin{example}\label{ex:0011}
+all generated Lean files byte-identical to release
+R30 recipe dependencies
+check2 []
+check6fast ['surv6.pkl']
+lp6 ['surv6.pkl']
+cert6 ['cert6_fails.pkl']
+cert6b ['cert6_fails.pkl', 'cert6_still.pkl']
+d4n4 ['d4n4_chamber.pkl', 'd4n4_control.pkl']
+d4n4b ['d4n4.py', 'd4n4b_chamber.pkl', 'd4n4b_control.pkl']
+run6 ['bal6.pkl']
+n7rand []

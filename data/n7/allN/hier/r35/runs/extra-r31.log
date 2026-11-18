@@ -1,0 +1,35 @@
+outside-chamber control, n=8: witness, cycle ((0, 1), (1, 2), (2, 3), (0, 3))
+all labelled octagons modulo rotation and reversal, n=8, 362880 placements
+  corner overtakes cycle: 544
+  forced greater height: 257040
+  heavier body in an edge intersection: 105296
+  first corner (edges, z, w, (i, j, a, b, 2 Delta Psi))): (((0, 1), (1, 2), (2, 3), (5, 7), (4, 5), (3, 4), (6, 7), (0, 6)), [0, 132, 165345840792, 165307900032], [2, 8712, -165307316328, 2504665152], [(3, 1, 6, 5, 162765294120)])
+square and hexagon sharing two bodies, n=8, 2880 placements
+  forced greater height: 2816
+  repeated node: 64
+two pentagons sharing two bodies, n=8, 2880 placements
+  forced greater height: 2845
+  repeated node: 35
+square and hexagon sharing the lightest body, n=9, 2880 placements
+  forced greater height: 2670
+  heavier body in an edge intersection: 10
+  repeated node: 200
+triangle and heptagon sharing the lightest body, n=9, 2880 placements
+  corner overtakes cycle: 4
+  forced greater height: 2796
+  heavier body in an edge intersection: 80
+  first corner (edges, z, w, (i, j, a, b, 2 Delta Psi))): (((5, 8), (5, 7), (7, 8), (0, 2), (0, 4), (4, 8), (1, 2), (6, 8), (3, 6), (1, 3)), [0, -53618221232516, -108544203958342, -54272101979088, 7878081284], [54272196895896, 108544203958508, 108544205101916, 54272101979256, 13780], [(3, 1, 4, 7, 53618220089108), (0, 3, 5, 6, 54264128981328)])
+three squares sharing the lightest body, n=10, 86400 placements
+  forced greater height: 84224
+  heavier body in an edge intersection: 12
+  repeated node: 2164
+same three squares with a lighter body off the cycle, n=11, 86400 placements
+  forced greater height: 84224
+  heavier body in an edge intersection: 12
+  repeated node: 2164
+twelve bodies on a ring, n=12, 86400 placements
+  forced greater height: 84052
+  heavier body in an edge intersection: 2348
+four squares sharing the lightest body, seeded sample, n=13, 20000 placements
+  forced greater height: 19964
+  repeated node: 36

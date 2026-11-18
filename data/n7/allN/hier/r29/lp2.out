@@ -1,0 +1,34 @@
+r29_lp n = 2, u = 0,1, stratum main, mode list: 9 pairs of trees; LPs 30; LPs neither optimal nor infeasible 0; 0 s
+   points found: 1; not ultrametric 0; with a cut condition that fails (recomputed from the monomials) 0; simple cycles of B over all points 1
+   failures of the statements of Theorem D4: none
+   distinct values of Psi* (1): -1
+   largest Psi* = -1; bound of Theorem D4 = 1
+   example with Psi* = -1: E* = [(0, 1), (1, 2)]
+      zeta  = {'01': -0.0, '0O': 1.0, '1O': -0.0}
+      omega = {'01': -0.0, '0O': 1.0, '1O': -0.0}
+      cycle [(0, 1), (1, 2)]: N = -3, q = [-2, -3], N Psi* + q.u = 0.00e+00
+r29_lp n = 2, u = 0,1, stratum main, mode max: 9 pairs of trees; LPs 83; LPs neither optimal nor infeasible 0; 0 s
+   points found: 2; not ultrametric 0; with a cut condition that fails (recomputed from the monomials) 0; simple cycles of B over all points 2
+   failures of the statements of Theorem D4: none
+   distinct values of Psi* (1): -1
+   largest Psi* = -1; bound of Theorem D4 = 1
+   example with Psi* = -1: E* = [(0, 1), (1, 2)]
+      zeta  = {'01': -0.0, '0O': 1.0, '1O': -0.0}
+      omega = {'01': -0.0, '0O': 1.0, '1O': -0.0}
+      cycle [(0, 1), (1, 2)]: N = -3, q = [-2, -3], N Psi* + q.u = 0.00e+00
+r29_lp n = 2, u = 0,1, stratum Y_0 = 0, mode list: 3 pairs of trees; LPs 0; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 2, u = 0,1, stratum Y_1 = 0, mode list: 3 pairs of trees; LPs 0; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 2, u = 0,1, stratum X_0 = 0, mode list: 3 pairs of trees; LPs 0; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 2, u = 0,1, stratum X_0 = 0 Y_0 = 0, mode list: 1 pairs of trees; LPs 0; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 2, u = 0,1, stratum X_0 = 0 Y_1 = 0, mode list: 1 pairs of trees; LPs 0; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 2, u = 0,1, stratum X_1 = 0, mode list: 3 pairs of trees; LPs 0; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 2, u = 0,1, stratum X_1 = 0 Y_0 = 0, mode list: 1 pairs of trees; LPs 0; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 2, u = 0,1, stratum X_1 = 0 Y_1 = 0, mode list: 1 pairs of trees; LPs 0; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0

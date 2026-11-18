@@ -1,0 +1,120 @@
+r29_lp n = 3, u = 0,1,20, stratum Y_0 = 0, mode list: 45 pairs of trees; LPs 419; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum Y_0 = 0, mode max: 45 pairs of trees; LPs 1211; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum Y_1 = 0, mode list: 45 pairs of trees; LPs 676; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum Y_1 = 0, mode max: 45 pairs of trees; LPs 2282; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum Y_2 = 0, mode list: 45 pairs of trees; LPs 970; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum Y_2 = 0, mode max: 45 pairs of trees; LPs 2762; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_0 = 0, mode list: 45 pairs of trees; LPs 312; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_0 = 0, mode max: 45 pairs of trees; LPs 932; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_0 = 0 Y_0 = 0, mode list: 9 pairs of trees; LPs 26; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_0 = 0 Y_0 = 0, mode max: 9 pairs of trees; LPs 95; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_0 = 0 Y_1 = 0, mode list: 9 pairs of trees; LPs 49; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_0 = 0 Y_1 = 0, mode max: 9 pairs of trees; LPs 142; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_0 = 0 Y_2 = 0, mode list: 9 pairs of trees; LPs 56; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_0 = 0 Y_2 = 0, mode max: 9 pairs of trees; LPs 150; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_1 = 0, mode list: 45 pairs of trees; LPs 536; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_1 = 0, mode max: 45 pairs of trees; LPs 1730; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_1 = 0 Y_0 = 0, mode list: 9 pairs of trees; LPs 62; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_1 = 0 Y_0 = 0, mode max: 9 pairs of trees; LPs 166; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_1 = 0 Y_1 = 0, mode list: 9 pairs of trees; LPs 68; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_1 = 0 Y_1 = 0, mode max: 9 pairs of trees; LPs 261; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_1 = 0 Y_2 = 0, mode list: 9 pairs of trees; LPs 108; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_1 = 0 Y_2 = 0, mode max: 9 pairs of trees; LPs 308; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_2 = 0, mode list: 45 pairs of trees; LPs 894; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_2 = 0, mode max: 45 pairs of trees; LPs 2578; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_2 = 0 Y_0 = 0, mode list: 9 pairs of trees; LPs 77; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_2 = 0 Y_0 = 0, mode max: 9 pairs of trees; LPs 191; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_2 = 0 Y_1 = 0, mode list: 9 pairs of trees; LPs 134; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_2 = 0 Y_1 = 0, mode max: 9 pairs of trees; LPs 361; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_2 = 0 Y_2 = 0, mode list: 9 pairs of trees; LPs 178; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,20, stratum X_2 = 0 Y_2 = 0, mode max: 9 pairs of trees; LPs 494; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum Y_0 = 0, mode list: 45 pairs of trees; LPs 419; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum Y_0 = 0, mode max: 45 pairs of trees; LPs 1211; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum Y_1 = 0, mode list: 45 pairs of trees; LPs 676; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum Y_1 = 0, mode max: 45 pairs of trees; LPs 2282; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum Y_2 = 0, mode list: 45 pairs of trees; LPs 970; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum Y_2 = 0, mode max: 45 pairs of trees; LPs 2762; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_0 = 0, mode list: 45 pairs of trees; LPs 312; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_0 = 0, mode max: 45 pairs of trees; LPs 932; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_0 = 0 Y_0 = 0, mode list: 9 pairs of trees; LPs 26; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_0 = 0 Y_0 = 0, mode max: 9 pairs of trees; LPs 95; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_0 = 0 Y_1 = 0, mode list: 9 pairs of trees; LPs 49; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_0 = 0 Y_1 = 0, mode max: 9 pairs of trees; LPs 142; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_0 = 0 Y_2 = 0, mode list: 9 pairs of trees; LPs 56; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_0 = 0 Y_2 = 0, mode max: 9 pairs of trees; LPs 150; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_1 = 0, mode list: 45 pairs of trees; LPs 536; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_1 = 0, mode max: 45 pairs of trees; LPs 1730; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_1 = 0 Y_0 = 0, mode list: 9 pairs of trees; LPs 62; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_1 = 0 Y_0 = 0, mode max: 9 pairs of trees; LPs 166; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_1 = 0 Y_1 = 0, mode list: 9 pairs of trees; LPs 68; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_1 = 0 Y_1 = 0, mode max: 9 pairs of trees; LPs 261; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_1 = 0 Y_2 = 0, mode list: 9 pairs of trees; LPs 108; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_1 = 0 Y_2 = 0, mode max: 9 pairs of trees; LPs 308; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_2 = 0, mode list: 45 pairs of trees; LPs 894; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_2 = 0, mode max: 45 pairs of trees; LPs 2578; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_2 = 0 Y_0 = 0, mode list: 9 pairs of trees; LPs 77; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_2 = 0 Y_0 = 0, mode max: 9 pairs of trees; LPs 191; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_2 = 0 Y_1 = 0, mode list: 9 pairs of trees; LPs 134; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_2 = 0 Y_1 = 0, mode max: 9 pairs of trees; LPs 361; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_2 = 0 Y_2 = 0, mode list: 9 pairs of trees; LPs 178; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0
+r29_lp n = 3, u = 0,1,50, stratum X_2 = 0 Y_2 = 0, mode max: 9 pairs of trees; LPs 494; LPs neither optimal nor infeasible 0; 0 s
+   points found: 0

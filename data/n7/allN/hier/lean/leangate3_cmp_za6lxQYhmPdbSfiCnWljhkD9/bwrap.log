@@ -1,0 +1,3 @@
+# bwrap --ro-bind / / --unshare-net --dev /dev --proc /proc true
+bwrap: Creating new namespace failed: Operation not permitted
+# rc 1

@@ -1,0 +1,103 @@
+url	status	type	final host	document title	curl exit	size
+https://annals.math.princeton.edu/2012/176-1/p10	200	text/html; charset=UTF-8	annals.math.princeton.edu	Finiteness of central configurations of five bodies in the plane | Annals of Mathematics	0	77986
+https://annals.math.princeton.edu/wp-content/uploads/annals-v176-n1-p10-p.pdf	200	application/pdf	annals.math.princeton.edu	PDF	0	629963
+https://api.crossref.org/works/10.1007/s10569-019-9920-6	200	application/json	api.crossref.org		0	12206
+https://api.crossref.org/works/10.1007/s10569-020-09993-1	200	application/json	api.crossref.org		0	10560
+https://api.datacite.org/dois/10.5281/zenodo.23576138	200	application/json; charset=utf-8	api.datacite.org		0	5132
+https://api.datacite.org/dois/10.5281/zenodo.23720035	200	application/json; charset=utf-8	api.datacite.org		0	10657
+https://arxiv.org/abs/0705.1732	200	text/html; charset=utf-8	arxiv.org	[0705.1732] Fibers of tropicalization	0	37632
+https://arxiv.org/abs/0909.4904	200	text/html; charset=utf-8	arxiv.org	[0909.4904] A Counterexample to a Generalized Saari's Conjecture with a Continuum of Central Configurations	0	40661
+https://arxiv.org/abs/1204.1837	200	text/html; charset=utf-8	arxiv.org	"[1204.1837] Correction to ""Fibers of tropicalization"""	0	36928
+https://arxiv.org/abs/1305.1728	200	text/html; charset=utf-8	arxiv.org	[1305.1728] Finiteness of classes of relative equilibria for the $n$-body problem	0	37199
+https://arxiv.org/abs/1508.06593	200	text/html; charset=utf-8	arxiv.org	[1508.06593] New equations for central configurations and generic finiteness	0	38781
+https://arxiv.org/abs/1811.08681	200	text/html; charset=utf-8	arxiv.org	[1811.08681] Generic finiteness for a class of symmetric planar central configurations of the six-body problem and the six-vortex problem	0	39193
+https://arxiv.org/abs/1812.07279	200	text/html; charset=utf-8	arxiv.org	[1812.07279] Central configurations in planar $n$-body problem with equal masses for $n = 5, 6, 7$	0	39605
+https://arxiv.org/abs/2006.06768	200	text/html; charset=utf-8	arxiv.org	[2006.06768] Central configurations in spatial n-body problem for n = 5, 6 with equal masses	0	40180
+https://arxiv.org/abs/2303.02853	200	text/html; charset=utf-8	arxiv.org	[2303.02853] Toward finiteness of central configurations for the planar six-body problem by symbolic computations	0	40574
+https://arxiv.org/abs/2502.20228	200	text/html; charset=utf-8	arxiv.org	[2502.20228] Finiteness of non-degenerate central configurations of the planar $n$-body problem with a homogeneous potential	0	38001
+https://arxiv.org/abs/2601.07962	200	text/html; charset=utf-8	arxiv.org	[2601.07962] The Veronese Geometry of Dziobek Configurations and Generic Finiteness for Homogeneous Potentials	0	41124
+https://arxiv.org/abs/2610.04136	200	text/html; charset=utf-8	arxiv.org	[2610.04136] Continuous Families of Central Configurations for Even-Power Homogeneous Potentials	0	41108
+https://arxiv.org/abs/2610.13100	200	text/html; charset=utf-8	arxiv.org	[2610.13100] Smale's sixth problem for five bodies in the plane, with a proof formalized in Lean	0	43020
+https://arxiv.org/abs/2610.13100v2	200	text/html; charset=utf-8	arxiv.org	[2610.13100v2] Smale's sixth problem for five bodies in the plane, with a proof formalized in Lean	0	43032
+https://arxiv.org/abs/2610.16107	200	text/html; charset=utf-8	arxiv.org	[2610.16107] Finiteness of planar central configurations of five bodies for all positive masses: On Smale's sixth problem	0	41293
+https://arxiv.org/abs/2610.23329	200	text/html; charset=utf-8	arxiv.org	[2610.23329] Finiteness of planar central configurations of six bodies for all positive masses: Part I, exceptional-mass first limits	0	40849
+https://arxiv.org/abs/2610.28168	200	text/html; charset=utf-8	arxiv.org	[2610.28168] Finiteness of planar central configurations of five bodies with positive masses	0	38483
+https://arxiv.org/html/2301.02305v2	200	text/html; charset=utf-8	arxiv.org	Smale’s 6th problem for generic masses	0	108096
+https://arxiv.org/html/2610.23329v1	200	text/html; charset=utf-8	arxiv.org	Generic finiteness of planar six-body central configurations: Part I, exceptional-mass first limits	0	1685287
+https://arxiv.org/pdf/0705.1732	200	application/pdf	arxiv.org	PDF	0	193219
+https://arxiv.org/pdf/1811.08681	200	application/pdf	arxiv.org	PDF	0	280995
+https://arxiv.org/pdf/2502.20228	200	application/pdf	arxiv.org	PDF	0	137991
+https://arxiv.org/pdf/2610.04136	200	application/pdf	arxiv.org	PDF	0	479699
+https://arxiv.org/pdf/2610.23329	200	application/pdf	arxiv.org	PDF	0	581594
+https://arxiv.org/pdf/2610.23329v1	200	application/pdf	arxiv.org	PDF	0	581594
+https://doi.org/10.1007/11870814_16	200	text/html; charset=utf-8	link.springer.com	Numeric-Symbolic Computations in the Study of Central Configurations in the Planar Newtonian Four-Body Problem | Springer Nature Link	0	251972
+https://doi.org/10.1007/s00222-005-0461-0	200	text/html; charset=utf-8	link.springer.com	Finiteness of relative equilibria of the four-body problem | Inventiones mathematicae | Springer Nature Link	0	298876
+https://doi.org/10.1007/s10569-013-9471-1	200	text/html; charset=utf-8	link.springer.com	Continua of central configurations with a negative mass in the $$n$$ -body problem | Celestial Mechanics and Dynamical Astronomy | Springer Nature Link	0	278830
+https://doi.org/10.1007/s10569-020-09993-1	200	text/html; charset=utf-8	link.springer.com	Central configurations in the spatial n-body problem for $$n=5,6$$ with equal masses | Celestial Mechanics and Dynamical Astronomy | Springer Nature Link	0	433847
+https://doi.org/10.1007/s10884-019-09765-y	200	text/html; charset=utf-8	link.springer.com	Generic Finiteness for a Class of Symmetric Planar Central Configurations of the Six-Body Problem and the Six-Vortex Problem | Journal of Dynamics and Differential Equations | Spri	0	315722
+https://doi.org/10.1016/0022-0396(91)90137-X	200	text/html;charset=UTF-8	linkinghub.elsevier.com	Redirecting	0	2657
+https://doi.org/10.1016/0304-3975(83)90002-6	200	text/html;charset=UTF-8	linkinghub.elsevier.com	Redirecting	0	2687
+https://doi.org/10.1016/j.physd.2013.12.001	200	text/html;charset=UTF-8	linkinghub.elsevier.com	Redirecting	0	2694
+https://doi.org/10.5281/zenodo.23720035	200	text/html; charset=utf-8	zenodo.org	Smale's sixth problem for six bodies in the plane: finiteness of central configurations for generic masses, with a proof formalized in Lean | Zenodo	0	84914
+https://doi.org/10.56994/JXM.001.002.006	200	text/html; charset=utf-8	jexpmath.org	Smale's 6th Problem for Generic Masses | Journal of Experimental Mathematics	0	22635
+https://github.com/leanprover-community/mathlib4/releases/tag/v4.36.0	200	text/html; charset=utf-8	github.com	Release v4.36.0 · leanprover-community/mathlib4 · GitHub	0	146545
+https://github.com/leanprover/elan	200	text/html; charset=utf-8	github.com	GitHub - leanprover/elan: The Lean version manager · GitHub	0	273524
+https://github.com/leanprover/lean4/blob/v4.36.0/src/lake/Lake/CLI/Help.lean	200	text/html; charset=utf-8	github.com	lean4/src/lake/Lake/CLI/Help.lean at v4.36.0 · leanprover/lean4 · GitHub	0	633915
+https://github.com/leanprover/lean4/releases/tag/v4.36.0	200	text/html; charset=utf-8	github.com	Release v4.36.0 · leanprover/lean4 · GitHub	0	152649
+https://github.com/no-way-labs/smale6-generic-finiteness	404	text/html; charset=utf-8	github.com	Page not found · GitHub · GitHub	0	224506
+https://hexagonmath.org/2611.00377v1	200	text/html; charset=utf-8	hexagonmath.org	Smale's sixth problem for six bodies in the plane: finiteness of central configurations for generic masses, with a proof formalized in Lean · Hexagon	0	71132
+https://hexagonmath.org/2611.00485v1	200	text/html; charset=utf-8	hexagonmath.org	Complex central configurations of the planar five-body problem at special masses · Hexagon	0	75823
+https://hexagonmath.org/pdf/2611.00377v1	200	application/pdf	hexagonmath.org	PDF	0	665572
+https://hexagonmath.org/pdf/2611.00485v1	200	application/pdf	hexagonmath.org	PDF	0	561787
+https://jexpmath.org/index.php/jem/article/download/Vol-1Issue-2Paper-6/Vol-1Issue-2Paper-6/64903	200	application/pdf	jexpmath.org	PDF	0	3328098
+https://lean-lang.org/doc/reference/latest/Build-Tools-and-Distribution/Lake/	200	text/html; charset=UTF-8	lean-lang.org	Lake	0	874635
+https://lean-lang.org/doc/reference/latest/find/?domain=Verso.Genre.Manual.section&name=axiom-consistency	200	text/html; charset=UTF-8	lean-lang.org	Cross-Reference Redirection	0	3690763
+https://link.springer.com/article/10.1007/s10569-019-9920-6	200	text/html; charset=utf-8	link.springer.com	Central configurations in planar n-body problem with equal masses for $$n=5,6,7$$ | Celestial Mechanics and Dynamical Astronomy | Springer Nature Link	0	436070
+https://link.springer.com/article/10.1007/s10569-020-09993-1	200	text/html; charset=utf-8	link.springer.com	Central configurations in the spatial n-body problem for $$n=5,6$$ with equal masses | Celestial Mechanics and Dynamical Astronomy | Springer Nature Link	0	433881
+https://link.springer.com/article/10.1007/s10884-019-09765-y	200	text/html; charset=utf-8	link.springer.com	Generic Finiteness for a Class of Symmetric Planar Central Configurations of the Six-Body Problem and the Six-Vortex Problem | Journal of Dynamics and Differential Equations | Spri	0	315756
+https://math.mit.edu/~poonen/papers/amsval.pdf	200	application/pdf	math.mit.edu	PDF	0	338644
+https://math.stanford.edu/~conrad/Perfseminar/refs/poonencomplete.pdf	200	application/pdf	math.stanford.edu	PDF	0	1653391
+https://mathcs.holycross.edu/~groberts/Papers/continuum.pdf	200	application/pdf	mathcs.holycross.edu	PDF	0	151833
+https://mathcs.holycross.edu/~little/JMMTalkCCs.pdf	200	application/pdf	mathcs.holycross.edu	PDF	0	325025
+https://online.watsci.org/abstract_pdf/2002v9/v9n4a-pdf/1.pdf	200	application/pdf	online.watsci.org	PDF	0	122438
+https://stacks.math.columbia.edu	200	text/html; charset=utf-8	stacks.math.columbia.edu	Index—The Stacks project	0	8344
+https://stacks.math.columbia.edu/tag/005K	200	text/html; charset=utf-8	stacks.math.columbia.edu	Lemma 5.15.15 (005K)—The Stacks project	0	17839
+https://stacks.math.columbia.edu/tag/00FV	200	text/html; charset=utf-8	stacks.math.columbia.edu	Theorem 10.34.1 (00FV): Hilbert Nullstellensatz—The Stacks project	0	21653
+https://stacks.math.columbia.edu/tag/00P3	200	text/html; charset=utf-8	stacks.math.columbia.edu	Lemma 10.116.5 (00P3)—The Stacks project	0	14211
+https://stacks.math.columbia.edu/tag/01J3	200	text/html; charset=utf-8	stacks.math.columbia.edu	Lemma 26.12.4 (01J3)—The Stacks project	0	16081
+https://stacks.math.columbia.edu/tag/01R8	200	text/html; charset=utf-8	stacks.math.columbia.edu	Lemma 29.6.3 (01R8)—The Stacks project	0	16421
+https://stacks.math.columbia.edu/tag/020J	200	text/html; charset=utf-8	stacks.math.columbia.edu	Lemma 33.8.3 (020J)—The Stacks project	0	14001
+https://stacks.math.columbia.edu/tag/02FX	200	text/html; charset=utf-8	stacks.math.columbia.edu	Lemma 29.29.1 (02FX)—The Stacks project	0	14991
+https://stacks.math.columbia.edu/tag/02FY	200	text/html; charset=utf-8	stacks.math.columbia.edu	Lemma 29.29.3 (02FY)—The Stacks project	0	14791
+https://stacks.math.columbia.edu/tag/02FZ	200	text/html; charset=utf-8	stacks.math.columbia.edu	Lemma 29.29.4 (02FZ)—The Stacks project	0	14896
+https://stacks.math.columbia.edu/tag/0495	200	text/html; charset=utf-8	stacks.math.columbia.edu	Lemma 29.9.3 (0495)—The Stacks project	0	13869
+https://stacks.math.columbia.edu/tag/04KW	200	text/html; charset=utf-8	stacks.math.columbia.edu	Lemma 33.8.10 (04KW)—The Stacks project	0	14522
+https://stacks.math.columbia.edu/tag/054K	200	text/html; charset=utf-8	stacks.math.columbia.edu	Theorem 29.23.3 (054K): Chevalley's Theorem—The Stacks project	0	15728
+https://stacks.math.columbia.edu/tag/081I	200	text/html; charset=utf-8	stacks.math.columbia.edu	Lemma 29.26.16 (081I)—The Stacks project	0	15176
+https://stacks.math.columbia.edu/tag/09GU	200	text/html; charset=utf-8	stacks.math.columbia.edu	Lemma 9.10.5 (09GU)—The Stacks project	0	16505
+https://stacks.math.columbia.edu/tag/0CB3	200	text/html; charset=utf-8	stacks.math.columbia.edu	Lemma 37.36.1 (0CB3)—The Stacks project	0	14732
+https://web.ma.utexas.edu/users/sampayne/pdf/CorrectionToFibers.pdf	200	application/pdf	web.ma.utexas.edu	PDF	0	307778
+https://www-users.cse.umn.edu/~rmoeckel/research/DziobekAMSLaTeX.pdf	200	application/pdf	www-users.cse.umn.edu	PDF	0	200937
+https://www-users.cse.umn.edu/~rmoeckel/research/FinitenessRE4BP.rev.pdf	200	application/pdf	www-users.cse.umn.edu	PDF	0	248503
+https://www.academia.edu/76016550/Definability_and_fast_quantifier_elimination_in_algebraically_closed_fields	403	text/html; charset=UTF-8	www.academia.edu	Just a moment...	0	5712
+https://www.aimsciences.org/article/doi/10.3934/jgm.2015.7.35	200	text/html;charset=UTF-8	www.aimsciences.org	Finiteness of relative equilibria in the planar generalized $N$-body problem with fixed subconfigurations	0	97945
+https://www.fim.uni-passau.de/fileadmin/dokumente/fakultaeten/fim/lehrstuhl/muller/SmaleProblems1998.pdf	200	application/pdf	www.fim.uni-passau.de	PDF	0	167582
+https://www.mefyi.com/papers/smale-6-six-body-generic/	200	text/html; charset=utf-8	www.mefyi.com	Smale's sixth problem for six bodies in the plane: finiteness of central configurations for generic masses, with a proof formalized in Lean | Tejasvi S. Tomar	0	15699
+https://www.mefyi.com/papers/smale-6-six-body-generic/smale-6-six-body-generic.pdf	200	application/pdf	www.mefyi.com	PDF	0	668683
+https://www.numdam.org/item/PMIHES_1966__28__5_0/	200	text/html; charset=utf-8	www.numdam.org	Éléments de géométrie algébrique : IV. Étude locale des schémas et des morphismes de schémas, Troisième partie	0	30330
+https://www.sciencedirect.com/science/article/pii/002203969190137X	403	text/html; charset=UTF-8	www.sciencedirect.com	ScienceDirect	0	832981
+https://www.sciencedirect.com/science/article/pii/S0167278998003157	403	text/html; charset=UTF-8	www.sciencedirect.com	ScienceDirect	0	832981
+https://www.thefiveprinciplesoforganizedcomplexity.com/academic-publications/	200	text/html; charset=UTF-8	www.thefiveprinciplesoforganizedcomplexity.com	Academic Publications – The Five Principles of Organized Complexity	0	455335
+https://zenodo.org/api/records/23576138	200	application/json	zenodo.org		0	3429
+https://zenodo.org/records/23576138	200	text/html; charset=utf-8	zenodo.org	Finiteness of Central Configurations for Every n A Valuation–Lattice Proof | Zenodo	0	55855
+https://zenodo.org/records/23720035/files/Tomar-Smale6-six-bodies-generic-masses-v5.pdf?download=1	200	application/octet-stream	zenodo.org	PDF	0	668683
+https://raw.githubusercontent.com/citation-file-format/citation-file-format/1.2.0/schema.json	200	text/plain; charset=utf-8	raw.githubusercontent.com		0	63763
+https://www.sciencedirect.com/science/article/pii/002203969190137X/pdfft?isDTMRedir=true&download=true	403	text/html; charset=UTF-8	www.sciencedirect.com	ScienceDirect	0	832981
+https://sites.math.northwestern.edu/~xia/	200	text/html	sites.math.northwestern.edu	Zhihong Jeff Xia	0	2876
+https://api.openalex.org/works/W1965505736?select=id,open_access,locations,has_content	200	application/json	api.openalex.org		0	1158
+https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/0022-0396(91)90137-X?fields=title,openAccessPdf,url	200	application/json	api.semanticscholar.org		0	314
+https://archive.org/advancedsearch.php?q=title%3A%22Central+configurations+with+many+small+masses%22+OR+%28title%3A%22Journal+of+differential+equations%22+AND+year%3A1991%29&output=json&rows=50&fl%5B%5D=identifier	200	application/json	archive.org		0	441
+https://articles.adsabs.harvard.edu/pdf/1991JDE....91..168X	403	application/xml	articles.adsabs.harvard.edu		0	243
+https://pascal-francis.inist.fr/vibad/index.php?action=getRecordDetail&idt=5511419	000		pascal-francis.inist.fr		28	0
+https://doi.org/10.1016/0304-3975(85)90150-1	200	text/html;charset=UTF-8	linkinghub.elsevier.com	Redirecting	0	2623
+https://zenodo.org/api/records/23720035	200	application/json	zenodo.org		0	6853

@@ -1,0 +1,27 @@
+XiaOpenAlex {"id":"https://openalex.org/W1965505736","open_access":{"is_oa":true,"oa_status":"bronze","oa_url":"https://doi.org/10.1016/0022-0396(91)90137-x","any_repository_has_fulltext":false},"locations":[{"id":"doi:10.1016/0022-0396(91)90137-x","doi":"https://doi.org/10.1016/0022-0396(91)90137-x","is_oa":true,"landing_page_url":"https://doi.org/10.1016/0022-0396(91)90137-x","pdf_url":null,"source":{"id":"https://openalex.org/S200871675","display_name":"Journal of Differential Equations","issn_l":"0022-0396","issn":["0022-0396","1090-2732"],"is_oa":false,"is_in_doaj":false,"is_core":true,"listed_in":["anvur-scientific","cwts-core","dongbi-b","jufo-2","norway-2","poland-140","russia-white-list-1"],"host_organization":"https://openalex.org/P4310320990","host_organization_name":"Elsevier BV","host_organization_lineage":["https://openalex.org/P4310320990"],"host_organization_lineage_names":["Elsevier BV"],"type":"journal"},"license":null,"license_id":null,"version":"publishedVersion","is_accepted":true,"is_published":true,"raw_source_name":"Journal of Differential Equations","raw_type":"journal-article"}],"has_content":{"pdf":false,"grobid_xml":false}}
+
+XiaSemantic {"paperId": "801811722e9ac24f6ff30d6cd1db4e7067b72d67", "url": "https://www.semanticscholar.org/paper/801811722e9ac24f6ff30d6cd1db4e7067b72d67", "title": "Central configurations with many small masses", "openAccessPdf": {"url": "https://doi.org/10.1016/0022-0396(91)90137-x", "status": "BRONZE", "license": null}}
+
+XiaArchive {"responseHeader":{"status":0,"QTime":42,"params":{"query":"title:&quot;Central configurations with many small masses&quot; OR (title:&quot;Journal of differential equations&quot; AND year:1991)","qin":"title:&quot;Central configurations with many small masses&quot; OR (title:&quot;Journal of differential equations&quot; AND year:1991)","fields":"identifier","wt":"json","rows":50,"start":0}},"response":{"numFound":0,"start":0,"docs":[]}}
+CITATION.cff valid against official 1.2.0 schema
+smale1998 (['Mathematical problems for the next century'], '10.1007/bf03025291', [('Steve', 'Smale')], '20', '7-15', {'date-parts': [[1998, 3]]})
+wintner1941 ('429', '', 'api.crossref.org')
+moulton1910 ('429', '', 'api.crossref.org')
+hamptonmoeckel2006 (['Finiteness of relative equilibria of the four-body problem'], '10.1007/s00222-005-0461-0', [('Marshall', 'Hampton'), ('Richard', 'Moeckel')], '163', '289-312', {'date-parts': [[2005, 10, 27]]})
+albouykaloshin2012 ('429', '', 'api.crossref.org')
+roberts1999 ('429', '', 'api.crossref.org')
+jensenleykin2025 ('429', '', 'api.crossref.org')
+changchen2024jsc ('429', '', 'api.crossref.org')
+changchen2025siads ('429', '', 'api.crossref.org')
+diaspan2020 (['Generic Finiteness for a Class of Symmetric Planar Central Configurations of the Six-Body Problem and the Six-Vortex Problem'], '10.1007/s10884-019-09765-y', [('Thiago', 'Dias'), ('Bo-Yu', 'Pan')], '32', '1579-1602', {'date-parts': [[2019, 5, 29]]})
+moczuradzgliczynski2019 ('429', '', 'api.crossref.org')
+moczuradzgliczynski2020 ('429', '', 'api.crossref.org')
+heintz1983 ('429', '', 'api.crossref.org')
+moeckel2001 ('429', '', 'api.crossref.org')
+xia1991 ('429', '', 'api.crossref.org')
+poonen1993 ('429', '', 'api.crossref.org')
+payne2009 ('429', '', 'api.crossref.org')
+ega4iii ('429', '', 'api.crossref.org')
+lean4 ('429', '', 'api.crossref.org')
+mathlib ('429', '', 'api.crossref.org')
+highs ('429', '', 'api.crossref.org')

@@ -1,0 +1,31 @@
+n=2 chamber types=1 pairs=1 cyclic_graphs=0 candidate=0 balanced=0 feasible=0 length2=0 length4=0
+n=2 unranked trees=1 heaviest-pair balanced simple cycles (unordered trees)=0
+n=3 chamber types=4 pairs=10 cyclic_graphs=0 candidate=0 balanced=0 feasible=0 length2=0 length4=0
+n=3 unranked trees=4 heaviest-pair balanced simple cycles (unordered trees)=0
+n=4 repeated-mass control types=32 pairs=528 cyclic_graphs=73 candidate=82 balanced=82 feasible=82 length2=78 length4=4
+n=4 chamber types=32 pairs=528 cyclic_graphs=8 candidate=8 balanced=0 feasible=0 length2=0 length4=0
+n=4 unranked trees=26 heaviest-pair balanced simple cycles (unordered trees)=0
+n=5 chamber types=436 pairs=95266 cyclic_graphs=3342 candidate=3596 balanced=0 feasible=0 length2=0 length4=0
+n=5 unranked trees=236 heaviest-pair balanced simple cycles (unordered trees)=0
+n=6 chamber types=9012 pairs=40612578 cyclic_graphs=2193590 candidate=2543192 balanced=144 feasible=0 length2=0 length4=0
+n=6 unranked trees=2752 heaviest-pair balanced simple cycles (unordered trees)=96
+real 1.47
+user 1.35
+sys 0.00
+             7208960  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                 633  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   3  involuntary context switches
+         25774261269  instructions retired
+          5068346011  cycles elapsed
+             7029504  peak memory footprint

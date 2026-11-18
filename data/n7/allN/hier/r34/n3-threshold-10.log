@@ -1,0 +1,23 @@
+Running HiGHS 1.16.0 (git hash: f3f113d): Copyright (c) 2026 under MIT licence terms
+Includes third-party software components, see THIRD_PARTY_NOTICES.md for full details
+nk_fibre K=3 Psi >= 10 u=0,1,30: pairs of trees 225, zeta trees 0 done before and 15 now (COMPLETE), LPs 8869, LPs with no verdict 0, solutions 0, distinct points 0, by dimension of the cell {}; leaves by ray verdict (0 none, 1 leaves the prevariety, 2 stays) {}; 1s
+real 0.72
+user 0.70
+sys 0.05
+            36143104  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                6298  page reclaims
+                  48  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  19  voluntary context switches
+                5111  involuntary context switches
+           807616974  instructions retired
+           294154688  cycles elapsed
+            25822144  peak memory footprint

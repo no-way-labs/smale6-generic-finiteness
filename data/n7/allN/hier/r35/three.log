@@ -1,0 +1,17 @@
+None None Psi=-1 sat Psi differs unsat
+None 0 Psi=-1 unsat Psi differs unsat
+None 1 Psi=-1 unsat Psi differs unsat
+None 2 Psi=-1 unsat Psi differs unsat
+0 None Psi=-1 unsat Psi differs unsat
+0 0 Psi=-1 unsat Psi differs unsat
+0 1 Psi=-1 unsat Psi differs unsat
+0 2 Psi=-1 unsat Psi differs unsat
+1 None Psi=-1 unsat Psi differs unsat
+1 0 Psi=-1 unsat Psi differs unsat
+1 1 Psi=-1 unsat Psi differs unsat
+1 2 Psi=-1 unsat Psi differs unsat
+2 None Psi=-1 unsat Psi differs unsat
+2 0 Psi=-1 unsat Psi differs unsat
+2 1 Psi=-1 unsat Psi differs unsat
+2 2 Psi=-1 unsat Psi differs unsat
+positive strata 1
