@@ -1,5 +1,7 @@
 # Generic finiteness of planar central configurations for every number of bodies
 
+[![DOI](https://zenodo.org/badge/1462339473.svg)](https://doi.org/10.5281/zenodo.24371244)
+
 Paper, formal proofs, computations and the record of the checks.
 
 **Paper:** [`paper/alln/main.pdf`](paper/alln/main.pdf) (source `paper/alln/main.tex`).
@@ -144,6 +146,10 @@ were read. These reads are not peer review.
 The code is under the MIT licence (`LICENSE`): the Lean files, the programs of `scripts/` and the programs
 kept under `data/`. The paper, the documents and reports of `docs/`, and the recorded points, logs and
 outputs of `data/` are under CC BY 4.0 (`LICENSE-CC-BY-4.0`). To cite this work, see `CITATION.cff`.
+
+Zenodo archives the releases of this repository. The DOI
+[10.5281/zenodo.24371244](https://doi.org/10.5281/zenodo.24371244) names all versions and resolves to the
+latest one; version 1.0.0 is [10.5281/zenodo.24371245](https://doi.org/10.5281/zenodo.24371245).
 
 ## Contact
 
