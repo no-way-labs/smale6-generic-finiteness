@@ -6,9 +6,7 @@ authors:
     given-names: "Keston"
     affiliation: "No Way Labs"
 repository-code: "https://github.com/no-way-labs/smale6-generic-finiteness"
-license:
-  - MIT
-  - CC-BY-4.0
+license: MIT
 keywords:
   - central configurations
   - n-body problem
